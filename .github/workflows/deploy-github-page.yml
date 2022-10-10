@@ -5,6 +5,7 @@ on:
       - main
 
 env:
+  DOMAIN: blog.usword.cn
   ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
   REPOSITORY: ${{ github.repository }}
   OWNER: ${{ github.repository_owner }}
