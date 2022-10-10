@@ -1,24 +1,24 @@
-name: merge-check
-on:
-  # push:
-  #   branches:
-  #     - main
-  pull_request:
-    branches:
-      - main
+# name: merge-check
+# on:
+#   push:
+#     branches:
+#       - main
+#   pull_request:
+#     branches:
+#       - main
 
-jobs:
-  run-jest-test:
-    name: jest-test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: install pnpm
-        run: yarn global add pnpm
-      - name: install depends
-        run: pnpm install
-      # - name: test project
-      #   run: pnpm run test
+# jobs:
+#   run-jest-test:
+#     name: jest-test
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
+#       - uses: actions/setup-node@v3
+#         with:
+#           node-version: 16
+#       - name: install pnpm
+#         run: yarn global add pnpm
+#       - name: install depends
+#         run: pnpm install
+#       - name: test project
+#         run: pnpm run test
