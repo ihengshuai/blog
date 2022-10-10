@@ -1,0 +1,34 @@
+name: deploy github page using vitepress
+on:
+  push:
+    branches:
+      - main
+
+env:
+  ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+  REPOSITORY: ${{ github.repository }}
+  OWNER: ${{ github.repository_owner }}
+  EMAIL: "wsm_1105@163.com"
+
+jobs:
+  build-and-deploy:
+    name: deploy github page
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: install pnpm
+        run: yarn global add pnpm
+      - name: build project
+        run: pnpm install && pnpm build
+      - run: ls
+      - name: deploy page
+        run: chmod +x ./scripts/deploy-page.sh && ./scripts/deploy-page.sh
+      # use other action
+      # - name: deploy github page
+      #   uses: JamesIves/github-pages-deploy-action@4.1.1
+      #   with:
+      #     branch: gh-pages
+      #     folder: ${{ env.BUNDLE_DIST }}

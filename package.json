@@ -1,0 +1,31 @@
+{
+  "name": "vitepress-blog",
+  "version": "1.0.0",
+  "description": "this is a blog for sharing the knowledge of web development.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs"
+  },
+  "keywords": ["blog", "frontend", "backend"],
+  "author": {
+    "name": "ihengshuai",
+    "email": "wsm_1105@163.com",
+    "url": "https://github.com/ihengshuai"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ihengshuai/blog.git"
+  },
+  "homepage": "blog.usword.cn",
+  "bugs": {
+    "url": "https://github.com/ihengshuai/blog/issues"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@algolia/client-search": "^4.9.1",
+    "vitepress": "1.0.0-alpha.10",
+    "vue": "^3.2.37"
+  }
+}

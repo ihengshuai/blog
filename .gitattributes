@@ -1,0 +1,3 @@
+*.js linguist-language=md
+*.tsx linguist-language=md
+*.html linguist-language=md
