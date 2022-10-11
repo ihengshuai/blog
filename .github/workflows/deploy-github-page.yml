@@ -10,6 +10,10 @@ env:
   REPOSITORY: ${{ github.repository }}
   OWNER: ${{ github.repository_owner }}
   EMAIL: "wsm_1105@163.com"
+  ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
+  ALGOLIA_APP_KEY: ${{ secrets.ALGOLIA_APP_KEY }}
+  ALGOLIA_APP_INDEXNAME: ${{ secrets.ALGOLIA_APP_INDEXNAME }}
+
 
 jobs:
   build-and-deploy:
@@ -22,6 +26,8 @@ jobs:
           node-version: 16
       - name: install pnpm
         run: yarn global add pnpm
+      - name: set env variables
+        run: echo ALGOLIA_APP_ID=${{ env.ALGOLIA_APP_ID }} >> .env && echo ALGOLIA_APP_KEY=${{ env.ALGOLIA_APP_KEY }} >> .env && echo ALGOLIA_APP_INDEXNAME=${{ env.ALGOLIA_APP_INDEXNAME }} >> .env
       - name: build project
         run: pnpm install && pnpm build
       - run: ls

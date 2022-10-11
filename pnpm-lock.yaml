@@ -2,12 +2,16 @@ lockfileVersion: 5.4
 
 specifiers:
   '@algolia/client-search': ^4.9.1
-  vitepress: 1.0.0-alpha.10
+  dotenv: ^16.0.1
+  markdown-it-anchor: ^8.6.5
+  vitepress: 1.0.0-alpha.13
   vue: ^3.2.37
 
 devDependencies:
   '@algolia/client-search': 4.14.2
-  vitepress: 1.0.0-alpha.10_tbpndr44ulefs3hehwpi2mkf2y
+  dotenv: 16.0.1
+  markdown-it-anchor: 8.6.5
+  vitepress: 1.0.0-alpha.13_tbpndr44ulefs3hehwpi2mkf2y
   vue: 3.2.37
 
 packages:
@@ -351,6 +355,11 @@ packages:
     resolution: {integrity: sha512-/WwNkdXfckNgw6S5R125rrW8ez139lBHWouiBvX8dfMFtcn6V81REDqnH7+CRpRipfYlyU1CmOnOxrmGcFOjeA==}
     dev: true
 
+  /dotenv/16.0.1:
+    resolution: {integrity: sha512-1K6hR6wtk2FviQ4kEiSjFiH5rpzEVi8WW0x96aztHVMhEspNpc4DVOUTEHtEva5VThQ8IaBX1Pe4gSzpVVUsKQ==}
+    engines: {node: '>=12'}
+    dev: true
+
   /esbuild-android-64/0.14.54:
     resolution: {integrity: sha512-Tz2++Aqqz0rJ7kYBfz+iqyE3QMycD4vk7LBRyWaAVFgFtQ/O8EJOnVmTOiDWYZ/uYzB4kvP+bqejYdVKzE5lAQ==}
     engines: {node: '>=12'}
@@ -599,6 +608,13 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /markdown-it-anchor/8.6.5:
+    resolution: {integrity: sha512-PI1qEHHkTNWT+X6Ip9w+paonfIQ+QZP9sCeMYi47oqhH+EsW8CrJ8J7CzV19QVOj6il8ATGbK2nTECj22ZHGvQ==}
+    peerDependencies:
+      '@types/markdown-it': '*'
+      markdown-it: '*'
+    dev: true
+
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -702,8 +718,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.10_tbpndr44ulefs3hehwpi2mkf2y:
-    resolution: {integrity: sha512-RGPU+YApj2jaYplAIJUe+2qlDks9FzPX1QGK+7NdGByeCCVZg6z9eYWjjvfvA/sgCtG3yeJE/4/jCwlv4Y8bVw==}
+  /vitepress/1.0.0-alpha.13_tbpndr44ulefs3hehwpi2mkf2y:
+    resolution: {integrity: sha512-gCbKb+6o0g5wHt2yyqBPk7FcvrB+MfwGtg1JMS5p99GTQR87l3b7symCl8o1ecv7MDXwJ2mPB8ZrYNLnQAJxLQ==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.2.1

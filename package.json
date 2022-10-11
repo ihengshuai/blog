@@ -8,7 +8,14 @@
     "build": "vitepress build docs",
     "serve": "vitepress serve docs"
   },
-  "keywords": ["blog", "frontend", "backend"],
+  "keywords": [
+    "blog",
+    "frontend",
+    "backend",
+    "vue",
+    "react",
+    "webpack"
+  ],
   "author": {
     "name": "ihengshuai",
     "email": "wsm_1105@163.com",
@@ -25,7 +32,9 @@
   "license": "ISC",
   "devDependencies": {
     "@algolia/client-search": "^4.9.1",
-    "vitepress": "1.0.0-alpha.10",
+    "dotenv": "^16.0.1",
+    "markdown-it-anchor": "^8.6.5",
+    "vitepress": "1.0.0-alpha.13",
     "vue": "^3.2.37"
   }
 }

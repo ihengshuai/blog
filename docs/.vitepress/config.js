@@ -1,6 +1,10 @@
 import path from "path";
 import { getNavMenu } from "./nav"
 import { getSidebarMenu } from "./sidebar";
+import dotenv from "dotenv"
+// import markdown_anchor from "markdown-it-anchor"
+
+dotenv.config({path: './.env'})
 
 const resolve = (p) => path.resolve(__dirname, p);
 
@@ -24,6 +28,10 @@ export default {
 	markdown: {
 		theme: "material-palenight",
 		lineNumbers: true,
+		toc: { level: [1, 2, 3] },
+		config: (md) => {
+			// md.use(markdown_anchor)
+		}
 	},
 	outDir: "../dist",
 	description: "a blog for sharing web development experiences...",
@@ -36,12 +44,17 @@ export default {
 		],
 		sidebar: getSidebarMenu(),
 		editLink: {
-			pattern: "https://github.com/ihengshuai/blog/edit/dev/docs/:path",
+			pattern: "https://github.com/ihengshuai/blog/edit/main/docs/:path",
 			text: "Edit this page on GitHub",
 		},
 		footer: {
 			message: "Released under the MIT License.",
 			copyright: "Copyright © 2019-present HengShuai",
 		},
+		algolia: {
+			appId: process.env.ALGOLIA_APP_ID,
+			apikey: process.env.ALGOLIA_APP_KEY,
+			indexName: process.env.ALGOLIA_APP_INDEXNAME,
+		}
 	},
 };
