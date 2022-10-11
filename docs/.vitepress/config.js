@@ -53,7 +53,7 @@ export default {
 		},
 		algolia: {
 			appId: process.env.ALGOLIA_APP_ID,
-			apikey: process.env.ALGOLIA_APP_KEY,
+			apiKey: process.env.ALGOLIA_APP_KEY,
 			indexName: process.env.ALGOLIA_APP_INDEXNAME,
 		}
 	},
