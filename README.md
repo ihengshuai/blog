@@ -6,5 +6,12 @@ hi, welcome to there! :sparkles:
 
 本博客系统基于[vitepress](https://vitepress.vuejs.org/)搭建，有关[vitepress](https://vitepress.vuejs.org/)配置请移步官方文档
 
+## 在线阅读
+[https://blog.usword.cn](https://blog.usword.cn)
 
-![payment_code.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h71o5fiw7gj31a90v87hl.jpg)
+## 打赏
+如果你觉得本博客对你有帮助，不介意的话打赏一杯咖啡，鼓励作者不断分享技术文章，在此感谢!:thumbsup:
+<div>
+<img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72anu40usj30dw0dw40j.jpg" width=200>
+<img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg" width=200>
+</div>

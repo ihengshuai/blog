@@ -3,6 +3,8 @@ editLink: false
 ---
 
 # me
+关于我
 
-打赏一杯咖啡
-![payment_code.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h71o5fiw7gj31a90v87hl.jpg)
+## 打赏
+<img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72anu40usj30dw0dw40j.jpg" width=200>
+<img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg" width=200>
