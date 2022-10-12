@@ -15,3 +15,8 @@ hi, welcome to there! :sparkles:
 <img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72anu40usj30dw0dw40j.jpg" width=200>
 <img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg" width=200>
 </div>
+
+## 版权
+Copyright 2019-present HengShuai ([ihengshuai@foxmail.com](mailto:ihengshuai@foxmail.com))
+
+知识共享 署名-非商业性使用-相同方式共享 4.0（CC BY-NC-SA 4.0），详情见 [LICENSE](/LICENSE) 文件。
