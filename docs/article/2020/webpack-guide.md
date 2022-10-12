@@ -277,7 +277,7 @@ npm install @babel/core @babel/preset-env @babel/plugin-transform-runtime -D
 npm install @babel/runtime @babel/runtime-corejs3 -S
 ```
 
-对 babel7 配置不熟悉的小伙伴，可以阅读一下这篇文章: [Babel7 知识你了解多少](/home/front/2019/Babel7知识)
+<!-- 对 babel7 配置不熟悉的小伙伴，可以阅读一下这篇文章: [Babel7 知识你了解多少](/home/front/2019/Babel7知识) -->
 
 我们在以上的配置基础上添加配置:
 
