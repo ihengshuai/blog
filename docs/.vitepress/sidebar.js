@@ -85,6 +85,18 @@ export const getSidebarMenu = () => ({
       text: "2021",
       items: [
         {
+          text: "Sep",
+          items: [
+            { text: "1. 前端性能测试工具", link: "/article/2021/performance-tools.html" },
+          ],
+        },
+        {
+          text: "July",
+          items: [
+            { text: "1. Typescript装饰器指南", link: "/article/2021/ts-decorator.html" },
+          ],
+        },
+        {
           text: "Mar",
           items: [
             { text: "1. 手写vue图片懒加载插件", link: "/article/2021/vue-img-lazyload.html" },
@@ -102,6 +114,13 @@ export const getSidebarMenu = () => ({
     {
       text: "2020",
       items: [
+        {
+          text: "Aug",
+          items: [
+            { text: "1. 关于DOMParser、XMLSerializer、createTreeWalker使用", link: "/article/2020/domparser-xml.html" },
+            { text: "2. vscode快捷键", link: "/article/2020/vscode-shortcut.html" },
+          ],
+        },
         {
           text: "May",
           items: [
