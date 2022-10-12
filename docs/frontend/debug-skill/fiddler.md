@@ -151,12 +151,16 @@ cls
 
 ## 远程抓包/APP抓包/ios抓包
 :::tip
-远程需和fiddler保持在局域网下，点击保存重启fiddler
+远程调试需要将远程应用和fiddler保持在局域网下
 :::
+
 这里以IPhone为例，其他大同小异
+1. 首先在菜单栏中一次点击`Tools > Options`弹出options面板，选择`Connections`Tab，可以看到fiddler监听的端口为`8088`(不同版本可能不同)，你也可以修改它；下面有一个选项为`Allow remote computers to connect`勾选上☑️，允许远程连接；右侧有一个`Act as system proxy`让fiddler作为系统代理(默认)，点击保存后最好重启下fiddler，如果后续配置后正常话不重启也行，如下图：
+ ![QQ截图20221012191525.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h72pyn1uyzj30fp0c779p.jpg)
 
-![QQ截图20221012191525.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h72pyn1uyzj30fp0c779p.jpg)
+2. 远程连接fiddler所在的计算机，这里以IPhone为例；首先查询计算机ip，可以通过fiddler右上角计算机图标提示，也可以在终端输入`ipconfig`查询或其他方法，如下图：
+ ![QQ截图20221012191720.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h72q0phv0oj30c9070dhm.jpg)
 
-![QQ截图20221012191720.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h72q0phv0oj30c9070dhm.jpg)
-
-![QQ截图20221012191812.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h72q0w6n1sj30ie06rjs6.jpg)
+  ![QQ截图20221012191812.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h72q0w6n1sj30ie06rjs6.jpg)
+ 手机在同一局域网下，配置wifi代理，找到和电脑连接相同的wifi，点击wifi，配置代理选择手动，输入刚刚查询的ip和fiddler监听的端口，点击保存，这下可以打开浏览器，随便查询查看fiddler抓包记录
+ ![IMG_0556.jpg](https://tva1.sinaimg.cn/large/005HV6Avgy1h72u78gr62j30n00qt3zr.jpg)
