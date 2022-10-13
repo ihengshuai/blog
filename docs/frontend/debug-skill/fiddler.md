@@ -149,7 +149,7 @@ cls
 
 接下来来介绍远程抓包，常见的就是app抓包，手机端抓包等等
 
-## 远程抓包/APP抓包/ios抓包
+## 客户端抓包
 :::tip
 远程调试需要将远程应用和fiddler保持在局域网下
 :::
@@ -158,9 +158,66 @@ cls
 1. 首先在菜单栏中一次点击`Tools > Options`弹出options面板，选择`Connections`Tab，可以看到fiddler监听的端口为`8088`(不同版本可能不同)，你也可以修改它；下面有一个选项为`Allow remote computers to connect`勾选上☑️，允许远程连接；右侧有一个`Act as system proxy`让fiddler作为系统代理(默认)，点击保存后最好重启下fiddler，如果后续配置后正常话不重启也行，如下图：
  ![QQ截图20221012191525.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h72pyn1uyzj30fp0c779p.jpg)
 
-2. 远程连接fiddler所在的计算机，这里以IPhone为例；首先查询计算机ip，可以通过fiddler右上角计算机图标提示，也可以在终端输入`ipconfig`查询或其他方法，如下图：
+2. 为了不让其他本地请求影响到我们分析抓包，这里把抓包改为只抓远程的包。打开`rules > custom rules`，搜索`static function OnBeforeRequest`，将以下代码粘贴进去，保存配置后最好重启一下
+  ```c#
+  static function OnBeforeRequest(oSession: Session) {
+    // 抓取远程的
+		if (!String.IsNullOrEmpty(oSession["x-ProcessInfo"])) { 
+			oSession["ui-hide"] = "localprocess"; 
+		}
+  }
+  ```
+
+3. 远程连接fiddler所在的计算机，这里以IPhone为例；首先查询计算机ip，可以通过fiddler右上角计算机图标提示，也可以在终端输入`ipconfig`查询或其他方法，如下图：
  ![QQ截图20221012191720.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h72q0phv0oj30c9070dhm.jpg)
 
   ![QQ截图20221012191812.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h72q0w6n1sj30ie06rjs6.jpg)
- 手机在同一局域网下，配置wifi代理，找到和电脑连接相同的wifi，点击wifi，配置代理选择手动，输入刚刚查询的ip和fiddler监听的端口，点击保存，这下可以打开浏览器，随便查询查看fiddler抓包记录
+ 手机在同一局域网下，配置wifi代理，找到和电脑连接相同的wifi，点击wifi，配置代理选择手动，输入刚刚查询的ip和fiddler监听的端口，点击保存
  ![IMG_0556.jpg](https://tva1.sinaimg.cn/large/005HV6Avgy1h72u78gr62j30n00qt3zr.jpg)
+
+  打开Safari输入网址`http://192.168.11.224:10000`回车后，查看fiddler抓包记录
+
+   ![1525E81FFFF883D1CAE399097D7DDF52.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73pfw5tn6j30n00cdjrj.jpg)
+
+  ![QQ截图20221013154539.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73pi66t4kj30z30900xz.jpg)
+
+  重新输入输入`https://blog.usword.cn`
+  ![C8A68661E2.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73pm8kyoaj30n00gxdge.jpg)
+
+  再看看抓包记录，会发现啥记录都没有
+
+  ![QQ截图20221013155018.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73pmrzkj4j30h808375m.jpg)
+
+  `https://blog.usword.cn`是https协议地址，fiddler默认不会抓取https的，需要手动打开配置选项，而且需要安装fiddler证书为根证书，接下来一起配置https
+
+## 配置HTTPS
+
+![QQ截图20221013164038.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73r35d3enj30sf0cywff.jpg)
+
+首先打开`Tools > Options > HTTPS`，将下图中的选项全部勾选，为方便测试`Descript HTTPS traffic`选择`from remote clients only`，如下图：
+
+![QQ截图20221013155947.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73pwn5dmzj30g90c1gpu.jpg)
+
+在Safari中访问远程fiddler地址`192.168.11.224:8088`，点击允许下载证书
+![5DD9EE10FD.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73q8hmbq5j30n00megne.jpg)
+
+![B4D670F449.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73q9nfd59j30n00urtan.jpg)
+
+打开手机设置，找到描述文件，点击信任安装证书iphone要输入手机密码(不同手机型号操作有差异)，最后会看到已验证
+
+![FB1F83102D9AF2773325155581A75FE7.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73qacxc4xj30n00madgh.jpg)
+
+![A7D37E643BF4136954A5AABF8F78C20E.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73qao8qylj30n00piwfe.jpg)
+
+![2F6F6322E2EC59919FD479FAA5D5E20D.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73qatqbquj30n00lgaaq.jpg)
+
+现在打开Safari重新访问`https://blog.usword.cn`查看抓包记录，会发现已经抓到了
+
+![20221013161635.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h73qe4pb57j30gs066adb.jpg)
+
+当打开抖音App发现抓取不到信息，这是因为现在有的app已经有了反抓包手段
+
+至此，关于fiddler的常用的抓包功能已经介绍的差不多了，到这里你应该对fiddler有一定的认识了，自己一定要动手实践一遍玩一玩才不会忘记
+
+## 总结
+fiddler是个很强大的抓包工具，主要原理是作为中间代理，代理客户端和服务器之间的通信，这样请求对于fiddler就是透明的；至于https，fiddler不但扮演了客户端和服务器进行TLS加密通信，还扮演了服务器和客户端进行TLS加密通信，之所以服务器信任fiddler，是因为fiddler证书已经被系统根证书信任了，所以可以进行通信。
