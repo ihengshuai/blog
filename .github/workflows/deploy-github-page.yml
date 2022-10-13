@@ -31,6 +31,8 @@ jobs:
       - name: build project
         run: pnpm install && pnpm build
       - run: ls
+      - name: deploy sitemap
+        run: cp sitemap.txt dist
       - name: deploy page
         run: chmod +x ./scripts/deploy-page.sh && ./scripts/deploy-page.sh
       # use other action
