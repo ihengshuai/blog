@@ -14,7 +14,7 @@ env:
   ALGOLIA_APP_KEY: ${{ secrets.ALGOLIA_APP_KEY }}
   ALGOLIA_APP_INDEXNAME: ${{ secrets.ALGOLIA_APP_INDEXNAME }}
   GITALK_ID: ${{ secrets.GITALK_ID }}
-  GITALK_SECRE: ${{ secrets.GITALK_SECRE }}
+  GITALK_SECRET: ${{ secrets.GITALK_SECRET }}
 
 jobs:
   build-and-deploy:
@@ -28,7 +28,7 @@ jobs:
       - name: install pnpm
         run: yarn global add pnpm
       - name: set env variables
-        run: echo ALGOLIA_APP_ID=${{ env.ALGOLIA_APP_ID }} >> .env && echo ALGOLIA_APP_KEY=${{ env.ALGOLIA_APP_KEY }} >> .env && echo ALGOLIA_APP_INDEXNAME=${{ env.ALGOLIA_APP_INDEXNAME }} >> .env && echo GITALK_ID=${{ env.GITALK_ID }} >> .env && echo GITALK_SECRE=${{ env.GITALK_SECRE }} >> .env
+        run: echo ALGOLIA_APP_ID=${{ env.ALGOLIA_APP_ID }} >> .env && echo ALGOLIA_APP_KEY=${{ env.ALGOLIA_APP_KEY }} >> .env && echo ALGOLIA_APP_INDEXNAME=${{ env.ALGOLIA_APP_INDEXNAME }} >> .env && echo GITALK_ID=${{ env.GITALK_ID }} >> .env && echo GITALK_SECRET=${{ env.GITALK_SECRET }} >> .env
       - name: build project
         run: pnpm install && pnpm build
       - run: ls
