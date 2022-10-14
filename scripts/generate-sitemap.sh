@@ -3,7 +3,7 @@
 # 生成sitemap
 
 files=$(find ./docs -name '*.md')
-filemap=($(echo $files | tr ',' ' '))
+filemap=$(echo $files | tr ',' ' ')
 domain=${DOMAIN}
 sitemapDir=./dist/sitemap.txt
 
