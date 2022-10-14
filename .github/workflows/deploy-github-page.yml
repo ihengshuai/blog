@@ -14,7 +14,6 @@ env:
   ALGOLIA_APP_KEY: ${{ secrets.ALGOLIA_APP_KEY }}
   ALGOLIA_APP_INDEXNAME: ${{ secrets.ALGOLIA_APP_INDEXNAME }}
 
-
 jobs:
   build-and-deploy:
     name: deploy github page
@@ -31,8 +30,8 @@ jobs:
       - name: build project
         run: pnpm install && pnpm build
       - run: ls
-      - name: deploy sitemap
-        run: cp sitemap.txt dist
+      - name: generate sitemap
+        run: chmod +x ./scripts/generate-sitemap.sh && ./scripts/generate-sitemap.sh
       - name: deploy page
         run: chmod +x ./scripts/deploy-page.sh && ./scripts/deploy-page.sh
       # use other action
