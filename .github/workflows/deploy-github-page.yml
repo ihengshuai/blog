@@ -13,8 +13,8 @@ env:
   ALGOLIA_APP_ID: ${{ secrets.ALGOLIA_APP_ID }}
   ALGOLIA_APP_KEY: ${{ secrets.ALGOLIA_APP_KEY }}
   ALGOLIA_APP_INDEXNAME: ${{ secrets.ALGOLIA_APP_INDEXNAME }}
-  GITALK_ID: ${{ github.GITALK_ID }}
-  GITALK_SECRE: ${{ github.GITALK_SECRE }}
+  GITALK_ID: ${{ secrets.GITALK_ID }}
+  GITALK_SECRE: ${{ secrets.GITALK_SECRE }}
 
 jobs:
   build-and-deploy:
