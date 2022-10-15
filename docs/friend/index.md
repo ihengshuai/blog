@@ -1,1 +1,3 @@
 ## friend
+
+<Gitalk />

@@ -150,3 +150,6 @@ Function.prototype.mybind = function(context) {
 
 ## 最后
 希望以上的解析还可以帮助你进一步理解三者的概念和使用方法，手写的实现方法可能会有一些小问题，你可以进行补充，如果你喜欢本篇文章，动动小手分享出去，关注[GitHub](https://github.com/Peachick)更多优质项目等你来开箱:smile:
+
+
+<Gitalk />
