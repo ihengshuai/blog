@@ -93,3 +93,6 @@ const str = s.serializeToString(document);
 |ProcessingInstruction|处理指令|
 |Attr|属性节点|
 2. `serializeToString`方法会给根元素自动增加xmlns命名空间，如上图
+
+
+<Gitalk />

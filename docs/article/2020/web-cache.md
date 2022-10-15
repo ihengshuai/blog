@@ -25,3 +25,5 @@ head:
 - 按照数据存储类型分为：`web storage`、`Cookie`、`IndexDB`等等
 
 待补充...
+
+<Gitalk />

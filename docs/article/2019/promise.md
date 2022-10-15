@@ -185,3 +185,6 @@ MyPromise.resolve().then(() => {
   console.log(6);
 })
 ```
+
+
+<Gitalk />

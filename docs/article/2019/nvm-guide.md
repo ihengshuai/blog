@@ -93,3 +93,6 @@ node_mirror: npm.taobao.org/mirrors/node/
 npm_mirror: npm.taobao.org/mirrors/npm/
 ```
 5.这样就解决好了~,你学废了吗？
+
+
+<Gitalk />

@@ -434,3 +434,5 @@ str = 'skJavaslkdJAVAllksdfJaVAlp'
 // 将会以 java 或者 javas 进行分割（不区分大小写）
 str.split(/javas?/i) // => ['sk', 'lkd', 'llksdf', 'lp']
 ```
+
+<Gitalk />

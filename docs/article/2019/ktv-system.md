@@ -578,3 +578,6 @@ router.post("/test", passport.authenticate("jwt", {session:false}), async (req, 
 
 此项目2018年7天快速写的，作者打算对项目将会进行重构，fork后等待项目更新自动推送...
 传送门: [https://github.com/ihengshuai/ktv-select_music-system](https://github.com/ihengshuai/ktv-select_music-system)
+
+
+<Gitalk />

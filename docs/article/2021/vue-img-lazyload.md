@@ -481,3 +481,7 @@ class ImageManager {
 本篇主要通过一个图片管理器`ImageManager`和一个懒加载管理器`Lazy`，分别实现了对图片状态的管理，和对图片请求真实资源的管理。通过使用交叉观测器`IntersectionObserver`来观测图片的临界值来加载真实资源，后又使用`scroll`监测window滚动来兼容IE对`IntersectionObserver`的不支持，最后进行各种优化完成插件功能
 
 以上源码可以在[GitHub下载](https://github.com/ihengshuai/vue-lazy-plugin)，感谢点赞、感谢支持:smile:
+
+
+
+<Gitalk />

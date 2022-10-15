@@ -341,3 +341,6 @@ export function initMixin (Vue: Class<Component>) {
 在`_init`函数内部首先对传入的options进行了合并，`mergeOptions`
 
 由于工作原因，后续会不断补充...(感谢理解）
+
+
+<Gitalk />
