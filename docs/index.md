@@ -8,13 +8,13 @@ hero:
   tagline: A blog for sharing web development experiences...
   image:
     src: /logo.png
-    alt: VitePress
+    alt: hengshuai's blog
   actions:
     - theme: brand
       text: Get Started
       link: /frontend/index.html
     - theme: alt
-      text: View on GitHub
+      text: Contribute
       link: https://github.com/ihengshuai/blog
 
 features:

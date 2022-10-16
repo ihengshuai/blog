@@ -26,7 +26,7 @@ hi all, welcome here! :sparkles:
 
 ## 联系
 扫描下方二维码关注公众号，输入联系作者会得到我的微信二维码，就可以加我了。有需要的话，我会考虑建个微信交流群，大家一起来探讨技术。
-<img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h73c12oikuj309k09kq2u.jpg" width=200>
+<img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h73c12oikuj309k09kq2u.jpg" alt="hengshuai公众号" width=200>
 
 ## 贡献
 关于贡献内容，你可以fork本篇博客，本地跑起，或直接修改对应的文章，修改完后，发个pull request请求即可，我会及时处理的
@@ -37,8 +37,8 @@ hi all, welcome here! :sparkles:
 如果你觉得本博客对你有帮助，不介意的话打赏一杯咖啡，鼓励作者不断分享技术文章，在此感谢!:thumbsup:
 
 <div>
-<img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72anu40usj30dw0dw40j.jpg" width=200>
-<img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg" width=200>
+<img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72anu40usj30dw0dw40j.jpg" width=200 alt="支付宝捐赠">
+<img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg" width=200 alt="微信支付捐赠">
 </div>
 
 ## 版权

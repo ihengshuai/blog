@@ -23,6 +23,7 @@ const loadGitalk = () => {
 
 let gitalkHost;
 onMounted(() => {
+  if (!__ENV_VARIABLES__?.ENV_PROD) return;
   gitalkHost = document.createElement("div");
   gitalkHost.setAttribute("id", "gitalk-container");
   document.querySelector(".content-container").append(gitalkHost);
@@ -49,8 +50,3 @@ onUnmounted(() => {
   gitalkHost?.remove();
 });
 </script>
-
-<style>
-#gitalk-container {
-}
-</style>
