@@ -1,5 +1,15 @@
 :root {
   --vp-c-brand: #646cff;
   --vp-c-brand-light: #747bff;
-	--vp-c-brand-dark: rgb(74, 72, 196);
+  --vp-c-brand-dark: rgb(74, 72, 196);
+  --vp-layout-max-width: 1500px;
+  --vp-sidebar-width: 300px
+}
+
+.VPDoc.has-aside .content-container {
+  max-width: 860px !important;
+}
+
+.VPDoc:not(.has-sidebar) .content {
+  max-width: 1000px !important;
 }

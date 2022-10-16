@@ -1,8 +1,9 @@
 <template>
-  <CardLink :members="members" />
+  <VPTeamMembers size="small" :members="members" />
 </template>
 
 <script setup>
+import { VPTeamMembers } from "vitepress/theme";
 import svgs from "./svg.js";
 
 const members = [
@@ -23,11 +24,28 @@ const members = [
       },
     ],
   },
+  {
+    avatar: "https://www.ruanyifeng.com/blog/images/person2_s.jpg",
+    name: "阮一峰",
+    title: "阮一峰的网络日志",
+    links: [
+      { icon: "github", link: "https://github.com/ruanyf" },
+      {
+        icon: { svg: svgs.blog },
+        link: "http://www.ruanyifeng.com/blog",
+      },
+    ],
+  },
 ];
 </script>
 
 <style>
 .VPTeamMembersItem.small .profile {
   padding: 20px !important;
+}
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
