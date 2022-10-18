@@ -168,3 +168,5 @@ charles可以模拟不同的网络环境，很方便进行网速相关的测试�
 以上就是charles的使用方法，相信到这里已经可以满足你的常用需求了，一定要自己动手实践才能熟能生巧；当然本篇也是挑了一些必懂的使用方法，其他使用可以自行摸索，都很简单的。和[fiddler](/frontend/debug-skill/fiddler.html)一样，charles也是基于客户端和服务端中间的代理，所以可以抓取记录，原理图可以看[fiddler](/frontend/debug-skill/fiddler.html)这篇。
 
 以上如有错误地方，欢迎指正，非常感谢! :grin:
+
+<Gitalk />
