@@ -37,7 +37,7 @@ export default {
     },
     footer: {
       message: "Released under the MIT License.",
-      copyright: "Copyright © 2019-present HengShuai",
+      copyright: `Copyright © 2018-${new Date().getFullYear()} HengShuai`,
     },
     algolia: {
       appId: process.env.ALGOLIA_APP_ID,

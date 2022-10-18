@@ -4,7 +4,7 @@ description: fiddler抓包工具的使用,fiddler调试web应用程序的利器
 head:
   - - meta
     - name: keywords
-      content: fiddler,fiddler抓包工具,抓包工具,前端调试,frontend debugger,chrome调试,调试技能,node调试,线上调试
+      content: fiddler,fiddler抓包工具,手机抓包,ios抓包,android抓包,抓包工具,前端调试,frontend debugger,chrome调试,调试技能,node调试,线上调试
 ---
 
 # Fiddler
@@ -221,6 +221,8 @@ cls
 
 ## 总结
 fiddler是个很强大的抓包工具，主要原理是作为中间代理，代理客户端和服务器之间的通信，这样请求对于fiddler就是透明的；至于https，fiddler不但扮演了客户端和服务器进行TLS加密通信，还扮演了服务器和客户端进行TLS加密通信，之所以服务器信任fiddler，是因为fiddler证书已经被系统根证书信任了，所以可以进行通信。
+
+接下来来介绍[charles](/frontend/debug-skill/charles.html)的使用
 
 
 <Gitalk />

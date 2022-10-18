@@ -16,7 +16,10 @@ export const getSidebarMenu = () => ({
         {
           text: "Debug Skill",
           link: "/frontend/debug-skill/index.html",
-          items: [{ text: "Fiddler", link: "/frontend/debug-skill/fiddler.html" }],
+          items: [
+            { text: "Fiddler", link: "/frontend/debug-skill/fiddler.html" },
+            { text: "Charles", link: "/frontend/debug-skill/charles.html" }
+          ],
         },
         { text: "NodeJS", link: "/frontend/node/index.html" },
         { text: "Typescript", link: "/frontend/ts/index.html" },
