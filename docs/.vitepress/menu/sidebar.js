@@ -6,7 +6,18 @@ export const getSidebarMenu = () => ({
       text: "Frontend literacy",
       collapsible: true,
       items: [
-        { text: "Javascript", link: "/frontend/js/index.html" },
+        {
+          text: "Javascript",
+          link: "/frontend/js/index.html",
+          items: [
+            { text: "原型链与继承", link: "/frontend/js/proto-inherit.html" },
+            { text: "作用域与闭包", link: "/frontend/js/scope-closure.html" },
+            { text: "隐式转换", link: "/frontend/js/implicit-conversion.html" },
+            { text: "异步", link: "/frontend/js/async.html" },
+            { text: "事件循环(EventLoop)", link: "/frontend/js/eventloop.html" },
+            { text: "元编程", link: "/frontend/js/meta-coding.html" },
+          ],
+        },
         { text: "CSS", link: "/frontend/css/index.html" },
         { text: "Vue", link: "/frontend/vue/index.html" },
         { text: "React", link: "/frontend/react/index.html" },

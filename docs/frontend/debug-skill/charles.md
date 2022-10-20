@@ -18,7 +18,7 @@ head:
 虽然原理相同，由于是不同工具，一些功能还是有细微差距的，charles相比[fiddler](/frontend/debug-skill/fiddler.html)更加简洁，但并不是更弱一些。其界面简单宜人，比较清爽，这点可能已经吸了一大半的用户了吧。再者charles把一些常用的功能选项直接封装好了(如：模拟不同的网络俗)，而[fiddler](/frontend/debug-skill/fiddler.html)可能有时需要修改代码，这对一些基础薄弱的小伙伴是非常不友好的，那么你可以试试charles，让我们开始吧！
 
 :::tip
-[charles](https://www.charlesproxy.com)同样有些功能也是需要收费的，但是相比[fiddler](/frontend/debug-skill/fiddler.html)可以免费试用基础功能，而且市面上破解的很多(自行搜索即可)，对macOS用户也比较友好，可以尝试用用感觉一下
+[charles](https://www.charlesproxy.com)同样有些功能也是需要收费的，但是相比[fiddler](/frontend/debug-skill/fiddler.html)可以免费试用基础功能，而且市面上[破解](https://www.zzzmode.com/mytools/charles)的很多(自行搜索即可)，对macOS用户也比较友好，可以尝试用用感觉一下
 :::
 
 ## 下载安装
