@@ -13,9 +13,9 @@ head:
 本文将会全面介绍原型、原型链和继承。
 
 ## 什么是原型与原型链
-Javascript有`string`、`number`、`boolean`、`undefined`、`null`、`symbol`、`bigint`等几种基本类型，其它都可以看做`object`类型，只有`object`对象才会有原型。`每个对象内部都会包含一个隐藏的[[Prototype]]属性，这个属性就是原型`，它不能直接被访问，现在可以通过`Object.getPrototypeOf(obj)`进行访问，取代非标准的`__proto__`属性进行访问，它是[[Prototype]]的历史原因，是原型对象的`getter/setter`，不过`__proto__`已被浏览器包括服务端都已支持，因此不用担心使用，以下都以`__proto__`作为原型属性介绍。
+Javascript有`string`、`number`、`boolean`、`undefined`、`null`、`symbol`、`bigint`等几种基本类型，其它都可以看做`object`类型，只有`object`对象才会有原型。<u>**每个对象内部都会包含一个隐藏的`[[Prototype]]`属性，这个属性就是原型**</u>，它不能直接被访问，现在可以通过`Object.getPrototypeOf(obj)`进行访问，取代非标准的`__proto__`属性进行访问，它是[[Prototype]]的历史原因，是原型对象的`getter/setter`，不过`__proto__`已被浏览器包括服务端都已支持，因此不用担心使用，以下都以`__proto__`作为原型属性介绍。
 
-原型也是一个普通对象，对象自己和原型之间通过链接的方式引用，当改变原型对象时，所有的子对象的原型都会同步改变。
+原型也是一个普通对象，指向构造函数的prototype属性，对象自己和原型之间通过链接的方式引用，当改变原型对象时，所有的子对象的原型都会同步改变。
 
 ```js
 // 1. 创建原型对象
@@ -42,7 +42,7 @@ console.log(u2.__proto__ === user); // => true
 
 原型大家理解了后，那原型链也很快就懂了，这也是以上`u1/u2`可以访问到`name`属性的关键。
 
-每个对象都有一个`[[Protype]]`或`__proto__`属性指向它的[构造函数](https://baike.baidu.com/item/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0)的`prototype`属性也就是原型，原型对象也是个普通对象，它也有自己的原型即`__proto__`属性，也指向到它的构造函数的`prototype`属性，就这样层层向上，直到Object的原型`null`，也称为原型链的顶端。
+<u>**每个对象都有一个`[[Protype]]`或`__proto__`属性指向它的[构造函数](https://baike.baidu.com/item/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0)的`prototype`属性也就是原型，原型对象也是个普通对象，它也有自己的原型即`__proto__`属性，也指向到它的构造函数的`prototype`属性，就这样层层向上，直到Object的原型`null`，也称为原型链的顶端，这就是原型链。**</u>
 
 JS中当访问对象的属性时，会先查看当前对象是否存在此属性，如果不存在会从当前对象的原型链中查找属性，直到原型链的顶端，这也是为什么`u1/u2`可以访问`name`属性的原因。
 

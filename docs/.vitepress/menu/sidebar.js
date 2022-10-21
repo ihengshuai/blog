@@ -29,7 +29,8 @@ export const getSidebarMenu = () => ({
           link: "/frontend/debug-skill/index.html",
           items: [
             { text: "Fiddler", link: "/frontend/debug-skill/fiddler.html" },
-            { text: "Charles", link: "/frontend/debug-skill/charles.html" }
+            { text: "Charles", link: "/frontend/debug-skill/charles.html" },
+            { text: "Wireshark", link: "/frontend/debug-skill/wireshark.html" },
           ],
         },
         { text: "NodeJS", link: "/frontend/node/index.html" },
