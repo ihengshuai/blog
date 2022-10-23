@@ -3,7 +3,7 @@
 export const getSidebarMenu = () => ({
   "/frontend/": [
     {
-      text: "Frontend literacy",
+      text: "Frontend basic",
       collapsible: true,
       items: [
         {

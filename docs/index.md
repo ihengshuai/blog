@@ -4,7 +4,7 @@ title: 首页
 
 hero:
   name: I'm Hengshuai
-  text: A passionate web developer base on ShenZhen
+  text: A web developer base on ShenZhen, China
   tagline: A blog for sharing web development experiences...
   image:
     src: /logo.png
@@ -20,7 +20,7 @@ hero:
 features:
   - icon: 🏝️
     title: Front-end knowledge system
-    details: Popular front ends and popular frameworks are shared here, such as：React、Vue、RegExp、WebAssembly etc.
+    details: Popular front ends and popular frameworks are shared here, such as：React、Vue、Protocol、RegExp、WebAssembly etc.
   - icon: ⛵
     title: Full stack knowledge
     details: From development to deployment, you will learn about cloud development such as deploy, backend, sql, docker, k8s, etc.

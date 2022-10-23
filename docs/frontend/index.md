@@ -15,7 +15,7 @@ head:
 知识清单按照由浅入深的顺序进行编写,当然看什么取决于你的选择:smirk:
 :::
 
-- Frontend literacy
+- Frontend basic
   - [Javascript](/frontend/js/index.html)
   - [CSS](/frontend/css/index.html)
   - [Vue](/frontend/vue/index.html)
