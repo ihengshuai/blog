@@ -215,9 +215,100 @@ console.log(Object.getPrototypeOf(user));
 
 在JS中都是以原型为基础进行继承的，通过上面原型的学习，接下来让我们看看JS继承吧。
 
-## 原型链继承
+## new内幕
+在了解继承前，先来看看new操作。
+```js{10}
+function User(name) { this.name = name; }
+User.prototype.say = function() { console.log("I'm ", this.name) };
+const user = new User("Lucky"); // User{ name: "Lucky" } => 具有User原型方法的对象
 
-## 借用构造函数继承
+// 显式返回一个对象
+function User(name) {
+  this.name = name;
+  return { age: 1 };
+}
+const user = new User("Lucky"); // { age: 1} => 普通对象(没意义)
+```
+当new构造函数时会产生一个全新的对象，new操作毫无意义(以下都是在无显式返回对象基础分析)，正常情况下这内部会涉及到哪些步骤：
+- 生成一个全新对象，如果没有显式返回对象，这个对象会继承User的原型prototype
+- 函数的this将会指向生成的对象上
+- 生成的对象的原型指向函数的`prototype`对象
+- 如果函数显式返回对象类型的值(`Object/Array/Function/RegExp`...)，new和普通函数调用将没有任何区别
+- 如果返回非对象类型的值，将会忽略显式返回值并返回内部生成的新对象
+
+我们知道了new做了什么后，其实可以自己手动实现new的操作，这里简单实现原理：
+```js
+// new implement
+function newOperator(Ctor, ...args) {
+  if (typeof Ctor !== "function") {
+    throw TypeError(`${Ctor} is not a function!`)
+  }
+  const newObj = Object.create(Ctor.prototype);
+  const ctorReturn = Ctor.apply(newObj, args || []);
+  if (Object.prototype.toString.call(ctorReturn) !== "[object Null]" && typeof ctorReturn === "object") {
+    return ctorReturn;
+  }
+  return newObj;
+}
+```
+
+## 原型链继承
+原型链继承是最基本的继承，这和所有对象都有`__proto__`属性概念一样
+
+```js{12,26,27,28}
+function Parent(name) {
+  this.name = name;
+  this.sons = ["Tom", "Jerry"];
+}
+Parent.prototype.say = function() {
+  console.log("my name:", this.name);
+}
+function Child(food) {
+  this.food = food;
+}
+// 将Parent的实例作为Child的prototype
+Child.prototype = new Parent();
+Child.prototype.eat = function() {
+  console.log("I eat:", this.food);
+}
+
+const child = new Child('noodles');
+child.say(); // my name: undefinded
+child.eat(); // I eat noodles
+console.log(c1.sons); // // ['Tom', 'Jerry']
+
+const c2 = new Child("rice");
+c2.eat(); // I eat rice
+console.log(c2.sons); // ['Tom', 'Jerry']
+
+c1.sons.push("Lucky");
+console.log(c1.sons, c2.sons); //  ['Tom', 'Jerry', 'Lucky'], ['Tom', 'Jerry', 'Lucky']
+console.log(c1.__proto__ === c2.__proto__); // true
+```
+以上就是最简单原型链继承，了解原型链相信一看就懂。这样继承子类可以拿到父类的属性还有`prototype`上的方法，但很明显的缺点就是，父类是个实例对象，那么所有子类对于父类的继承都是引用(28行已经证明了引用)，当一个子类修改父类中的属性或方法时，都会影响到其它的子类(代码26,27行)；还有一个缺点无法对父类进行传参。
+- 优点：<u>可以继承父类的属性和原型方法；</u>
+- 缺点：<u>父类在子类之间共享，会造成数据之间的污染和篡改；无法给父类传参；</u>
+
+## 构造函数继承
+所谓的构造函数继承是在实例化子类时，对父类构造函数通过`call/apply`改变内部的this指向，让其内部的this的属性可以转嫁给子类，来看下面代码：
+
+```js
+function Parent(name) {
+  this.name = name;
+  this.run = () => console.log("I am running...");
+}
+Parent.prototype.say = function() {
+  console.log("hello");
+}
+function Child(name, age) {
+  Parent.call(this, name);
+  this.age = age;
+}
+const child = new Child("Tom", 10);
+console.log(child.name, child.age); // Tom, 10
+child.run(); // I am running...
+child.say(); // child.say is not a function
+```
 
 ## 原型式继承
 

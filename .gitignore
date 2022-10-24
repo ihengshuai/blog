@@ -1,5 +1,6 @@
 node_modules
 dist
+__example__
 *.log
 .vscode
 .idea
