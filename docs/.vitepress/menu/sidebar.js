@@ -22,6 +22,7 @@ export const getSidebarMenu = () => ({
         { text: "Vue", link: "/frontend/vue/index.html" },
         { text: "React", link: "/frontend/react/index.html" },
         { text: "Regexp", link: "/frontend/regexp/index.html" },
+        { text: "Babel", link: "/frontend/babel/index.html" },
         { text: "Webpack", link: "/frontend/webpack/index.html" },
         { text: "Building Tool", link: "/frontend/building-tool/index.html" },
         {
