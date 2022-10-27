@@ -1,0 +1,31 @@
+# 编辑器相关
+
+- DocumentORShadow.activeElement: 获取聚焦元素focus/active
+- Selection对象（window.getSelection / document.setSelection）: 用户选择的文本范围或光标的当前位置，https://developer.mozilla.org/zh-CN/docs/Web/API/Selection
+- Range（接口表示一个包含节点与文本节点的一部分的文档片段）：https://developer.mozilla.org/zh-CN/docs/Web/API/Range
+  - 属性：
+    - collapsed
+    - commonAncestorContainer
+    - startContainer
+    - endContainer
+    - startOffset
+    - endOffset
+  - 方法：
+    - collapse
+    - compareBoundaryPoints(how, sourceRange)边界比较
+    - comparePoint(referenceNode, offset)返回 -1、0 或 1，分别表示端点在 Range 之前、内部还是之后
+    - cloneContents：返回range中所有节点文档片段
+    - cloneRange()
+    - deleteContents()
+    - getBoundingClientRect(): 返回范围内容的DOMRect
+    - getClientRects
+    - getIsPointInRange(node, offset): 判断某个节点在range里
+    - insertNode(node): 在range开头插入节点
+    - intersectsNode(node): 判断节点是否相交
+    - selectNode(node): 选中节点，并将range起始节点的父节点和node的父节点相同
+    - selectNodeContents(node): 设置包含节点内容
+    - setEnd(node, offset): 设置range终点
+    - setStart(node, offset): 设置起点
+    - setEndAfter(refenceNode)
+    - setEndBefore
+- 粘贴对象（clipboardData）: ClipboardEvent.clipboardData https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent/clipboardData

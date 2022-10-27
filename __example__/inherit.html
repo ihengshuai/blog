@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inherit</title>
+  </head>
+  <body>
+    <script>
+      // new implement
+      function newOperator(Ctor, ...args) {
+        if (typeof Ctor !== "function") {
+          throw TypeError(`${Ctor} is not a function!`)
+        }
+        const newObj = Object.create(Ctor.prototype);
+        const ctorReturn = Ctor.apply(newObj, args || []);
+        if (Object.prototype.toString.call(ctorReturn) !== "[object Null]" && typeof ctorReturn === "object") {
+          return ctorReturn;
+        }
+        return newObj;
+      }
+    </script>
+    <script>
+      // function Parent(name) {
+      //   this.name = name;
+      //   this.run = () => console.log("I am running...");
+      // }
+      // Parent.prototype.say = function() {
+      //   console.log("hello");
+      // }
+      // function Child(name, age) {
+      //   Parent.call(this, name);
+      //   this.age = age;
+      // }
+      // const child = new Child("Tom", 10);
+      // console.log(child.name, child.age); // Tom, 10
+      // child.run(); // I am running...
+      // child.say(); // child.say is not a function
+    </script>
+    <script>
+      /**
+       *
+      // 原型链继承
+      function Parent(name) {
+        this.name = name;
+        this.sons = ["Tom", "Jerry"];
+      }
+      Parent.prototype.say = function() {
+        console.log("my name:", this.name);
+      }
+      function Child(food) {
+        this.food = food;
+      }
+      //
+      Child.prototype = new Parent();
+      Child.prototype.eat = function() {
+        console.log("I eat:", this.food);
+      }
+
+      const c1 = new Child('noodles');
+      c1.say(); // my name: undefinded
+      c1.eat(); // I eat noodles
+      console.log(c1.sons);
+
+      const c2 = new Child("rice");
+      c2.eat(); // I eat rice
+      console.log(c2.sons); // ['Tom', 'Jerry']
+
+      c1.sons.push("Lucky");
+      console.log(c1.sons, c2.sons); //  ['Tom', 'Jerry', 'Lucky'], ['Tom', 'Jerry', 'Lucky']
+      console.log(c1.__proto__ === c2.__proto__); // true
+       *
+       * /
+    </script>
+  </body>
+</html>
