@@ -29,3 +29,24 @@
     - setEndAfter(refenceNode)
     - setEndBefore
 - 粘贴对象（clipboardData）: ClipboardEvent.clipboardData https://developer.mozilla.org/en-US/docs/Web/API/ClipboardEvent/clipboardData
+
+- 零宽字符
+```
+零宽空格（zero-width space, ZWSP）用于可能需要换行处。
+    Unicode: U+200B  HTML: &#8203;
+
+零宽不连字 (zero-width non-joiner，ZWNJ)放在电子文本的两个字符之间，抑制本来会发生的连字，而是以这两个字符原本的字形来绘制。
+    Unicode: U+200C  HTML: &#8204;
+
+零宽连字（zero-width joiner，ZWJ）是一个控制字符，放在某些需要复杂排版语言（如阿拉伯语、印地语）的两个字符之间，使得这两个本不会发生连字的字符产生了连字效果。
+    Unicode: U+200D  HTML: &#8205;
+
+左至右符号（Left-to-right mark，LRM）是一种控制字符，用于计算机的双向文稿排版中。
+    Unicode: U+200E  HTML: &lrm; &#x200E; 或&#8206;
+
+右至左符号（Right-to-left mark，RLM）是一种控制字符，用于计算机的双向文稿排版中。
+    Unicode: U+200F  HTML: &rlm; &#x200F; 或&#8207;
+    
+字节顺序标记（byte-order mark，BOM）常被用来当做标示文件是以UTF-8、UTF-16或UTF-32编码的标记。
+    Unicode: U+FEFF
+```
