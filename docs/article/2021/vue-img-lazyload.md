@@ -482,6 +482,5 @@ class ImageManager {
 
 以上源码可以在[GitHub下载](https://github.com/ihengshuai/vue-lazy-plugin)，感谢点赞、感谢支持:smile:
 
-
-
+<Reward />
 <Gitalk />

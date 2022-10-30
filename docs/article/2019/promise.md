@@ -186,5 +186,7 @@ MyPromise.resolve().then(() => {
 })
 ```
 
+//待更新...
 
+<Reward />
 <Gitalk />

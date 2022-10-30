@@ -435,4 +435,5 @@ str = 'skJavaslkdJAVAllksdfJaVAlp'
 str.split(/javas?/i) // => ['sk', 'lkd', 'llksdf', 'lp']
 ```
 
+<Reward />
 <Gitalk />

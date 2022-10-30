@@ -20,8 +20,8 @@ head:
 接着就是给*网站搭建应用了*
 
 ## 应用搭建
-小编的博客主要是基于自己的[webpack-mpa-template](https://github.com/Peachick/webpack-mpa-template)项目骨架集成的，采用了前后端分离进行开发，前端使用传统的`webpack`、`Vue`、`React`、`jquery`等技术（项目模板已经集成好了，开箱即用），后端一开始采用`Spring`+`MySQL`开发，后台考虑到，nodejs的轻巧及方便以及对大批前端同学友好的全栈项目而言，就走上了`koa`+`mysql`的主体方案，相对大批前端同学来说更加友好。
-本文就不讲述搭建应用的详细内容了，你可以参考我的项目骨架[webpack-mpa-template](https://github.com/Peachick/webpack-mpa-template)，开箱即用，支持Vue、React
+小编的博客主要是基于自己的[webpack-mpa-template](https://github.com/ihengshuai/webpack-mpa-template)项目骨架集成的，采用了前后端分离进行开发，前端使用传统的`webpack`、`Vue`、`React`、`jquery`等技术（项目模板已经集成好了，开箱即用），后端一开始采用`Spring`+`MySQL`开发，后台考虑到，nodejs的轻巧及方便以及对大批前端同学友好的全栈项目而言，就走上了`koa`+`mysql`的主体方案，相对大批前端同学来说更加友好。
+本文就不讲述搭建应用的详细内容了，你可以参考我的项目骨架[webpack-mpa-template](https://github.com/ihengshuai/webpack-mpa-template)，开箱即用，支持Vue、React
 ## 应用部署
 小编开发完基本的功能后，就准备部署到服务器上了。当然要提交代码到github了，服务器拉取代码后直接
 ```yaml
@@ -31,7 +31,7 @@ yarn run deploy
 
 pm2 start blog-app
 ```
-前面说了，后端主要是以node作为支撑服务的，node部署采用流行的[pm2](https://pm2.keymetrics.io/)进行部署的，其有很好的负载均衡、热重启、日志收集等等爽到不能再爽的功能，很值得推荐。大家可能还有疑惑那前端打包的页面是如何托管的，其实再执行`yarn run deploy`后，自动会把打包后的前端页面推到后端的 `public` 目录作为静态路由，之所以不单独为前端页面部署服务，是因为作为后端路由后可以很好的路由拦截，进行身份鉴权等问题，你是不是很好奇如何做到的，在[webpack-mpa-template](https://github.com/Peachick/webpack-mpa-template)里都进行了简单的说明
+前面说了，后端主要是以node作为支撑服务的，node部署采用流行的[pm2](https://pm2.keymetrics.io/)进行部署的，其有很好的负载均衡、热重启、日志收集等等爽到不能再爽的功能，很值得推荐。大家可能还有疑惑那前端打包的页面是如何托管的，其实再执行`yarn run deploy`后，自动会把打包后的前端页面推到后端的 `public` 目录作为静态路由，之所以不单独为前端页面部署服务，是因为作为后端路由后可以很好的路由拦截，进行身份鉴权等问题，你是不是很好奇如何做到的，在[webpack-mpa-template](https://github.com/ihengshuai/webpack-mpa-template)里都进行了简单的说明
 ### 鉴权拦截器
 `鉴权拦截`主要是针对登录信息进行拦截的，整个工程划分了免登录和登录机制模块，其主要针对登录模块进行拦截的
 下面是鉴权拦截器的部分:point_down:
@@ -59,19 +59,19 @@ function validateAuth() {
 ### nginx代理
 前面讲述了我们的应用已经正常运行，接下来就需要进行http配置，使用域名映射到node server。
 在`conf.d`路径下我们建立单独的`appName.conf`来配置单独应用(如果你熟悉nginx)，这样以应用配置方便以后管理及维护，屡试不爽
-```yaml
+```nginx
 server {
-      listen 80;
-      server_name blog.cn; # 绑定的域名
-      
-      # 进行反向代理
-      location / {
-        proxy_redirect off;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $http_x_forwarded_for;
-        proxy_pass http://127.0.0.1:5695; # 本地node server 地址
-      }
+  listen 80;
+  server_name blog.cn; # 绑定的域名
+  
+  # 进行反向代理
+  location / {
+    proxy_redirect off;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $http_x_forwarded_for;
+    proxy_pass http://127.0.0.1:5695; # 本地node server 地址
+  }
 }
 ```
 以上就是针对当前应用的nginx配置，其绑定了`blog.cn`域名，配置完后保存退出后执行:point_down:
@@ -95,44 +95,44 @@ nginx -s reload # nginx 重新加载配置
 
 知道了优化的方向，接下来就着手不同问题对症下药
 
-### 按需加载及CDN
+## 设置CDN
 在webpack(4.x)中我们进行打包时，有个[`optimization`,`splitChunks`](https://v4.webpack.js.org/configuration/optimization)字段
 可以在这里进行代码分割的逻辑，因为要结合CDN，对于一些常用的库文件，可以忽略打包，这样就可以减小打包体积，分割的代码也会变小
 ```js
 // webpack.prod.config.js
 module.exports = {
-    // ...其他配置
-    
-    // 忽略打包采用cdn
-    externals: {
-        "vue": "Vue",
-        "vue-router": "VueRouter",
-        "vuex": "Vuex",
-        "react": "react",
-        "jquery": "jQuery",
-        "echarts": "echarts",
-        "moment": "moment",
-    },
-    
-    // 代码分割
-    optimization: {
-        splitChunks: {
-            // 总的配置
-            chunks: "all",
-            minSize: 30000,
-            minChunks: 2,
-            maxAsyncRequests: 5,
-            maxInitialRequests: 3,
-            name: false,
-            cacheGroups: {
-                // 当前模块相同的配置会覆盖全局配置
-                vender: {
-                    // 对于当前模块 的配置
-                },
-                // ... 可以继续根据模块或者第三方库进行划分
-            }
-        }
+  // ...其他配置
+  
+  // 忽略打包采用cdn
+  externals: {
+    "vue": "Vue",
+    "vue-router": "VueRouter",
+    "vuex": "Vuex",
+    "react": "react",
+    "jquery": "jQuery",
+    "echarts": "echarts",
+    "moment": "moment",
+  },
+  
+  // 代码分割
+  optimization: {
+    splitChunks: {
+      // 总的配置
+      chunks: "all",
+      minSize: 30000,
+      minChunks: 2,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3,
+      name: false,
+      cacheGroups: {
+        // 当前模块相同的配置会覆盖全局配置
+        vender: {
+          // 对于当前模块 的配置
+        },
+        // ... 可以继续根据模块或者第三方库进行划分
+      }
     }
+  }
 }
 ```
 现在需要在页面中主动引入库文件的cdn
@@ -141,7 +141,6 @@ module.exports = {
 
 //- 引入了jquery
 script(src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js")
-...
 ```
 
 以上简单概述了使用webpack`代码分割`和`忽略打包采用cdn`引用
@@ -155,7 +154,7 @@ script(src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js")
 
 介绍完代码分割及CDN，接着来说说`预加载`
 
-### 预加载
+## 预加载
 > 预加载顾名思义就是提前加载资源，也就是说在下次需要使用该资源或该资源可能会被使用时，提前加载，减小下载请求，或命中缓存，这样就会提高响应速度
 
 提前加载涉及到 `preload` 及 `prefetch`，二者都是为提前加载资源而生的，那两者有啥不同呢？
@@ -186,10 +185,10 @@ import(/*webpackPrefetch: true*/ "@/components/ByteMd/ByteMd")
 
 接着 资源缓存 :point_down:
 
-### 资源缓存
+## 缓存
 >缓存：初次访问时对静态资源进行缓存或储存，在下载访问时根据不同的缓存策略命中缓存返还资源，减少请求
 
-在讲缓存前，先大概了解下 缓存又分为 `浏览器缓存` 和 `http缓存`，二者相辅相成，你中有我我中有你，如果你对缓存还不太了解，可以阅读我的另一篇文章 [老生常谈的前端缓存和解决方案](https://blog.usword.cn/#/article/1635331108)，此处就不在详细展开
+在讲缓存前，先大概了解下 缓存又分为 `浏览器缓存` 和 `http缓存`，二者相辅相成，你中有我我中有你，如果你对缓存还不太了解，可以阅读我的另一篇文章 [web缓存策略](/article/2020/web-cache.html)，此处就不在详细展开
 
 对于js、css文件，可以在webpack进行打包时，给文件添加hash值，在迭代项目时，会根据hash不同主动进行资源获取，这里推荐使用`contenthash`及文件内容不变，hash不变。
 
@@ -197,47 +196,46 @@ import(/*webpackPrefetch: true*/ "@/components/ByteMd/ByteMd")
 // webpack.config.js
 
 module.exports = {
-   output: {
-        path: resolve("../client/dist"),
-        filename: USE_HASH ? "js/[name].[chunkhash:4].js" : "js/[name].js",
-        publicPath: "/",
-        chunkFilename: USE_HASH ? "js/[name].[chunkhash:4].js" : "js/[name].js",
-        // ... 其他配置
-    },
+  output: {
+    path: resolve("../client/dist"),
+    filename: USE_HASH ? "js/[name].[chunkhash:4].js" : "js/[name].js",
+    publicPath: "/",
+    chunkFilename: USE_HASH ? "js/[name].[chunkhash:4].js" : "js/[name].js",
+    // ... 其他配置
+  },
 }
 ```
 这样就解决了更新问题
 
 接着需要在nginx中进行静态资源的缓存(本文假设你对nginx有基本了解)
-```yaml
+```nginx
  # 缓存图片，音频等资源
  location ~ .*\.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|gz|mp3|mp4|ogg|webm)$ {
-         # 资源防盗链
-         valid_referers *.usword.cn ~\.google\. ~\.baidu\. *.qq.com;            
-         if ($invalid_referer) {                                                
-                 rewrite ^/ http://tva1.sinaimg.cn/large/005HV6Avgy1gvn4e450oxj6
-02.jpg;                                                                         
-                 return 403;                                                    
-         }                                                                      
-         proxy_pass http://127.0.0.1:8882; # node server
-         proxy_redirect off;                        
-         proxy_set_header Host $host;
-         proxy_cache my_cache; # nginx指定缓存项
-         proxy_cache_valid 200 304 24h;
-         proxy_cache_valid any 10m; # 代理过期时间
-         expires 7d;  # 资源过期时间
-         add_header Is-Cache true; # 天机自定义头部                                             
+    # 资源防盗链
+    valid_referers *.usword.cn ~\.google\. ~\.baidu\. *.qq.com;            
+    if ($invalid_referer) {                                                
+      rewrite ^/ http://tva1.sinaimg.cn/large/005HV6Avgy1gvn4e450oxj602.jpg;                                                                         
+      return 403;                                                    
+    }                                                                      
+    proxy_pass http://127.0.0.1:8882; # node server
+    proxy_redirect off;                        
+    proxy_set_header Host $host;
+    proxy_cache my_cache; # nginx指定缓存项
+    proxy_cache_valid 200 304 24h;
+    proxy_cache_valid any 10m; # 代理过期时间
+    expires 7d;  # 资源过期时间
+    add_header Is-Cache true; # 天机自定义头部                                             
  }                                                                              
 
  # 缓存js，css 同上
  location ~ .*\.(?:js|css)$ {                                                   
-         proxy_pass http://127.0.0.1:9901;                                      
-         proxy_set_header Host $host;                                           
-         proxy_cache my_cache;                                                  
-         proxy_cache_valid 200 304 24h;                                         
-         proxy_cache_valid any 10m;                                             
-         expires 7d;                                                            
-         add_header Is-Cache true;                                              
+    proxy_pass http://127.0.0.1:9901;                                      
+    proxy_set_header Host $host;                                           
+    proxy_cache my_cache;                                                  
+    proxy_cache_valid 200 304 24h;                                         
+    proxy_cache_valid any 10m;                                             
+    expires 7d;                                                            
+    add_header Is-Cache true;                                              
  }                                                                              
 ```
 ![](http://tva1.sinaimg.cn/large/005HV6Avgy1gvzs1comyfj30th0a50x6.jpg)
@@ -252,12 +250,28 @@ module.exports = {
     减少请求量，采用分页加载。每个用户面对的都是有固定尺寸的显示器，其可展示的内容就只占一屏，其后面的数据就算加载了用户也看不到
     可以对浏览器进行滚动监听，当到快到底部时，再进行下一部门内容的加载
     
-### 资源压缩gzip
-待补充...
+## 资源压缩gzip
+nginx示例配置，更多配置戳这里查看[官方文档](https://nginx.org/en/docs/http/ngx_http_gzip_module.html)。
+```nginx
+server {
+  gzip on;
+  gzip_types text/html text/css application/javascript;
+  gzip_static: on;
+  gzip_proxied: expired no-cache auth;
+  gzip_buffers: 16 8k;
+  gzip_min_length: 2k;
+  gzip_comp_level: 4;
+  gzip_http_version: 1.0;
+  gzip_vary: on;
+  gzip_disable: "MSIE [1-6]\.";
+}
+```
+//待更新...
 
 ## 总结
 本文主要从cdn、代码分割、资源缓存、预加载和懒加载等方面，不断优化了网站的加载速度，可能还需要不断的优化，但至少现在比刚开始已经快的很多了。
 结尾容我感叹一句：`白嫖不容易，别放弃白嫖`
 
 
+<Reward />
 <Gitalk />

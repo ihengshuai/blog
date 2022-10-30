@@ -526,5 +526,5 @@ class People {
 // 待补充
 ```
 
-
+<Reward />
 <Gitalk />

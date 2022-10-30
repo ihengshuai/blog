@@ -10,7 +10,7 @@ export const getSidebarMenu = () => ({
           text: "Javascript",
           link: "/frontend/js/index.html",
           items: [
-            { text: "原型链与继承", link: "/frontend/js/proto-inherit.html" },
+            { text: "原型、原型链与继承", link: "/frontend/js/proto-inherit.html" },
             { text: "作用域与闭包", link: "/frontend/js/scope-closure.html" },
             { text: "隐式转换", link: "/frontend/js/implicit-conversion.html" },
             { text: "异步", link: "/frontend/js/async.html" },

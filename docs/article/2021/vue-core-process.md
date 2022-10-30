@@ -343,4 +343,5 @@ export function initMixin (Vue: Class<Component>) {
 由于工作原因，后续会不断补充...(感谢理解）
 
 
+<Reward />
 <Gitalk />

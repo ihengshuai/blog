@@ -1,11 +1,11 @@
 ---
-title: hengshuai's blog
+title: 恒帅博客(关于我)
 editLink: false
-description: welcome to hengshuai's blog for sharing developer knowledge,欢迎大家来到我的博客系统hengshuai's blog,在这里我会分享给大家前后端开发经验,以及日常的经验新的等等
+description: welcome to hengshuai's blog for sharing developer knowledge,很高兴在这里遇见您,我会分享给大家前后端开发经验,以及日常的经验新的等等
 head:
   - - meta
     - name: keywords
-      content: hengshuai's blog,前端开发,Vue,React,webpack,vite,rollup,gulp,nestjs,typescript,前端性能优化,低代码,微前端,node bff,node中间件,node性能优化,混合应用,可视化开发,前端可视化,设计模式,小程序,前端调试指南,前端构建工具,nginx,反向代理,http协议,http protocol,docker,k8s,kubenetes,nodejs,css,regexp,正则表达式,CI/CD,DevOps,Java,Redis,Mysql,Spring,SpringBoot,MyBatis,vue原理,babel,eslint,前端项目规范,编译原理,gitlab,jenkins
+      content: hengshuai's blog,恒帅的博客,前端开发,Vue,React,webpack,vite,rollup,gulp,nestjs,typescript,前端性能优化,低代码,微前端,node bff,node中间件,node性能优化,混合应用,可视化开发,前端可视化,设计模式,小程序,前端调试指南,前端构建工具,nginx,反向代理,http协议,http protocol,docker,k8s,kubenetes,nodejs,css,regexp,正则表达式,CI/CD,DevOps,Java,Redis,Mysql,Spring,SpringBoot,MyBatis,vue原理,babel,eslint,前端项目规范,编译原理,gitlab,jenkins
 ---
 
 # me
@@ -14,9 +14,7 @@ hi all, welcome here! :sparkles:
 
 大家好，我是一位充满热情的web开发工程师主攻前端但不止前端，这是我的博客系统，在这里我会对于常见的技术进行笔记，也会发发相关的文章。目前在深圳就职于[QooApp](https://www.qoo-app.com)团队，欢迎交流
 
-本博客系统基于[vitepress](https://vitepress.vuejs.org/)搭建，有关[vitepress](https://vitepress.vuejs.org/)配置请移步官方文档
-
-由于以前的博客系统是用node+docker一套自己搭建的，随着服务器的到期和成本的考虑，决定转换成用静态博客来部署；旧博客数据已保存在本地，可以在本地运行起来，由于工作原因，我会抽时间将文章搬运过来
+由于以前的博客系统是用node+docker一套自己搭建的，随着服务器到期和成本的考虑，决定转换成用静态博客来部署；旧博客数据已保存在本地，可以在本地运行起来，由于工作原因，我会抽时间将文章搬运过来
 
 在博客中会包含前端的学习路线、笔记、全栈知识，分享前端学习过程，常见的技术使用、原理理解等等，也会讲讲项目部署后端运维知识如：pm2、docker、k8s等运维云原生技术，还会分享一些平时归纳的文章总结，如果你感兴趣的话！
 

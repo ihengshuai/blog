@@ -1,13 +1,13 @@
 ---
-title: Charles使用指南
-description: charles一个简洁适配多系统的强大的抓包工具
+title: Charles抓包工具使用指南
+description: charles一个简洁适配多系统的强大的抓包工具,方便抓取web和移动端数据包,设置代理等等
 head:
   - - meta
     - name: keywords
       content: charles,charles抓包工具,手机抓包,ios抓包,android抓包,客户端抓包,抓包工具,Mac抓包,前端调试,frontend debugger,chrome调试,调试技能,node调试,线上调试
 ---
 
-# Charles使用指南
+# Charles抓包工具
 
 上一篇介绍了[fiddler](/frontend/debug-skill/fiddler.html)抓包工具，这篇就来看看[charles](https://www.charlesproxy.com)的使用
 
@@ -172,10 +172,9 @@ https://www.52pojie.cn/thread-1350618-1-1.html
 ## 总结
 以上就是charles的使用方法，相信到这里已经可以满足你的常用需求了，一定要自己动手实践才能熟能生巧；当然本篇也是挑了一些必懂的使用方法，其他使用可以自行摸索，都很简单的。和[fiddler](/frontend/debug-skill/fiddler.html)一样，charles也是基于客户端和服务端中间的代理，所以可以抓取记录，原理图可以看[fiddler](/frontend/debug-skill/fiddler.html)这篇。
 
-以上如有错误地方，欢迎指正，非常感谢! :grin:
-
 >相关文档：
 
 [https://www.charlesproxy.com/documentation](https://www.charlesproxy.com/documentation/getting-started)
 
+<Reward />
 <Gitalk />
