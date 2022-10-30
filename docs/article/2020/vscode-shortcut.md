@@ -209,5 +209,5 @@ Command + Home 滚动到顶部
 Command + End 滚动到底部
 ```
 
-
+<Reward />
 <Gitalk />

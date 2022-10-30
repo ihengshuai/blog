@@ -149,7 +149,8 @@ Function.prototype.mybind = function(context) {
 - 最后来说通过 `new` 的方式，在之前的章节中我们学习过如何判断 `this`，对于 `new` 的情况来说，不会被任何方式改变 `this`，所以对于这种情况我们需要忽略传入的 `this` 
 
 ## 最后
-希望以上的解析还可以帮助你进一步理解三者的概念和使用方法，手写的实现方法可能会有一些小问题，你可以进行补充，如果你喜欢本篇文章，动动小手分享出去，关注[GitHub](https://github.com/Peachick)更多优质项目等你来开箱:smile:
+希望以上的解析还可以帮助你进一步理解三者的概念和使用方法，手写的实现方法可能会有一些小问题，你可以进行补充，如果你喜欢本篇文章，动动小手分享出去，关注[GitHub](https://github.com/ihengshuai)更多优质项目等你来开箱:smile:
 
 
+<Reward />
 <Gitalk />

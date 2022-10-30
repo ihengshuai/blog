@@ -26,4 +26,5 @@ head:
 
 待补充...
 
+<Reward />
 <Gitalk />

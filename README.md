@@ -4,8 +4,6 @@ hi all, welcome here! :sparkles:
 
 大家好，我是一位充满热情的web开发工程师主攻前端但不止前端，这是我的博客系统，在这里我会对于常见的技术进行笔记，也会发发相关的文章。目前在深圳就职于[QooApp](https://www.qoo-app.com)团队，欢迎交流
 
-本博客系统基于[vitepress](https://vitepress.vuejs.org/)搭建，有关[vitepress](https://vitepress.vuejs.org/)配置请移步官方文档
-
 由于以前的博客系统是用node+docker一套自己搭建的，随着服务器的到期和成本的考虑，决定转换成用静态博客来部署；旧博客数据已保存在本地，可以在本地运行起来，由于工作原因，我会抽时间将文章搬运过来
 ## 在线阅读
 [https://blog.usword.cn](https://blog.usword.cn)

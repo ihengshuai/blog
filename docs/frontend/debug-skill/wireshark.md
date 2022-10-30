@@ -1,13 +1,13 @@
 ---
-title: wireshark使用教程
-description: 使用wireshark分析网络数据包、协议、通信
+title: wireshark网络抓包工具使用教程
+description: 使用wireshark网络抓包工具分析网络数据包、协议、通信
 head:
   - - meta
     - name: keywords
       content: wireshark,wireshark抓包工具,网络抓包工具,协议抓包,frontend debugger,chrome调试,调试技能,线上调试
 ---
 
-# wireshark使用教程
+# wireshark网络抓包
 
 到这里已经讲了两个抓包工具的使用了，大家应该对抓包不是很陌生了。而[wireshark](https://www.wireshark.org)相对于[fiddler](/frontend/debug-skill/fiddler.html)和[charles](/frontend/debug-skill/charles.html)更加偏向于网络层面的抓包或者说是一个网络封包分析工具。使用对象更适合于网络相关人员(网络管理员/相关运维等等)，目的用来截取网络通信，显示详细的封包资料。
 
@@ -271,6 +271,5 @@ wireshark我们选择本地回环地址网卡接口，端口选择`9999`
 ## 小结
 本篇介绍了wireshark的基本使用，并通过对ARP协议、TCP协议和HTTP协议的分析，已经掌握了分析数据包的基本能力，并加强了相关协议的理解，其他相关的协议都大同小异。到本篇已经讲了3款抓包软件了，相信大家对抓包已经不陌生了，希望通过这些抓包工具可以提高你的分析能力和对原理的认识。
 
-本文如有任何错误，烦请指正，感谢阅读，谢谢大家。
-
+<Reward />
 <Gitalk />
