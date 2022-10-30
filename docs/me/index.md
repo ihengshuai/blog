@@ -1,5 +1,5 @@
 ---
-title: hengshuai's blog
+title: 恒帅博客(关于我)
 editLink: false
 description: welcome to hengshuai's blog for sharing developer knowledge,很高兴在这里遇见您,我会分享给大家前后端开发经验,以及日常的经验新的等等
 head:
