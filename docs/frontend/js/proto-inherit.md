@@ -8,30 +8,36 @@ head:
 ---
 
 # 原型、原型链与继承
-众所周知js是基于原型的编程语言，相对于传统的[OOP面向对象编程](https://baike.baidu.com/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1)还是有一点区别的。每个对象拥有一个原型对象，并从原型那里获得属性、方法等等，这些属性和方法都是定义在其`构造函数的prototype`属性上，通过链接(`__proto__`)进行联系的。而对于传统的OOP，则会定义对应的类，然后在实例化对象时，将属性和方法复制到实例上。
+众所周知js是基于原型的编程语言，相对于传统的[OOP面向对象编程](https://baike.baidu.com/item/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1)还是有一点区别的。在JS中每个对象都会拥有一个原型对象，自己可以从原型那里获得额外的属性、方法等等(可以看做继承)，这些属性和方法都是定义在其`构造函数的prototype`(即原型)属性上，可以通过属性(`__proto__`)进行获取。而对于传统的OOP，则会定义对应的类，然后在实例化对象时，将属性和方法复制到实例上。
 
 本文将会全面介绍原型、原型链和继承。
 
 ## 什么是原型与原型链
-Javascript有`string`、`number`、`boolean`、`undefined`、`null`、`symbol`、`bigint`等几种基本类型，其它都可以看做`object`类型，只有`object`对象才会有原型。<u>**每个对象内部都会包含一个隐藏的`[[Prototype]]`属性，这个属性就是原型，它指向它的构造函数的prototype属性**</u>，它不能直接被访问，现在推荐通过`Object.getPrototypeOf(obj)`进行访问，取代非标准的`__proto__`属性进行访问，它是[[Prototype]]的历史原因，是原型对象的`getter/setter`，不过`__proto__`已被浏览器包括服务端都已支持，因此不用担心使用，以下都以`__proto__`作为原型属性介绍。
+Javascript有`string`、`number`、`boolean`、`undefined`、`null`、`symbol`、`bigint`等几种基本类型，其它都可以看做`object`类型，只有`object`对象才会有原型。
+
+<u>**JS中每个对象内部都会包含一个隐藏的`[[Prototype]]`属性，这个属性就是原型，它指向它的构造函数的prototype属性，即原型对象为构造函数的`[[prototype]]`属性。**</u>由于历史原因，通常情况下大家都喜欢用`__proto__`访问和修改原型，但它不是ES标准，而是一些浏览器实现了这个非标准的`__proto__`，而后来官方推出`Object.get/setPrototypeOf(obj)`进行操作原型，取代非标准的`__proto__`属性进行访问。
+
+`__proto__`是`[[Prototype]]`的历史原因，是原型对象的`getter/setter`，虽然官方不推荐，不过`__proto__`已被浏览器包括服务端都已支持，因此不用担心使用，以下都以`__proto__`作为原型属性介绍。由于修改原型是个极其耗时的工作，所以不推荐频繁修改它，一般都是在继承时初始化值后尽量减少修改。
 
 原型也是一个普通对象，指向构造函数的prototype属性，对象自己和原型之间通过链接的方式引用，当改变原型对象时，所有的子对象的原型都会同步改变。
 
->若prototype属性不是很清楚后面会介绍，先记住概念，后面就会[解释](/frontend/js/proto-inherit.html#构造函数)
+>关于构造函数或prototype属性不是很清楚后面会介绍，先记住概念，后面就会[解释](/frontend/js/proto-inherit.html#构造函数)
 
-```js{9,12,15,17}
+```js{10,12,14,18,19}
 // 1. 创建原型对象
+const parent = { parent: "parent" };
 const user = { name: "Tom" };
 
-// 2. 创建原型对象为user的u1、u2
-const u1 = Object.create(user);
-u1.age = 1;
+// 2. 创建原型对象为user的u1、u2, 此时 u1和u2 自身都是空对象
+const u1 = Object.create(user); // 创建原型为 user 的对象 u1 (Object.create后面会讲)
+u1.age = 1; // 为 u1&u2 添加 age 属性
 const u2 = Object.create(user);
 u2.age = 2;
 console.log(u1.__proto__ === user); // => true
 console.log(u2.__proto__ === user); // => true
 console.log(u1.__proto__ === u2.__proto__); // => true
 console.log(u1.name, u2.name); // => Tom, Tom
+console.log(u1.parent, u2.parent); // => parent, parent
 
 // 3. 改变原型对象
 user.name = "Jerry";
@@ -48,21 +54,19 @@ __proto__不等于[[prototype]]
 修改原型是个非常耗时的操作，避免频繁修改原型
 :::
 
-以上代码可以看出原型对象和普通对象没有什么区别，对象本身和原型对象以引用的关系存在。
+以上代码可以看出原型对象和普通对象没有什么区别，对象本身和原型对象以引用的关系存在(如上12、18和19行)。原型大家理解了后，那原型链也很快就懂了，这也是以上`u1/u2`可以访问到自身不存在的属性关键所在。
 
-原型大家理解了后，那原型链也很快就懂了，这也是以上`u1/u2`可以访问到`name`属性的关键。
+<u>**JS中每个对象都有一个`[[Protype]]`或`__proto__`属性指向它的[构造函数](https://baike.baidu.com/item/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0)的`prototype`属性也就是原型，原型对象也是个普通对象，它也有自己的原型即`__proto__`属性，也指向到它的构造函数的`prototype`属性，就这样层层向上，直到Object的原型`null`，也称为原型链的顶端，这就是原型链。**</u>
 
-<u>每个对象都有一个`[[Protype]]`或`__proto__`属性指向它的[构造函数](https://baike.baidu.com/item/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0)的`prototype`属性也就是原型，原型对象也是个普通对象，它也有自己的原型即`__proto__`属性，也指向到它的构造函数的`prototype`属性，就这样层层向上，直到Object的原型`null`，也称为原型链的顶端，这就是原型链。</u>
+>关于构造函数或prototype属性不是很清楚后面会介绍，先记住概念，后面就会[解释](/frontend/js/proto-inherit.html#构造函数)
 
->若prototype属性不是很清楚后面会介绍，先记住概念，后面就会[解释](/frontend/js/proto-inherit.html#构造函数)
+JS中当访问对象的属性时，会先查看当前对象是否存在此属性，如果不存在会从当前对象的原型链中查找属性，直到原型链的顶端，这也就解释了`u1/u2`为什么可以访问到自身不存在的属性`name`、`parent`等等。
 
-JS中当访问对象的属性时，会先查看当前对象是否存在此属性，如果不存在会从当前对象的原型链中查找属性，直到原型链的顶端，这也是为什么`u1/u2`可以访问`name`属性的原因。
-
-这是一张非常经典的原型链图，如果你能看懂这图，那你已经掌握了，如果有看不懂的，接着下面的内容。
+这是一张非常经典的原型链图，如果你已经掌握了原型的知识，相信看懂它想必并不难。如果有看不懂的，别着急接着下面的内容阅读完后再回头试试。
 
 ![proto-chain.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7cwsf7066j30gz0l4jv0.jpg)
 
-设置原型的方式有多种，下面介绍多种方式加深大家的理解。
+首先设置原型的方式有多种，下面介绍多种方式加深大家的理解。
 
 ### 属性访问器
 前面介绍了`__proto__`其实是`[[Prototype]]`原型的`getter/setter`，可以直接对象属性赋值的方式改变原型，这种方式最好理解。
@@ -109,13 +113,13 @@ console.dir(cat);
 以上便是`__proto__`方式添加原型，对于`prototype`属性接下来看看构造器。
 
 ### 构造函数
-在JS世界里只有函数才会有[构造器](https://baike.baidu.com/item/%E6%9E%84%E9%80%A0%E5%99%A8)(尽管ES6有class这种类似Java的语法，其本质还是函数)，如前面的`Object`就是个函数用来构造对象，可以用`o = new Object([...args])`来构造一个普通对象。每个函数都有`prototype`属性，它和原型对象`[[Prototype]]`不是一个概念，可以认为是个普通的对象，<u>**默认只有一个属性`constructor`，它指向函数本身。**</u>
+在JS世界里只有函数才会有[构造器](https://baike.baidu.com/item/%E6%9E%84%E9%80%A0%E5%99%A8)(尽管ES6有class这种类似Java的语法，其本质还是函数)，如前面的`Object`是个创建对象的构造器，可以用`o = new Object([...args])`来构造一个普通对象。每个函数都有`prototype`属性，它和原型对象`[[Prototype]]`不是一个概念，可以认为是个普通的对象，<u>**默认只有一个属性`constructor`，它指向函数本身。**</u>
 
 ![QQ截图20221021121302.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7csb2wjjdj30fm048js6.jpg)
 
 ![QQ截图20221021113431.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7cr7016vjj30t905q40n.jpg)
 
-普通函数的原型指向它的构造函数的`prototype`属性即：`App.__proto__ === Function.prototype`，在JS的世界里<u>**所有构造函数的原型指向Function的prototype**</u>，如：`Object.__proto__ === Function.prototype`
+函数也可以看做是一个特殊的对象也有自己的原型，<u>**JS中所有函数的原型指向它的构造函数Function的`prototype`属性**</u>如：`App.__proto__ === Function.prototype`、`Object.__proto__ === Function.prototype`、`Function.__proto__ === Function.prototype`
 
 ```js
 Function.__proto__ === Function.prototype // true
@@ -132,7 +136,7 @@ ArrayBuffer.__proto__ === Function.prototype // true
 
 了解了构造函数的原型后，下面来说函数特有属性`prototype`的作用。
 
-<u>**在函数作为构造函数使用时`new 构造函数`会生成一个新的对象，这个对象的原型指向构造函数的prototype属性**</u>，而作为普通函数使用时，prototype和普通的对象属性没有区别。
+函数都有个特殊的属性`prototype`，默认情况下改属性对象只有`constructor`属性执行函数本身，<u>**在函数作为构造函数使用时`new 构造函数`会生成一个新的对象，这个对象的原型会指向构造函数的prototype属性**</u>，而作为普通函数使用时，prototype和普通的对象属性没有区别。
 
 ```js{4}
 function User() {};
@@ -229,7 +233,7 @@ function User(name) {
 }
 const user = new User("Lucky"); // { age: 1} => 普通对象(没意义)
 ```
-当new构造函数时会产生一个全新的对象，正常情况下内部会涉及到以下步骤：
+前面讲了当new构造函数时会产生一个全新的对象，正常情况下内部会涉及到以下步骤：
 - 生成一个全新对象，如果没有显式返回对象，这个对象会继承User的原型prototype
 - 函数的this将会指向生成的对象上
 - 生成的对象的原型指向函数的`prototype`对象
