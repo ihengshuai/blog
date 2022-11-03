@@ -8,6 +8,20 @@
   </head>
   <body>
     <script>
+<<<<<<< HEAD
+      // new implement
+      function newOperator(Ctor, ...args) {
+        if (typeof Ctor !== "function") {
+          throw TypeError(`${Ctor} is not a function!`)
+        }
+        const newObj = Object.create(Ctor.prototype);
+        const ctorReturn = Ctor.apply(newObj, args || []);
+        if (Object.prototype.toString.call(ctorReturn) !== "[object Null]" && typeof ctorReturn === "object") {
+          return ctorReturn;
+        }
+        return newObj;
+      }
+=======
       class Parent {
         constructor(name) {
           this.name = name;
@@ -92,6 +106,7 @@
       //   }
       //   return newObj;
       // }
+>>>>>>> main
     </script>
     <script>
       // function Parent(name) {

@@ -21,6 +21,7 @@ head:
   - [Vue](/frontend/vue/index.html)
   - [React](/frontend/react/index.html)
   - [Regexp](/frontend/regexp/index.html)
+  - [Babel](/frontend/babel/index.html)
   - [Webpack](/frontend/webpack/index.html)
   - [Building Tool](/frontend/building-tool/index.html)
   - [Debug Skill](/frontend/debug-skill/index.html)
