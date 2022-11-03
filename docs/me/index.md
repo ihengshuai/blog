@@ -27,12 +27,18 @@ hi all, welcome here! :sparkles:
 <img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h73c12oikuj309k09kq2u.jpg" alt="hengshuai公众号" width=200>
 
 ## 贡献
-关于贡献内容，你可以fork本篇博客，本地跑起，或直接修改对应的文章，修改完后，发个pull request请求即可，我会及时处理的
+关于贡献内容，你可以fork本篇博客，本地跑起，或直接修改对应的文章，修改完后，发个pull request请求即可，我会及时处理的。
 
-当然，这里也会列出贡献者的头像，以及打赏者的名单
+Regarding the content of contribution, you can fork this blog, running locally, or directly modify the corresponding article. After the modification, you can send a Pull Request request. I will deal with it in time.
+
+为了答谢这里也会列出所有贡献者，以及打赏者的名单。
+
+As a token of appreciation there is also a list of all the contributors, as well as the people who tipped them.
 
 ## 打赏
 如果你觉得本博客对你有帮助，不介意的话打赏一杯咖啡，鼓励作者不断分享技术文章，在此感谢!:thumbsup:
+
+If you think this blog is helpful to you, if you don't mind, enjoy a cup of coffee, encourage the author to continue to share technical articles, thank you here!
 
 <div>
 <img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72anu40usj30dw0dw40j.jpg" width=200 alt="支付宝捐赠">
