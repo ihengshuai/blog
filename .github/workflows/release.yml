@@ -3,7 +3,7 @@ name: release version
 on:
   push:
     branches:
-      - "writing"
+      - "main"
     tags:
       - 'v[0-9]+.[0-9]+.[0-9]+'
 
