@@ -18,7 +18,7 @@ export const getHeaders = () => ([
   ["meta", { name: "author", content: "ihengshuai@foxmail.com" }],
   ["meta", { rel: "profile", href: "http://gmpg.org/xfn/11" }],
   ["meta", { name: "referrer", content: "same-origin" }],
-  ["link", { rel: "icon", type: "image/x-icon", href: "/logo.png" }],
+  ["link", { rel: "icon", type: "image/x-icon", href: "/logo.ico" }],
   ["meta", { "http-equiv": "X-UA-Compatible", content: "IE=edge,chrome=1" }],
   ["meta", { name: "theme-color", content: "#646cff" }],
   // ["meta", { name: "google-site-verification", content: "jBlH9An6BtR0uqLLmwdh31rWxnR9JAn26b" }],
