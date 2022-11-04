@@ -8,6 +8,28 @@ head:
       content: hengshuai's blog,恒帅的博客,前端开发,Vue,React,webpack,vite,rollup,gulp,nestjs,typescript,前端性能优化,低代码,微前端,node bff,node中间件,node性能优化,混合应用,可视化开发,前端可视化,设计模式,小程序,前端调试指南,前端构建工具,nginx,反向代理,http协议,http protocol,docker,k8s,kubenetes,nodejs,css,regexp,正则表达式,CI/CD,DevOps,Java,Redis,Mysql,Spring,SpringBoot,MyBatis,vue原理,babel,eslint,前端项目规范,编译原理,gitlab,jenkins
 ---
 
+<div align="center">
+  <a href="https://github.com/ihengshuai" target="_blank" style="display: inline-block;">
+    <img
+      width="200"
+      height="200"
+      src="/logo.png"
+    />
+  </a>
+
+  <br />
+  <br />
+
+  <p style="text-align: center;" align="center">
+    <img style="display: inline;" src="https://img.shields.io/github/last-commit/ihengshuai/blog.svg"/>
+    <img style="display: inline;" src="https://img.shields.io/badge/code_style-standard-brightgreen.svg"/>
+    <img style="display: inline;" src="https://img.shields.io/github/issues/ihengshuai/blog.svg"/>
+    <img style="display: inline;" src="https://img.shields.io/github/forks/ihengshuai/blog.svg"/>
+    <img style="display: inline;" src="https://img.shields.io/github/stars/ihengshuai/blog.svg"/>
+    <img style="display: inline;" src="https://img.shields.io/maintenance/yes/2019.svg"/>
+  </p>
+</div>
+
 # me
 
 hi all, welcome here! :sparkles:
@@ -40,7 +62,7 @@ As a token of appreciation there is also a list of all the contributors, as well
 
 If you think this blog is helpful to you, if you don't mind, enjoy a cup of coffee, encourage the author to continue to share technical articles, thank you here!
 
-<div>
+<div class="sm-center">
 <img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72anu40usj30dw0dw40j.jpg" width=200 alt="支付宝捐赠">
 <img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg" width=200 alt="微信支付捐赠">
 </div>

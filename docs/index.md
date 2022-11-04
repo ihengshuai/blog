@@ -14,8 +14,11 @@ hero:
       text: Get Started
       link: /frontend/index.html
     - theme: alt
-      text: Contribute
-      link: https://github.com/ihengshuai/blog
+      text: Readme
+      link: /me/index.html
+    # - theme: alt
+    #   text: Contribute
+    #   link: https://github.com/ihengshuai/blog
 
 features:
   - icon: 🏝️

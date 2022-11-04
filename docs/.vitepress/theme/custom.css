@@ -13,3 +13,16 @@
 .VPDoc:not(.has-sidebar) .content {
   max-width: 1000px !important;
 }
+
+.aside-curtain {
+  background: transparent !important;
+}
+
+@media screen and (max-width: 600px) {
+  .sm-center {
+    text-align: center;
+  }
+  .sm-center > * {
+    margin-bottom: 8px;
+  }
+}
