@@ -1,0 +1,15 @@
+name: release version
+
+on:
+  push:
+    branches:
+      - "writing"
+    tags:
+      - "*"
+
+jobs:
+  deploy-release:
+    name: deploy release
+    runs-on: ubuntu-latest
+    steps:
+    - run: echo success
