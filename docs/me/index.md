@@ -46,7 +46,7 @@ hi all, welcome here! :sparkles:
 
 ## 联系
 扫描下方二维码关注公众号，输入联系作者会得到我的微信二维码，就可以加我了。有需要的话，我会考虑建个微信交流群，大家一起来探讨技术。
-<img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h73c12oikuj309k09kq2u.jpg" alt="hengshuai公众号" width=200>
+<img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h7t9nb6in9j3076076glx.jpg" alt="hengshuai公众号" width=200>
 
 ## 贡献
 关于贡献内容，你可以fork本篇博客，本地跑起，或直接修改对应的文章，修改完后，发个pull request请求即可，我会及时处理的。
