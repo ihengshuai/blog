@@ -57,6 +57,9 @@ Regarding the content of contribution, you can fork this blog, running locally, 
 
 As a token of appreciation there is also a list of all the contributors, as well as the people who tipped them.
 
+## 转载须知
+本博客文章允许大家转载，需要注明出处并提供源文章链接，对于标注不允许转载的，请联系本人。
+
 ## 打赏
 如果你觉得本博客对你有帮助，不介意的话打赏一杯咖啡，鼓励作者不断分享技术文章，在此感谢!:thumbsup:
 
