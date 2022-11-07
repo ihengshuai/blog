@@ -24,6 +24,12 @@ JS的是通过异步回调的方式解决单线程的执行阻塞问题，虽然
 
 ## 了解浏览器
 
+参考文献：
+- https://developer.chrome.com/blog/inside-browser-part1/
+- https://developer.chrome.com/blog/inside-browser-part2/
+- https://developer.chrome.com/blog/inside-browser-part3/
+- https://developer.chrome.com/blog/inside-browser-part4/
+
 ## 浏览器的EventLoop
 JS的内存模型...
 
