@@ -16,13 +16,15 @@ head:
 虽然单线程会造成任务执行阻塞，页面长时间等待等缺点，但JS并没有改变它。由于<u>JS通常伴随着它的宿主环境浏览器而出现，若JS变成一个多线程的语言，那么浏览器处理用户的操作将会变得非常复杂</u>。试想在弱网环境下脚本还没有完全加载完时，用户如果点击页面的上某个表单提交任务，会发现没有任何反应，这难免会让用户产生一些想法。而单线程则会阻塞页面的渲染，当然用户也不知道可以做什么，只不过会牺牲点加载时间。
 
 ## JS的Engine和Runtime
-JS是一个动态解释性语言，需要通过JS的[引擎(JS Engine)](https://zh.wikipedia.org/wiki/JavaScript%E5%BC%95%E6%93%8E)进行解释(翻译)然后才会运行。随着网页复杂性和性能要求的提高，JS引擎也经历了从[SpiderMonkey](https://zh.wikipedia.org/wiki/SpiderMonkey)到[V8(由google开发)](https://v8.dev)的变革，而由谷歌开发的V8引擎最为出色，目前已被大多数现代浏览器等(Chrome、Edge、Safari)采用。同时JS也从以前浏览器单一的运行时(Runtime)演变到可以在服务端运行的NodeJS(基于V8)运行时，为它提供不同平台的运行时环境。
+JS是一个动态解释性语言，需要通过JS的[引擎(JS Engine)](https://zh.wikipedia.org/wiki/JavaScript%E5%BC%95%E6%93%8E)进行解释(翻译)成对应的字节码、机器码然后才会运行。随着网页复杂性和性能要求的提高，JS引擎也经历了从[SpiderMonkey](https://zh.wikipedia.org/wiki/SpiderMonkey)到[V8(由google开发)](https://v8.dev)的变革，而由谷歌开发的V8引擎最为出色，目前已被大多数现代浏览器等(Chrome、Edge、Safari)采用。同时JS也从以前浏览器单一的运行时(Runtime)演变到可以在服务端运行的NodeJS(基于V8)运行时，为它提供不同平台的运行时环境。
 - **Engine**：为JavaScript解析和执行提供环境条件(类似Java虚拟机)，并完成内存分配和垃圾回收等等。
 - **Runtime**：由JavaScript的宿主环境提供额外的属性和方法，如浏览器提供了用户交互的功能。
 
 JS的是通过异步回调的方式解决单线程的执行阻塞问题，虽然JS引擎是单线程的，但它的宿主环境一般都是多线程的，可以通过事件循环的机制来协调执行异步回调。所以常说的EventLoop是面向宿主环境的也就是Runtime，如浏览器和NodeJS，而浏览器的EventLoop被频繁讨论的，本篇将会对浏览器和NodeJS的EventLoop逐一展开介绍。
 
 ## 了解浏览器
+
+嗅探MIME -> 解析DOM -> 解析JS -> 解析CSS -> Layout Tree(几何形状) -> Paint(绘制顺序) -> 光栅与合成(rasterizing)
 
 参考文献：
 - https://developer.chrome.com/blog/inside-browser-part1/
