@@ -29,13 +29,13 @@ hi all, welcome here! :sparkles:
 
 ## 内容结构
 ```
-blog
-├── homepage  #主页
-├── frontend  #前端笔记
-├── fullstack #全栈笔记
-├── article   #日常文章
-├── friend    #友链
-├── me        #关于我
+blog nav
+├── HomePage   #主页
+├── Frontend   #前端
+├── Fullstack  #全栈
+├── Article    #文章
+├── Navigation #导航栏
+├── Me         #关于我
 ```
 在博客中会包含前端的学习路线、笔记、全栈知识，分享前端学习过程，常见的技术使用、原理理解等等，也会讲讲项目部署后端运维知识如：pm2、docker、k8s等运维云原生技术，还会分享一些平时归纳的文章总结，如果你感兴趣的话！
 
