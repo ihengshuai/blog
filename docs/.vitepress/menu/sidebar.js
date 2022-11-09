@@ -30,9 +30,12 @@ export const getSidebarMenu = () => ({
           text: "Debug Skill",
           link: "/frontend/debug-skill/index.html",
           items: [
+            { text: "Chrome", link: "/frontend/debug-skill/chrome.html" },
+            { text: "Vscode", link: "/frontend/debug-skill/vscode.html" },
             { text: "Fiddler", link: "/frontend/debug-skill/fiddler.html" },
             { text: "Charles", link: "/frontend/debug-skill/charles.html" },
             { text: "Wireshark", link: "/frontend/debug-skill/wireshark.html" },
+            { text: "Mobile", link: "/frontend/debug-skill/mobile.html" },
           ],
         },
         { text: "NodeJS", link: "/frontend/node/index.html" },
