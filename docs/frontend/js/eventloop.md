@@ -10,7 +10,7 @@ head:
 # EventLoop事件循环机制
 前端的同学们应该都听说过[EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)的概念，网上各大平台关于它的文章也是成百上千质量参差不一，其实在笔者刚开始接触js的时候这对这方面一头雾水，也是看了[高程](https://book.douban.com/subject/10546125)、[官方文档](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)以及大量的文章后才对它有了深刻认识，在这儿就来和大家分享下我对它的的认识和理解，不过要讲明白EventLoop这个东东还是要从头说起。
 
-内容循序渐进比较长，需要耐心看完:muscle:。
+本篇内容循序渐进比较长，需要耐心看完:muscle:。
 
 ## 前言
 众所周知JS是一个单线程非阻塞语言，不像诸如Java、Python等多线程语言对并发处理比较友好，而JS只能同时执行一个任务。那为什么JS不像其他语言一样也是个多线程语言呢？其实在最初使用浏览器呈现页面时，基本上都是静态页面和简单的功能，并没有考虑到复杂的交互功能，JS的创作者因此也没必要做更复杂的设计。但近年来随着web技术的突飞猛进，各种页面五花八门的交互以及并发资源请求等都出现了，因此关于JS单线程处理异步任务等等概念也就被关注起来了。
@@ -116,10 +116,12 @@ MacroTask Source的定义非常广泛，常见的键盘、鼠标、Ajax、setTim
 - MutationObserve
 - queueMicrotask
 
-那么为什么任务队列中会有宏任务(Macro Task)和微任务(Mirco Task)呢？其目的就是让不同类型的任务源有不同的执行优先级。
+<u>那么为什么任务队列中会有宏任务(Macro Task)和微任务(Mirco Task)呢？其目的就是让不同类型的任务源有不同的执行优先级。</u>
 
-在EventLoop中的每一次循环成一个`tick`，每一次tick都会先执行同步任务，然后查看是否有微任务，将所有的微任务在这个阶段执行完，如果执行微任务阶段再次产生微任务也会把他执行完，接下来会可能会进行视图的渲染，然后再从MacroTask队列中选择一个合适的任务放入执行栈执行，然后重复前面的步骤不断循环，再次拿出经典图：
+在EventLoop中的每一次循环成一个`tick`，每一次tick都会先执行同步任务，然后查看是否有微任务，将所有的微任务在这个阶段执行完，如果执行微任务阶段再次产生微任务也会把他执行完（<u>每次tick只会有一个微任务队列</u>），接下来会<u>可能</u>会进行视图的渲染，然后再从MacroTask队列中选择一个合适的任务放入执行栈执行，然后重复前面的步骤不断循环，再次拿出经典图：
 ![eventloop.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7z3bthpsfj30bm0a0go1.jpg)
+
+<u>**需要注意的是所谓的`微任务`并不会交给其他线程处理，而是V8自己内部的实现，微任务V8会将其放入一个专门的队列，待当前同步任务执行完后，便会清空当前队列**</u>，而MacroTask会交给其他线程去处理。
 
 接下来可以套用上面的概念看一段代码的执行结果（先别看答案自己先过一遍写出结果，最后再对比下哪里的想法有问题）：
 ```js
@@ -159,12 +161,31 @@ async1();
 console.log('script end');
 ```
 以上代码的打印顺序为：`async1 start` => `promise2` => `script end` => `async1 end` => `setTimeout start` => `promise1 start` => `setTimeout end` => `promise resolve1` => `promise1 end` => `promise resolve2` => `promise resolve3` => `promise resolve4` => `inner setTimeout`，不管和你预期的结果是否一样，接下来我们逐行分析：
-1. 首先script整体作为宏任务入栈，遇到setTimeout定时宏任务时交给定时线程去执行，其结果会放入宏任务队列，主线程挂起当前异步任务继续执行后面的代码。
-2. 执行async1()，async1函数入栈，并为当前函数提供一些变量上下文。首先打印`async1 start`，遇到`await promise2`，会执行`new Promise()`其也是个同步代码，所以会打印`promise2`
+1. 首先script整体作为同步任务执行，遇到setTimeout定时宏任务时交给定时线程去执行，其结果会放入宏任务队列，主线程挂起当前异步任务继续执行后面的代码。
+2. 执行async1()，async1函数入栈，并为当前函数提供一些变量上下文。首先打印`async1 start`，遇到`await promise2`，会执行`new Promise()`其也是个同步代码，所以会打印`promise2`，接着会执行`resolve()`，它返回的是个promise，然后回到async1函数内部，await其实是个语法糖，后面的代码会作为promise的then代码块执行，而then会当做微任务进入微任务队列（promise不清楚的可以看我[『异步编程』](/frontend/js/async.html)一文），async1执行完后出栈。
+3. 执行`console.log(script end)`，打印，然后出栈，第一轮同步任务执行完毕。
+4. 同步任务执行完后先看有没有微任务，第2步await后面的语句已经被放入微任务队列了，执行后打印`async1 end`，微任务队列清空。
+5. 这里没有涉及到视图更新等等。
+6. 主线程接着从任务队列中选取一个最老的宏任务（MacroTask）来执行，这里任务队列中只有一个`setTimeout定时任务`，首先会判断执行它的时机到了没，如果没到由于没有其他宏任务了，主线程什么都不会做。反之执行其会首先打印`setTimeout start`。接着执行`Promise.resolve()`其返回promise是个微任务会放入微任务队列，接着`new Promise()`执行打印`promise1 start`，内部也会resolve返回promise也是个微任务放入微任务队列。接着就是setTimeout放入宏任务队列，最后执行`setTimeout end`。
+7. MacroTask执行完毕，清空所有的MircoTask。首先执行`promise resolve1`，而后的then也是个微任务会被放入当前微任务队列。接着执行`promise1 end`，接下来又会执行`promise resolve2`，它也一样返回微任务(和前面重复步骤)直到执行完后面所有的then。
+8. MircoTask执行完后MacroTask Queue就剩下一个setTimeout任务了，合适的时机打印`inner setTimeout`。
 
-## setTimeout等定时器误差
+通过一步一步的分析相信你已经对其执行过程有了初步认识，为了加深大家的印象，这里录制了一个视频来动画展示其运行过程，点击这里查看
+
+
+## 定时器误差
+我们已经知道异步的MacroTask其实会交给其它线程去处理，当执行栈中的代码执行完后，才会通过EventLoop去获取下一个Task执行。而定时任务(如：setTimeout)当指定了时间后执行，若执行栈的任务还没有执行完，就算定时器时间到了，也永远不会去执行，直到清空当前执行栈后才会执行，来看下面代码：
+```js
+setTimeout(() => console.log('setTimeout'), 1000);
+for(let count = 0;count<10000000000;count++);
+```
+这段很简单定时器在1s后打印`setTimeout`，然后执行for循环，当你执行后会发现打印的时间已经远超1s，对于电脑性能不好的可能要更久。
+
+我们用EventLoop分析下上面的代码，当程序遇到setTimeout后，会交给定时器线程去执行，然后等1s后将其放入MacroTask Queue，等待主线程的调度。主线程遇到setTimeout挂起它，执行后面的for循环，直到执行完for循环才会去MacroTask Queue调度下一个Task也就是setTimeout。而这里for循环执行耗时时间已经远超1s，所以setTimeout回调的调度也会被推迟，这就是为什么setTimeout定义了1s执行却没有执行的本质原因，如果你了解了事件循环机制EventLoop，关于定时器误差也会很容易理解。
 
 ## 视图更新时机
+前面已经讲了在每一次tick执行完所有的MircoTask Queue后就会进行视图的更新。
+![](https://ibb.co/875vPhz)
 
 ## requestAnimationFrame
 
