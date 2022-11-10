@@ -1,10 +1,10 @@
 ---
-title: Emoji markup
-description: Markdown emoji markup list,help you select markdown emoji markup
+title: Emoji markup(Markdown表情)
+description: Markdown表情,Markdown emoji markup list,help you select markdown emoji markup
 head:
   - - meta
     - name: keywords
-      content: markdown,emoji markup,emoji,markdown emoji
+      content: markdown表情,markdown,emoji markup,emoji,markdown emoji
 ---
 
 # Emoji markup
@@ -323,5 +323,4 @@ Symbols
 | :small_blue_diamond: `:small_blue_diamond:` | :small_orange_diamond: `:small_orange_diamond:` | :small_red_triangle: `:small_red_triangle:` |
 | :small_red_triangle_down: `:small_red_triangle_down:` | :shipit: `:shipit:` |
 
-<Reward />
 <Gitalk />

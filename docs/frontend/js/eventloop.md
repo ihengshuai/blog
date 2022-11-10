@@ -172,22 +172,71 @@ console.log('script end');
 
 通过一步一步的分析相信你已经对其执行过程有了初步认识，为了加深大家的印象，这里录制了一个视频来动画展示其运行过程，点击这里查看
 
-
 ## 定时器误差
 我们已经知道异步的MacroTask其实会交给其它线程去处理，当执行栈中的代码执行完后，才会通过EventLoop去获取下一个Task执行。而定时任务(如：setTimeout)当指定了时间后执行，若执行栈的任务还没有执行完，就算定时器时间到了，也永远不会去执行，直到清空当前执行栈后才会执行，来看下面代码：
 ```js
 setTimeout(() => console.log('setTimeout'), 1000);
 for(let count = 0;count<10000000000;count++);
 ```
-这段很简单定时器在1s后打印`setTimeout`，然后执行for循环，当你执行后会发现打印的时间已经远超1s，对于电脑性能不好的可能要更久。
+这段代码很简单定时器在1s后打印`setTimeout`，然后执行for循环，当你执行后会发现打印的时间已经远超1s，对于电脑性能不好的可能要更久。
 
 我们用EventLoop分析下上面的代码，当程序遇到setTimeout后，会交给定时器线程去执行，然后等1s后将其放入MacroTask Queue，等待主线程的调度。主线程遇到setTimeout挂起它，执行后面的for循环，直到执行完for循环才会去MacroTask Queue调度下一个Task也就是setTimeout。而这里for循环执行耗时时间已经远超1s，所以setTimeout回调的调度也会被推迟，这就是为什么setTimeout定义了1s执行却没有执行的本质原因，如果你了解了事件循环机制EventLoop，关于定时器误差也会很容易理解。
 
 ## 视图更新时机
-前面已经讲了在每一次tick执行完所有的MircoTask Queue后就会进行视图的更新。
+前面已经讲了在每一次tick执行完所有的MircoTask Queue后就会进行视图的更新，但一般视图的更新会跟随这系统帧率通常都是`60fps(16.666ms一次)`，如果在每次tick中不断修改dom并不会立即更新：
+```html
+<div id="title" />
+<script>
+  const wrapper = document.querySelector("#title");
+  let color = "red";
+  let count = 0;
+  const timer = setInterval(() => {
+    count++;
+    if (count > 10) clearInterval(timer);
+    if (color === "red") {
+      wrapper.style.background = "blue";
+      color = "blue";
+    } else {
+      wrapper.style.background = "red";
+      color = "red";
+    }
+  }, 4);
+</script>
+```
 ![](https://ibb.co/875vPhz)
+上面代码每次都是宏任务会经历10次tick，dom也会更新10次，而实际图中也就一两次，这再次说明了更新视图会在合适的点进行更新，一般都是根据系统帧率60fps，若果用setTimeout做动画时间设置成17ms，应该不会掉太多帧，但setTimeout可能会被执行栈延迟调用，所以用setTimeout做动画掉帧的可能性非常大。
 
 ## requestAnimationFrame
+:::tip 考虑
+requestAnimationFrame是微任务还是宏任务？ :dash: 其实都不是
+:::
+requestAnimation会在每次更新视图前执行，他不会收到主线程的阻塞，也就是说视图更新的帧率为60fps，requestAnimationFrame也会执行60次，并且执行时间间隔非常稳定，所以很适合做动画，也不会卡顿。
+```js
+function rF() {
+  count ++;
+  if (count < 60) {
+    requestAnimationFrame(() => {
+      if (color === "red") {
+        wrapper.style.background = "blue";
+        color = "blue";
+      } else {
+        wrapper.style.background = "red";
+        color = "red";
+      }
+      rF();
+    })
+  }
+}
+rF();
+```
+通过requestAnimationFrame将会在每次更新视图时都会正确的更新每次修改的内容。
+
+## 浏览器EventLoop总结
+通过以上了解到浏览器是多线程的，其通过事件驱动模型用EventLoop事件循环机制来调度定时任务、用户交互、网络请求等异步任务，其大致过程如下：
+- 首先script整体作为宏任务执行，执行同步任务，当遇到异步任务时，如果是宏任务就会交给其它线程处理，并放入对应的任务队列中。微任务放入微任务队列，主线程挂起这些异步任务，接着执行后面的代码。
+- 当前执行栈清空会先执行所有的微任务，如果还遇到微任务也会将其放入当前微任务队列后，直到所有执行完。
+- 当所有微任务执行完后，浏览器可能会更新视图，与帧率有很大关系。
+- 然后主线程根据调度优先级从宏任务队列中适合执行的任务执行，然后不断重复以上操作。
 
 ## Node的EventLoop
 // 待更新
@@ -196,7 +245,6 @@ for(let count = 0;count<10000000000;count++);
 
 相关参考：
 - https://zhuanlan.zhihu.com/p/33058983
-- https://juejin.cn/post/6844904165462769678
 - https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
 - [动画演示](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!)
 - https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/

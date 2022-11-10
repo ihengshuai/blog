@@ -20,7 +20,7 @@
       let count = 0;
       const timer = setInterval(() => {
         count++;
-        if (count > 100) clearInterval(timer);
+        if (count > 60) clearInterval(timer);
         if (color === "red") {
           wrapper.style.background = "blue";
           color = "blue";
@@ -28,7 +28,24 @@
           wrapper.style.background = "red";
           color = "red";
         }
-      }, 8);
+      }, 16.6);
+      function rF() {
+      	count ++;
+      	if (count < 60) {
+      		console.log(1)
+      		requestAnimationFrame(() => {
+		      	if (color === "red") {
+		          wrapper.style.background = "blue";
+		          color = "blue";
+		        } else {
+		          wrapper.style.background = "red";
+		          color = "red";
+		        }
+		        rF();
+	        })
+      	}
+      }
+      rF();
     </script>
     <!-- <script type="text/javascript">
 		setTimeout(() => {
