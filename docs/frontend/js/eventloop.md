@@ -1,5 +1,5 @@
 ---
-title: 彻底搞懂EventLoop事件循环机制
+title: 彻底搞懂EventLoop事件循环机制(浏览器和Node EventLoop)
 description: 由于JavaScript是个单线程的语言,异步任务都会通过回调来解决单线程问题,JavaScript内部通过EventLoop事件循环机制来调度异步任务,本篇会对比浏览器的EventLoop和Node的EventLoop展开讲解
 head:
   - - meta
@@ -11,6 +11,8 @@ head:
 前端的同学们应该都听说过[EventLoop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)的概念，网上各大平台关于它的文章也是成百上千质量参差不一，其实在笔者刚开始接触js的时候这对这方面一头雾水，也是看了[高程](https://book.douban.com/subject/10546125)、[官方文档](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)以及大量的文章后才对它有了深刻认识，在这儿就来和大家分享下我对它的的认识和理解，不过要讲明白EventLoop这个东东还是要从头说起。
 
 本篇内容循序渐进比较长，需要耐心看完:muscle:。
+
+>注：如遇到有一些链接无法访问可能需要科学上网
 
 ## 前言
 众所周知JS是一个单线程非阻塞语言，不像诸如Java、Python等多线程语言对并发处理比较友好，而JS只能同时执行一个任务。那为什么JS不像其他语言一样也是个多线程语言呢？其实在最初使用浏览器呈现页面时，基本上都是静态页面和简单的功能，并没有考虑到复杂的交互功能，JS的创作者因此也没必要做更复杂的设计。但近年来随着web技术的突飞猛进，各种页面五花八门的交互以及并发资源请求等都出现了，因此关于JS单线程处理异步任务等等概念也就被关注起来了。
@@ -239,13 +241,85 @@ rF();
 - 然后主线程根据调度优先级从宏任务队列中适合执行的任务执行，然后不断重复以上操作。
 
 ## Node的EventLoop
-// 待更新
+讲完了浏览器的EventLoop接下来看看Node的EventLoop，Node和浏览器都是基于v8引擎，浏览器中的异步方法node中也会有，除此之外还包括：
+- 文件I/O
+- process.nextTick
+- setImmediate
+- 监听关闭事件
+
+Node中的事件循环机制是基于[Libuv(Asynchronous I/O)](https://libuv.org)引擎实现的，v8引擎会分析对应的js代码然后调用node的api，而node又被libuv驱动执行对应的任务，并把任务放入到对应的任务队列等待主线程的调度，因此node的EventLoop是libuv里实现的，看下node原理图：
+
+![node-system.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h817cbtjngj30i5074di0.jpg)
+
+### 执行阶段
+
+node事件循环机制中和浏览器的不太一样，在node中一般不说微任务和宏任务，通常分为不同的执行阶段，而在这些不同的执行阶段都会对应执行任务，node就是这样不断循环这些不同的执行阶段调度任务的执行顺序，其EventLoop包括以下执行阶段：
+- **`timers`**：执行定时器任务队列回调：setTimeout、setInterval...
+- **`pending callback`**：执行除了定时器、setImmediate以外的大部分回调，如操作系统TCP连接回调、IO回调等等。
+- **`idle、prepare`**：内部调度不用关心
+- **`poll`**：等待新的请求连接或I/O事件。node一开始进入这个阶段，如果当前阶段的任务队列执行空，先看有没有setImmediate回调，如果有进入check执行setImmediate回调，或等待新的I/O请求连接，同时也会检测timer是否有到期，若有会直接进入timer阶段执行回调，受代码执行环境的影响
+- **`check`**：执行setImmediate回调
+- **`close`**：执行socket等关闭操作回调
+
+以下是来自官网的一张[事件循环图](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#event-loop-explained):arrow_down:
+![node-eventloop.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h815w92ru3j30ka0aw40g.jpg)
+
+以上每个阶段的任务执行完在进入下一个阶段前会先清空当前阶段的微任务队列，而老版本的node则会先把当前阶段的代码回调执行完后才会执行微任务队列，如下代码：
+```js
+setTimeout(() => {
+  console.log("setTimeout1");
+  Promise.resolve().then(() => console.log("promise1"));
+});
+setTimeout(() => {
+  console.log("setTimeout2");
+  Promise.resolve().then(() => console.log("promise2"));
+});
+```
+- 使用node版本(9.11.2)，打印顺序：`setTimeout1` => `setTimeout2` => `promise1` => `promise2`，node会先将timer阶段的回调执行完后，才会执行当前阶段微任务队列中的所有微任务。
+- 浏览器打印顺序：`setTimeout1` => `promise1` => `setTimeout2` => `promise2`。
+- 使用高版本浏览器打印顺序和浏览器一致。
+
+### setTimeout和setImmediate
+通常情况下我们都会使用setTimeout执行延时任务，在node中也提供了`setImmediate`来执行异步任务表示立即执行，前面讲到它在`check`阶段执行；若将`setTimeout`的时间设置为0是不是和前者有同样的效果：
+```js
+setTimeout(() => console.log("setTimeout"));
+setImmediate(() => console.log("setImmediate"));
+```
+多次执行以上代码会发现打印顺序并不固定，这是为什么呢？
+
+以上代码就两个异步任务，前面讲了node刚开始会进入`poll`阶段，如果当前阶段没有任何任务要执行时，就会看看有无`setImmediate`回调，如果有的话进入`check`阶段执行回调，但是同时也会监听`setTimeout`的回调，如果到期也会立马进入timer阶段去执行定时器的回调，两者优先级不是固定的，这就是为什么打印顺序并不是一致的原因。
+
+现在将上面的代码稍作修改，让其在IO回调里执行：
+```js
+const fs = require("fs")
+fs.readFile(__dirname + "/inherit.js", 'utf8', (err, data) => {
+  setTimeout(() => console.log("setTimout"));
+  setImmediate(() => console.log("setImmediate"));
+})
+```
+以上的打印顺序永远是`setImmediate` => `setTimeout`，为什么呢？因为上面代码是在IO回调里执行的。回到事件循环的执行阶段中，I/O回调会在`pending callback`阶段执行，按照事件循环机制`check`阶段会在`timer`阶段前执行，所以为什么打印顺序不会变。
+
+### process.nextTick
+`process.nextTick`也是立即执行的意思，但它和`setImmediate`不一样的是，其不是阶段性的任务。`process.nextTick`在每个阶段同步任务执行完后都会执行，并且优先于微任务(promise)执行：
+```js
+setTimeout(() => {
+  Promise.resolve().then(() => console.log("promise"));
+  process.nextTick(() => console.log("nextTick"));
+});
+setImmediate(()=> console.log('setImmediate'));
+```
+上面执行结果`promise`和`nextTick`打印永远在一起，并且`nextTick`印永远会在`promise`之前打印，而`setImmediate`只会在`check阶段`打印。
+
+按照执行时机，`promise.nextTick`更适合于立即执行某个任务。
 
 ## 总结
+到这里关于JS的EventLoop就讲完了，你应该也已经明白了什么是EventLoop了。本篇通过对EventLoop的学习可以对JS的执行顺序和浏览器渲染时机等等有更深的理解，这会大大减少程序运行的不确定性，也能更好的通过事件循环机制调度任务执行的优先级，如果没有彻底理解请根据文中例子和概念不断反复练习。
 
 相关参考：
-- https://zhuanlan.zhihu.com/p/33058983
 - https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/
-- [动画演示](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!)
+- [http://latentflip.com/loupe](http://latentflip.com/loupe/?code=JC5vbignYnV0dG9uJywgJ2NsaWNrJywgZnVuY3Rpb24gb25DbGljaygpIHsKICAgIHNldFRpbWVvdXQoZnVuY3Rpb24gdGltZXIoKSB7CiAgICAgICAgY29uc29sZS5sb2coJ1lvdSBjbGlja2VkIHRoZSBidXR0b24hJyk7ICAgIAogICAgfSwgMjAwMCk7Cn0pOwoKY29uc29sZS5sb2coIkhpISIpOwoKc2V0VGltZW91dChmdW5jdGlvbiB0aW1lb3V0KCkgewogICAgY29uc29sZS5sb2coIkNsaWNrIHRoZSBidXR0b24hIik7Cn0sIDUwMDApOwoKY29uc29sZS5sb2coIldlbGNvbWUgdG8gbG91cGUuIik7!!!)
 - https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/
 - https://www.youtube.com/watch?v=8aGhZQkoFbQ
+
+<Reward />
+<Gitalk />
