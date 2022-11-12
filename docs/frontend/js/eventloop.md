@@ -172,7 +172,9 @@ console.log('script end');
 7. MacroTask执行完毕，清空所有的MircoTask。首先执行`promise resolve1`，而后的then也是个微任务会被放入当前微任务队列。接着执行`promise1 end`，接下来又会执行`promise resolve2`，它也一样返回微任务(和前面重复步骤)直到执行完后面所有的then。
 8. MircoTask执行完后MacroTask Queue就剩下一个setTimeout任务了，合适的时机打印`inner setTimeout`。
 
-通过一步一步的分析相信你已经对其执行过程有了初步认识，为了加深大家的印象，这里录制了一个视频来动画展示其运行过程，点击这里查看
+通过一步一步的分析相信你已经对其执行过程有了初步认识，为了加深大家的印象，这里录制了一个视频来动画展示其运行过程，[点击这里查看](https://www.bilibili.com/video/BV1RW4y147Xv)
+
+![iShot_2022-11-12_10.59.25.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h825tdqysdj31920pg7l9.jpg)
 
 ## 定时器误差
 我们已经知道异步的MacroTask其实会交给其它线程去处理，当执行栈中的代码执行完后，才会通过EventLoop去获取下一个Task执行。而定时任务(如：setTimeout)当指定了时间后执行，若执行栈的任务还没有执行完，就算定时器时间到了，也永远不会去执行，直到清空当前执行栈后才会执行，来看下面代码：
