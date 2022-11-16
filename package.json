@@ -4,7 +4,7 @@
   "description": "this is a blog for sharing the knowledge of web development.",
   "main": "index.js",
   "scripts": {
-    "dev": "vitepress dev docs",
+    "dev": "vitepress dev docs --port=9999",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs"
   },
