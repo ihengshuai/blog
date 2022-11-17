@@ -32,11 +32,11 @@ JS是个动态弱类型语言，使用非常自由，但随着项目的不断演
 ## 类Class
 
 ## 泛型
-1. type<T>
-2. interface<T>
-3. function<T>
-4. Class<T>
-5. Promise<T>
+1. `type<T>`
+2. `interface<T>`
+3. `function<T>`
+4. `Class<T>`
+5. `Promise<T>`
 
 ## 条件类型
 1. extends

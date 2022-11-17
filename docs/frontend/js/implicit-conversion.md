@@ -82,4 +82,5 @@ console.log(name.age); // undefined
 相关参考:
 - https://www.freecodecamp.org/chinese/news/javascript-implicit-type-conversion/
 - https://juejin.cn/post/6844903557968166926
+- https://baobangdong.cn/objects-convert-to-primitive/
 - https://tc39.es/ecma262/#sec-toprimitive
