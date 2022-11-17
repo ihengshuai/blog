@@ -76,6 +76,12 @@ console.log(name.age); // undefined
 | Date | new Date | true | 数字(时间戳) | 'Wed Nov 16 2020 16:51:31 GMT+0800 (中国标准时间)' |
 | Sysbol | Symbol('a') | true | throw TypeError | throw TypeError |
 
+## 一些无聊的问题
+```js
+{} + []
+[] + {}
+```
+
 // 待更新...
 
 
