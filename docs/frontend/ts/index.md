@@ -2,6 +2,8 @@
 
 JS是个动态弱类型语言，使用非常自由，但随着项目的不断演变代码越多产生的不确定性就会越大，而ts可以更好的进行类型约束，降低程序的不稳定性
 
+<iframe src="//player.bilibili.com/player.html?aid=945017055&bvid=BV1RW4y147Xv&cid=888873805&page=1" scrolling="no" border="0" frameborder="no" width="100%" height="600" framespacing="0" allowfullscreen="true"> </iframe>
+
 ## 基础类型
 
 ## 内置null/undefined/void
@@ -93,5 +95,3 @@ type LiteralToPrimitive<T> = T extends string
 
 
 // 待更新...
-
-<Gitalk />
