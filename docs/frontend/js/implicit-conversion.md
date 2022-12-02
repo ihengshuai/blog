@@ -1,10 +1,10 @@
 ---
 title: JS类型隐式转换与装箱拆箱
-description: 搞明白JS动态弱类型语言的隐式转换规则及装箱拆箱操作让意外的结果不再束手无策
+description: 搞明白JS动态弱类型语言的隐式转换规则及装箱拆箱规则来提高你的程序稳定性
 head:
   - - meta
     - name: keywords
-      content: 类型隐式转换,装箱拆箱,类型转换规则,toPrimitive,弱类型
+      content: 类型隐式转换,装箱拆箱,运算转换,类型转换规则,toPrimitive,弱类型,OrdinaryToPrimitive
 ---
 
 # JS类型隐式转换与装箱拆箱
@@ -13,12 +13,12 @@ head:
 JS引擎往往会最大限度的降低程序的错误，假如你会写`num = 1;num.name=xxx`这种很明显的错误，但当你运行时却不会报错，这里就涉及到了`装箱和拆箱`；还有`1 == true; 1 == [1]`你会发现竟然结果都为`true`，如果你不了解JS内部的装箱、拆箱和类型的隐式转换规则，这些可能都会让你产生困惑，如果你有这些疑惑，接着看下面的内容吧。
 
 ## 装箱与拆箱
-什么是装箱和拆箱？其是相对于<u>基础类型</u>和<u>对象类型</u>两者之间的转换而言的。JS中有`string`、`number`、`boolean`等基础类型，`String`、`Number`、`Boolean`、`Object`、`Array`等对象类型。将基础类型转换为对应的对象类型就是`装箱`，而对象类型转换为基础类型则为`拆箱`。
+什么是装箱和拆箱？JS中有`string`、`number`、`boolean`基础类型，它们都有对应的包装类型(引用类型)`String`、`Number`、`Boolean`，<u>装箱就是将基础类型转换为对应的包装类型，而拆箱则将包装类型转换为对应的基础类型。</u>
 
-<u>如果你不对**拆箱**操作不了解，将会影响你对隐式转换的理解。</u>
+<u>如果你对**拆箱**操作不了解，将会影响你对隐式转换的理解。</u>
 
-## 装箱
-像`number`、`boolean`等都有对应的包装类型`Number`、`Boolean`等，可以通过显式new进行装箱，JS引擎也可以隐式装箱，下面就来了解下两种不同的装箱操作。
+### 装箱
+装箱可以通过显式new进行装箱，JS引擎也可以隐式装箱，下面就来了解下两种不同的装箱操作。
 
 1. 显式装箱
 ```js
@@ -47,8 +47,21 @@ console.log(name.age); // undefined
 ```
 上面隐式装箱`name`是个基础类型，基础类型不会有属性的，但却拥有`toUpperCase`方法，其本质还是`String`对象的方法，当执行此方法时会隐式的将name转换为对象`name => new String(name)`，然后就会拥有对应的方法；而给其设置`age`属性后重新获取却为`undefined`，这里JS引擎就处理了错误的赋值操作，也会将`name`转换为`new String(name)`然后在执行下一行前又会销毁此对象，可以理解为当前对象就是来为赋值操作服务的。
 
-## 拆箱toPrimitive、 OrdinaryToPrimitive
-装箱基本上就是前面那么简单，而对JS的困惑往往都出自类型的拆箱，它是类型隐式转换的重点。拆箱遵循[【toPrimitive规则】](https://tc39.es/ecma262/#sec-toprimitive)
+### 拆箱
+拆箱则是将包装类型转化为对应的基础类型，通过执行`valueOf`方法可以得到它的原始值：
+```js
+num = new Number(123); // Number {123}
+typeof num; // object
+num.valueOf(); // 123
+
+bool = new Object(true); // Boolean {true}
+typeof booll; // object
+bool.valueOf(); // true
+```
+除了执行`valueOf`，`toString`方法也可以将包装类型转换为基础类型字符串形式，其实除了以上几个包装类型拆箱，其他的引用类型也会根据一定的规则进行转换，下面就来一起看看。
+
+## toPrimitive、 OrdinaryToPrimitive
+对于引用类型在特殊条件下都会转换为基础类型，其拆箱都会遵循[【toPrimitive规则】](https://tc39.es/ecma262/#sec-toprimitive)
 
 JS引擎內部toPrimitive的签名如下：input是待转换的对象，perferedType为转换的类型，有`string/number`两种
 ```ts
@@ -157,7 +170,7 @@ obj = {
 通过上面的代码再次证明了确实是以上的步骤，接下来看OrdinaryToPrimitive
 
 **OrdinaryToPrimitive证明**
-```js
+```js{12,13}
 // 1. hint为string会先执行toString方法
 `${{valueOf: () => 1, toString: () => 2}}`; // '2'
 Array.prototype.toString = () => 'array';
@@ -170,6 +183,7 @@ Array.prototype.valueOf = () => 2;
 
 // 3.当不指定 hint 类型时，除Date类型其它会优先执行`valueOf`，然后执行`toString`，Date正好相反
 '' + ({valueOf: () => 1, toString: () => 2}); // '1'
+1 + ({valueOf: () => 1, toString: () => 2}); // 2
 '' + new Date(); // 'Thu Dec 01 2021 12:56:23 GMT+0800 (中国标准时间)'
 Date.prototype.toString = () => 'date'; // 修改Date的toString方法
 '' + new Date(); // date
@@ -180,9 +194,22 @@ Date.prototype.toString = () => [1,2,3]; // 修改Date的toString方法
 '' + new Date(); // '1609459200000' => 执行 valueOf
 '' + ({valueOf: () => [1,2,3], toString: () => []}); // Uncaught TypeError: Cannot convert object to primitive value
 ```
-以上就是OrdinaryToPrimitive的执行步骤。
+以上就是OrdinaryToPrimitive的执行步骤，其实`valueOf`执行结果更趋向于自己原本的值(除Date外)，而`toString`一定会返回string类型，如：
+```js
+// valueOf
+obj = { name: 1 };
+obj.valueOf(); // { name: 1 }
+(function(){}).valueOf(); // f(){}
+[1,2,3].valueOf(); // [1,2,3]
+new RegExp('^\d+','i').valueOf(); // /^d+/i
 
-通过上面的内容你应该对装箱与拆箱有了更深的认识，从拆箱中应该也看到了类型转换的影子(`'' + ({valueOf: () => 1, toString: () => 2}); // '1'`)，返回的结果是个<u>字符串1而不是数字</u>，这里就涉及到了类型的隐式转换，`number => string`的转换。
+// toString
+obj.toString(); // '[object Object]'
+[1,2,3].toString(); // '1,2,3'
+new RegExp('^\d+','i').toString(); // '/^d+/i'
+```
+
+通过上面的内容你应该对装箱与拆箱有了更深的认识，从拆箱中应该也看到了类型转换的影子(上面代码中12,13行高亮部分)`'' + ({valueOf: () => 1, toString: () => 2}); // '1'`，返回的结果是个<u>字符串1而不是数字</u>，而`1 + ({valueOf: () => 1, toString: () => 2}); // 2`返回的却是数字2，两者只因相加位类型的不同结果也不同，这里就涉及到了类型的隐式转换，`number => string`的转换。
 
 了解了对象转换为原始类型(拆箱)后，接下来就来看看类型隐式转换是如何运作的。
 
@@ -218,33 +245,90 @@ Date.prototype.toString = () => [1,2,3]; // 修改Date的toString方法
 | Array | ['123'] | true | 123 | '123' |
 | Array | ['123', 'abc'] | true | NaN | '123,abc' |
 | Date | new Date | true | 数字(时间戳) | 'Wed Nov 16 2020 16:51:31 GMT+0800 (中国标准时间)' |
-| Sysbol | Symbol('a') | true | throw TypeError | throw TypeError |
+| Symbol | Symbol('a') | true | throw TypeError | throw TypeError |
 
 ## 算术运算符转换
 算术运算符主要包括`+、-、*、/`，除了`+`运算符外，其余算术运算符都针对的是数字number，也就是说运算双方都必须是或转换为数字，这个相对来说简单直接套上面的表格即可，而`+`运算符最为特殊，`+`不仅可以进行算术运算也可以进行字符串的拼接，同时也是最常见的隐式转换。
 
 ### 减乘除
-参与双方若是基础类型都会转换为`number`类型，而一方为引用类型时会先进行内部拆箱，然后两者再转换为`string`类型进行字符串的拼接，下面用一段代码加深下印象：
+参与双方若是基础类型都会转换为`number`类型，而一方为<u>引用类型时会先进行内部拆箱转换成**最兼容number类型的基本类型**</u>，下面用一段代码加深下印象：
 1. string转number
 ```js
-'1' - 0  // 1
-'1a' - 0  // NaN
+'1' - 1  // 0
+'1' * 1  // 0
+'1a' - 1  // NaN
 ```
 这里`'1'`会涉及到`string => number`的转换，从上面的表格中得到转换值为`1`，而`'1a'`转换后并不能兼容数字所以是`NaN`。
 
 2. boolean转number
 ```js
 true - 0  // 1
-false - 0 // 0
+true * 1  // 1
+false - 0  // 0
 ```
 true转换为1，false转换为0。
 
 3. undefined、null转number
 ```js
-undefined - 1 // NaN
+undefined - 1  // NaN
 null - 1  // -1
+null * 1  // 0
 ```
 undefined转换为NaN，null转换为0。
+
+4. 对象类型转number
+```js
+[] - 1  // -1
+[] * 1  // 0
+[1] - 1  // 0
+[1, 'a'] - 1  // NaN
+({}) - 1  // NaN
+new Date() - 1  // 1577836799999
+(function(){}) - 1  // NaN
+new RegExp('^\w+', 'i') - 1  // NaN
+```
+对象类型会根据`OrdinaryToPrimitive`拆箱规则进行转换为基础类型number类型，然后进行计算。
+
+以上便是`-、*、/`运算符转换为number类型的规则，比较简单。
+
+### 加运算
+加法运算最为特殊同时也是类型转换最多的，不仅可以进行算术运算也可以进行字符串的拼接。其转换规则为：
+  1. 若一方是`string`类型，则另一方也会转换为字符串，进行字符串的拼接
+  2. 若一方为`number`类型，另一方为原始类型，将其转换为number类型，进行算术相加。
+  3. 若一方为`number`类型，另一方为引用类型，将其拆箱转换为基本类型后，进行字符串的拼接。
+
+>以上转换规则优先级从高到低进行转换。
+
+转换规则1：
+```js
+'' + 1 // '1'
+'' + true // 'true'
+'str' + undefined // 'strundefined'
+'' + null // 'null'
+'' + [] // ''
+'' + [1] // '1'
+'' + [1,2,3] // '1,2,3'
+'' + {name: 1} // '[object Object]'
+'' + (function(){}) // 'function(){}'
+```
+
+转换规则2：
+```js
+1 + 1 // 2
+1 + true // 2
+1 + null // 1
+1 + undefined // NaN
+```
+
+转换规则3：
+```js
+1 + [] // '1'
+1 + [1,2] // '11,2'
+1 + (function(){}) // '1function(){}'
+1 + ({}) // '1[objectObject]'
+1 + new Date() // '1Fri Dec 02 2020 11:40:48 GMT+0800 (中国标准时间)'
+1 + new RegExp('\s', 'ig') // '1/s/gi'
+```
 
 4. 对象类型和number相加
 ```js
@@ -255,13 +339,15 @@ new Date() + 1  // 'Fri Dec 02 2020 09:14:09 GMT+0800 (中国标准时间)1'
 (function(){}) + 1  // 'function(){}1'
 new RegExp('^\w+', 'i') + 1  // '/^w+/i1'
 ```
-对象类型会根据`OrdinaryToPrimitive`规则进行转换为基础类型，然后运算双方再转换为字符串进行拼接。
+对象类型会根据`OrdinaryToPrimitive`拆箱规则进行转换为基础类型，然后运算双方再转换为字符串进行拼接。
 
 ## 问题
 ```js
 {} + []
 [] + {}
 ```
+
+## 总结
 
 // 待更新...
 
