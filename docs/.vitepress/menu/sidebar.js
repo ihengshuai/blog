@@ -11,8 +11,8 @@ export const getSidebarMenu = () => ({
           link: "/frontend/js/index.html",
           items: [
             { text: "原型、原型链与继承", link: "/frontend/js/proto-inherit.html" },
-            { text: "作用域、执行上下文、作用域链和闭包", link: "/frontend/js/scope-closure.html" },
-            { text: "隐式转换", link: "/frontend/js/implicit-conversion.html" },
+            { text: "作用域(链)、执行上下文及闭包", link: "/frontend/js/scope-closure.html" },
+            { text: "类型隐式转换", link: "/frontend/js/implicit-conversion.html" },
             { text: "事件循环(EventLoop)", link: "/frontend/js/eventloop.html" },
             { text: "异步", link: "/frontend/js/async.html" },
             { text: "元编程", link: "/frontend/js/meta-coding.html" },
