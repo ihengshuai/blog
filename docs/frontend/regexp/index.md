@@ -1,5 +1,5 @@
 ---
-title: 正则表达式指南(RegExp)
+title: 正则表达式(RegExp)
 description: 玩转正则表达式(regexp)的使用技巧,使用regexp提高开发效率
 head:
   - - meta
@@ -7,7 +7,7 @@ head:
       content: 正则表达式,RegExp,正则匹配,前端正则表达式
 ---
 
-# 正则表达式指南
+# 正则表达式
 
 >JavaScript中的正则是Perl的大子集，但Perl内部的一些表达式却没有继承
 

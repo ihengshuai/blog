@@ -4,13 +4,15 @@ description: 搞明白JS动态弱类型语言的隐式转换规则及装箱拆�
 head:
   - - meta
     - name: keywords
-      content: 类型隐式转换,装箱拆箱,运算转换,类型转换规则,toPrimitive,弱类型,OrdinaryToPrimitive
+      content: 类型隐式转换,装箱拆箱,运算转换,类型转换规则,type conversion,toPrimitive,弱类型,OrdinaryToPrimitive
 ---
 
 # JS类型隐式转换与装箱拆箱
 如果你写过大多数强类型语言如`Java`对数据的类型一定不会陌生，如定义两个变量：`int num = 1`和`boolean bool = false`，比较两个变量是否相等时结果很明显时`false`(不同类型直接会报错)，类型不同的变量永远不会相等。由于JS被定位成`动态弱类型语言`，其往往会颠覆你的认知。
 
 JS引擎往往会最大限度的降低程序的错误，假如你会写`num = 1;num.name=xxx`这种很明显的错误，但当你运行时却不会报错，这里就涉及到了`装箱和拆箱`；还有`1 == true; 1 == [1]`你会发现竟然结果都为`true`，如果你不了解JS内部的装箱、拆箱和类型的隐式转换规则，这些可能都会让你产生困惑，如果你有这些疑惑，接着看下面的内容吧。
+
+> 注：如遇到有一些链接无法访问可能需要科学上网
 
 ## 装箱与拆箱
 什么是装箱和拆箱？JS中有`string`、`number`、`boolean`基础类型，它们都有对应的包装类型(引用类型)`String`、`Number`、`Boolean`，<u>装箱就是将基础类型转换为对应的包装类型，而拆箱则将包装类型转换为对应的基础类型。</u>
@@ -299,6 +301,8 @@ new RegExp('^\w+', 'i') - 1  // NaN
 
 >以上转换规则优先级从高到低进行转换。
 
+下面用几个例子演示这些规则：
+
 转换规则1：
 ```js
 '' + 1 // '1'
@@ -329,32 +333,93 @@ new RegExp('^\w+', 'i') - 1  // NaN
 1 + new Date() // '1Fri Dec 02 2020 11:40:48 GMT+0800 (中国标准时间)'
 1 + new RegExp('\s', 'ig') // '1/s/gi'
 ```
+以上便是加法的隐式转换，根据上面三条规则的优先级进行转换，基础不同类型转换的值可以根据上面的表格进行判断，引用类型根据拆箱规则结合转换优先级即可。
 
-4. 对象类型和number相加
+## 逻辑运算转换
+
+### !运算转换
+逻辑运算的转换常见的就是`!`和`==`的转换，相对来说非常简单。一般像`null、undefined、0、''、NaN、false`等为false外，其余的都是true（如：`[]、{}`等等）。
 ```js
-[] + 1  // '1'
-[1] + 1 // '11'
-({}) + 1  // '[object Object]1'
-new Date() + 1  // 'Fri Dec 02 2020 09:14:09 GMT+0800 (中国标准时间)1'
-(function(){}) + 1  // 'function(){}1'
-new RegExp('^\w+', 'i') + 1  // '/^w+/i1'
+!null // true
+!undefined // true
+!NaN // true
+![] // false
+!{} // false
 ```
-对象类型会根据`OrdinaryToPrimitive`拆箱规则进行转换为基础类型，然后运算双方再转换为字符串进行拼接。
+
+### ==运算转换
+`==`转换规则一般总结为一下五条：
+
+- `NaN`和任何其他类型(包括自己)比较值都是false。
+- `Boolean`和其他类型比较时，自己转化为`Number`类型然后进行比较.
+- `Number`和`String`类型比较，将`String`类型转换为`Number`类型后进行比较。
+- `undefined`除了和`null`比较结果为true外，其余的比较都是false。
+- 原始值和引用类型进行比较时，引用类型根据拆箱规则转换成基础类型后进行比较。
+```js
+NaN == NaN // false
+NaN == 0 // false
+true == 2 // false  true => 1
+1 = '1' // true  '1' => 1
+undefined == null // true
+undefined == NaN // false
+null == false // false
+[1] == 1 // true  [1] => 1
+[1,2] == 1 // false  [1,2] => '1,2'
+```
+
+到这里基本上学会了以上的内容，隐式转换就可以搞懂了，其实也没什么难度，把这些转换概念摸清楚就可以游刃有余。
 
 ## 问题
+有些同学可能看到这里，还没有完全掌握，这里就提供几个小菜，提供给大家练习，看和你的想法一直不，如果一直可以说清楚具体逻辑不，想法有出入那又是问什么？
+
 ```js
-{} + []
-[] + {}
+({}) + []
+```
+::: details 查看结果
+答案：`'[object Object]'`，两者首先拆箱转换为基础类型，`{} => [object Object]`、`[] => ''`然后进行字符串拼接
+:::
+
+```js
+[] == []
+```
+::: details 查看结果
+答案：false，这里不会进行拆箱，类型相同的变量会直接比较，两者都是引用类型，地址不同不会相等
+:::
+
+```js
+[] == ![]
+```
+:::details 查看结果
+答案：true，`![]`先转换转换为false，`[]`进行拆箱变成0，`false`在转换成0
+:::
+
+这里笔者发现一个有趣的问题，看看通过上面的知识你能解决吗：
+```js
+let a;
+// 请让变量a满足以下条件
+
+if (a == 1 && a == 2 && a == 3) { console.log(true) };
 ```
 
+:::details 查看结果
+```js
+a = {
+  value: 1,
+  valueOf:() => a.value++;
+}
+```
+以上就是解决方案，是不是很简单。
+首先要想a同时满足`1、2、3`的值，直接排除掉基础类型值，那么a一定是个引用类型，引用类型和基础类型的`==`比较，会通过拆箱规则转换，那么就会执行`valueOf、toString`方法，又根据拆箱优先级会先执行`valueOf`方法，那么在此方法做文章就可以了，每次读取值时进行自加，这样就会满足`1、2、3`
+:::
+
 ## 总结
-
-// 待更新...
-
+本篇主要讲了JS怎么进行隐式转换的，通过拆箱和装箱了解到JS引擎对程序的包容性还是很高的，学会引用类型根据`toPrimitive`优先级规则进行转换，也学会了从简单的算术运算到逻辑运算的隐式转换规则。
 
 相关参考:
-- https://www.freecodecamp.org/chinese/news/javascript-implicit-type-conversion/
-- https://juejin.cn/post/6844903557968166926
-- https://baobangdong.cn/objects-convert-to-primitive/
 - https://tc39.es/ecma262/#sec-toprimitive
+- https://source.chromium.org/chromium/chromium/src/+/main:third_party/devtools-frontend/src/node_modules/es-abstract/2020/OrdinaryToPrimitive.js;l=16?q=OrdinaryToPrimitive&sq=&ss=chromium
+- https://www.youtube.com/watch?v=XYFg6_V-c9Q
+
+<Reward />
+<Gitalk />
 
