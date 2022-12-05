@@ -10,3 +10,24 @@ head:
 # Javascript异步编程
 
 callback => 事件监听 => 发布订阅 => promise => generator => async/await
+
+## 回调函数
+ajax
+
+## 事件监听
+click
+
+## 发布订阅
+eventbus
+
+## promise
+
+## 迭代器generator
+```js
+// what is a generator
+function *gen() {};
+g = gen();
+typeof g.next === "function" && typeof g.throw === "function"
+```
+
+## async/await
