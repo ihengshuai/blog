@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>基本直线、矩形、画笔</title>
+	<link rel="stylesheet" type="text/css" href="../init.css">
+	<style type="text/css">
+		#cvs {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="cvs"></canvas>
+	<button id="clear">清除</button>
+
+	<script type="text/javascript">
+		const canvas = document.querySelector("#cvs")
+		const ctx = canvas.getContext("2d")
+		init();
+		ctx.save();
+		ctx.strokeStyle = "red";
+		ctx.translate(100, 100);
+		ctx.strokeRect(0, 0, 100, 100);
+		ctx.restore();
+		ctx.fillStyle = "red";
+		ctx.fillRect(0, 0, 50, 50);
+		ctx.moveTo(300, 200);
+		ctx.lineTo(200, 300)
+		ctx.lineTo(300, 300)
+		ctx.closePath();
+		ctx.stroke();
+		ctx.save();
+		ctx.beginPath();
+		ctx.translate(300, 300);
+		ctx.fillRect(0, 0, 100, 100)
+		ctx.restore();
+		ctx.moveTo(100, 100);
+		ctx.fillRect(80, 80, 10, 10);
+		ctx.save();
+		ctx.fillStyle = "blue"
+		ctx.moveTo(400, 200);
+		ctx.lineTo(500, 200);
+		ctx.lineTo(500, 300);
+		ctx.lineTo(400, 300);
+		ctx.fill();
+
+
+		function init(w = 800, h = 600) {
+			canvas.width = w;
+			canvas.height = h;
+		}
+
+		document.querySelector("#clear").addEventListener("click", () => {
+			ctx.clearRect(0, 0, canvas.width, canvas.height)
+		})
+	</script>
+</body>
+</html>

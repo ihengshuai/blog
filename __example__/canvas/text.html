@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>text</title>
+	<link rel="stylesheet" type="text/css" href="../init.css">
+	<style type="text/css">
+		#cvs {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="cvs"></canvas>
+
+	<script type="text/javascript">
+		const canvas = document.querySelector("#cvs")
+		const ctx = canvas.getContext("2d")
+		init();
+		ctx.font = "20px sans-serif"
+
+		ctx.strokeStyle = "red"
+		ctx.strokeText("中文文字", 100, 100)
+		ctx.save();
+		ctx.fontStyle = "red"
+		ctx.font = "30px 微软雅黑"
+		ctx.direction = "left"
+		ctx.fillStyle = "blue"
+		ctx.textBaseline = "bottom"
+		ctx.fillText("填充g文字", 300, 100)
+		const measure = ctx.measureText("haha");
+		console.log(measure)
+
+
+
+		function init(w = 800, h = 600) {
+			canvas.width = w;
+			canvas.height = h;
+		}
+	</script>
+</body>
+</html>

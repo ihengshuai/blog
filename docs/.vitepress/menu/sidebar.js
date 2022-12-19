@@ -42,6 +42,7 @@ export const getSidebarMenu = () => ({
         { text: "Typescript", link: "/frontend/ts/index.html" },
         { text: "NestJS", link: "/frontend/nestjs/index.html" },
         { text: "Render Mode", link: "/frontend/render-mode/index.html" },
+        { text: "Canvas", link: "/frontend/canvas/index.html" },
         {
           text: "Project Specification",
           link: "/frontend/project-specification/index.html",

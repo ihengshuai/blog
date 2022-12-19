@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>canvas</title>
+	<link rel="stylesheet" type="text/css" href="../init.css">
+</head>
+<body>
+	<canvas id="bg-canvas" style="width:100vw;height:100vh;"></canvas>
+
+	<script type="text/javascript">
+		var Canvas = (function () {
+            function main(el) {
+                if (!el) return false;
+                this.el = el;
+                this.ctx = this.el.getContext("2d");
+                this.queue = [];
+                this.timer = null;
+                this.fps = 60;
+                this.directionMap = {
+                    'tl': function (op) {
+                        if (op.y >= (-1 * op.height) || op.x >= (-1 * op.width)) {
+                            op.y = op.y - (op.yS / (op.time * this.fps));
+                            op.x = op.x - (op.xS / (op.time * this.fps));
+                            this.queue.push(op);
+                            this.drawSquare(op);
+                        }
+                    },
+                    'bl': function (op) {
+                        if (op.y < (this.height + op.height) || op.x >= (-1 * op.width)) {
+                            op.y = op.y + (op.yS / (op.time * this.fps));
+                            op.x = op.x - (op.xS / (op.time * this.fps));
+                            this.queue.push(op);
+                            this.drawSquare(op);
+                        }
+                    },
+                    'tr': function (op) {
+                        if (op.y >= (-1 * op.height) || op.x < (this.width + op.width)) {
+                            op.y = op.y - (op.yS / (op.time * this.fps));
+                            op.x = op.x + (op.xS / (op.time * this.fps));
+                            this.queue.push(op);
+                            this.drawSquare(op);
+                        }
+                    },
+                    'br': function (op) {
+                        if (op.y < (this.height + op.height) || op.x < (this.width + op.width)) {
+                            op.y = op.y + (op.yS / (op.time * this.fps));
+                            op.x = op.x + (op.xS / (op.time * this.fps));
+                            this.queue.push(op);
+                            this.drawSquare(op);
+                        }
+                    }
+                };
+                this.init();
+            }
+            main.prototype = {
+                init: function () {
+                    this.el.width = this.width = this.el.clientWidth;
+                    this.el.height = this.height = this.el.clientHeight;
+                },
+                clear: function () {
+                    this.ctx.clearRect(0, 0, this.width, this.height);
+                },
+                start: function () {
+                    var ps = 0;
+                    if (this.timer) {
+                        clearInterval(this.timer);
+                    }
+                    this.timer = setInterval(function () {
+                        if (this.queue.length > 0) {
+                            this.clear();
+                            for (var i = 0, l = this.queue.length; i < l; i++) {
+                                var op = this.queue.shift();
+                                this.directionMap[op.direction].call(this, op);
+                            }
+                        } else {
+                            clearInterval(this.timer);
+                            this.timer = null;
+                        }
+                        ps++;
+                        if (ps === this.fps) {
+                            ps = 0;
+                            if (this.queue.length < 200) {
+                                this.createSquare(10);
+                            }
+                        }
+                    }.bind(this), 1000 / this.fps);
+                },
+                createSquare: function (num) {
+                    for (var i = 0; i < num; i++) {
+                        var wh = Math.floor(Math.random() * 10) + 5;
+                        opacitys = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9];
+                        directions = ['tl', 'bl', 'tr', 'br'];
+                        var option = {
+                            color: '#6bc2c6',
+                            x: (this.width - wh) / 2,
+                            y: (this.height - wh) / 2,
+                            xS: Math.floor(this.width * Math.random()),
+                            yS: Math.floor(this.height * Math.random()),
+                            width: wh,
+                            height: wh,
+                            opacity: opacitys[Math.floor(Math.random() * (opacitys.length))],
+                            time: Math.floor(Math.random() * 6) + 2,
+                            direction: directions[Math.floor(Math.random() * (directions.length))]
+                        }
+                        this.queue.push(option);
+                    }
+                },
+                drawSquare: function (option) {
+                    var _option = {
+                        color: '',
+                        x: 0,
+                        y: 0,
+                        width: 0,
+                        height: 0,
+                        opacity: 1
+                    }
+                    if (option) {
+                        for (var i in _option) {
+                            if (option[i]) _option[i] = option[i];
+                        }
+                    }
+                    this.ctx.globalAlpha = _option.opacity;
+                    this.ctx.fillStyle = _option.color;
+                    this.ctx.fillRect(_option.x, _option.y, _option.width, _option.height);
+                }
+            }
+            return main;
+        })();
+        var bgCanvas = new Canvas(document.getElementById('bg-canvas'));
+        bgCanvas.createSquare(20);
+        bgCanvas.start();
+	</script>
+</body>
+</html>

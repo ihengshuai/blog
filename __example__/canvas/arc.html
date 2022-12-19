@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>arc</title>
+	<link rel="stylesheet" type="text/css" href="../init.css">
+	<style type="text/css">
+		#cvs {
+			border: 1px solid #000;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="cvs"></canvas>
+
+	<script type="text/javascript">
+		const canvas = document.querySelector("#cvs")
+		const ctx = canvas.getContext("2d")
+		init();
+
+		ctx.fillStyle = "red"
+		ctx.moveTo(100, 100);
+		ctx.arc(100, 100, 100, 0, 2 * Math.PI)
+		ctx.fill()
+		ctx.fillStyle = "white"
+		ctx.font = "20px 微软雅黑"
+		ctx.fillText("圆心", 80, 110)
+		ctx.save();
+
+		ctx.restore();
+		ctx.beginPath();
+		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.fillStyle = "red"
+		ctx.arc(0, 0, 100, 0, Math.PI / 3)
+		ctx.strokeStyle = "blue"
+		ctx.moveTo(0, 0);
+		ctx.lineTo(100, 0);
+		ctx.stroke()
+		ctx.save();
+		ctx.rotate(Math.PI / 3);
+		ctx.moveTo(0, 0)
+		ctx.lineTo(100, 0);
+		ctx.stroke();
+		ctx.save();
+
+		ctx.restore();
+		ctx.beginPath();
+		ctx.fillStyle = "blue"
+		ctx.moveTo(200, 400);
+		ctx.arcTo(200, 400, 400, 400, 50)
+		ctx.fill();
+
+
+		function init(w = 800, h = 600) {
+			canvas.width = w;
+			canvas.height = h;
+		}
+	</script>
+</body>
+</html>
