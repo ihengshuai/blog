@@ -12,6 +12,11 @@ ctx.moveTo(x, y)
 // 开始新的路径
 ctx.beginPath()
 
+// 线属性
+ctx.lineJoin
+ctx.lineCap
+ctx.lineWidth
+
 // 直线
 ctx.lineTo(x, y)
 
@@ -84,3 +89,36 @@ ctx.arcTo(x1, y1, x2, y2, r)
 ```js
 
 ```
+
+### 图像合成
+globalCompositeOperation
+
+### 裁剪
+clip
+
+### 状态保存恢复
+save、restore
+
+### 像素操作
+- ImageData
+- getImageData
+- drawImage
+- putImageData
+
+### 交互
+- isPointInPath
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
