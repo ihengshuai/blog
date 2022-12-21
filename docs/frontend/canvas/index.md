@@ -87,8 +87,15 @@ ctx.arcTo(x1, y1, x2, y2, r)
 > translate、transform
 
 ```js
-
+// placeholder
 ```
+
+<iframe src="https://codesandbox.io/embed/bu-men-ji-gou-lwtfb?fontsize=14&hidenavigation=1&theme=dark"
+   style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+   title="部门机构"
+   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 ### 图像合成
 globalCompositeOperation
