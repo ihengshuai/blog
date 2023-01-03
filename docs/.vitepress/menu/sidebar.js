@@ -106,6 +106,12 @@ export const getSidebarMenu = () => ({
       text: "2021",
       items: [
         {
+          text: "Nov",
+          items: [
+            { text: "1. PWA渐进式应用", link: "/article/2021/pwa-app.html" },
+          ],
+        },
+        {
           text: "Sep",
           items: [
             { text: "1. 前端性能测试工具", link: "/article/2021/performance-tools.html" },

@@ -4,6 +4,9 @@
 ctx = canvas.getContext("2d")
 ```
 
+属性与方法：
+[CanvasRenderingContext2D](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D)
+
 ### 基本
 ```js
 // 移动画笔
@@ -47,6 +50,9 @@ ctx.fill();
 
 // 清除画布
 ctx.clearRect(startX, startY, width, height);
+
+// 设置图形或图片的透明度 0-1
+ctx.globalAlpha = 1
 ```
 
 ### 文字
@@ -98,7 +104,7 @@ ctx.arcTo(x1, y1, x2, y2, r)
 ></iframe>
 
 ### 图像合成
-globalCompositeOperation
+[globalCompositeOperation](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation)
 
 ### 裁剪
 clip
