@@ -11,6 +11,18 @@ head:
 
 需要`manifest`和`serviceWorker`
 
+安装条件：
+- 未安装 Web 应用程序
+- 符合用户参与启发式
+- 通过 HTTPS 提供服务
+- 具有一个 Web 应用清单，其中包括：
+    + short_name 或 name
+    + icons - 必须包含一个 192 像素和一个 512 像素的图标
+    + start_url
+    + display - 必须是 fullscreen、standalone 或 minimal-ui
+    + 不能有 prefer_related_applications，或值为 false
+- 使用 fetch 处理程序注册服务工作进程
+
 ```html
 <!DOCTYPE html>
 <html lang="en">

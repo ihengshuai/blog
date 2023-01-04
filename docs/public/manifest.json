@@ -24,7 +24,7 @@
             "type": "image/png"
           }
     ],
-    "start_url": "/",
+    "start_url": "https://blog.usword.cn",
     "display": "minimal-ui",
     "theme_color": "#747bff",
     "background_color": "#747bff"
