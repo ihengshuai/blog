@@ -11,6 +11,10 @@ head:
 
 需要`manifest`和`serviceWorker`
 
+出现条件：
+- 性能问题
+- 用户留存
+
 安装条件：
 - 未安装 Web 应用程序
 - 符合用户参与启发式
@@ -80,39 +84,34 @@ self.addEventListener("fetch", (event) => {
 ```json
 // manifest.json
 {
-    "name": "xxx",
-    "short_name": "rrr",
-    "description": "Progressive Web App that lists games submitted to the A-Frame category in the js13kGames 2017 competition.",
+    "name": "hengshuai's blog",
+    "short_name": "hengshuai's blog",
+    "description": "a progress blog app for sharing web development experiences...",
     "icons": [
-        {
-            "src": "https://lf9-static.bytednsdoc.com/obj/eden-cn/pipieh7nupabozups/toutiao_web_pc/icon_tt_512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-          },
           {
-            "src": "https://lf9-static.bytednsdoc.com/obj/eden-cn/pipieh7nupabozups/toutiao_web_pc/icon_tt_384.png",
+            "src": "/384.png",
             "sizes": "384x384",
             "type": "image/png"
           },
           {
-            "src": "https://lf9-static.bytednsdoc.com/obj/eden-cn/pipieh7nupabozups/toutiao_web_pc/icon_tt_256.png",
+            "src": "/256.png",
             "sizes": "256x256",
             "type": "image/png"
           },
           {
-            "src": "https://lf9-static.bytednsdoc.com/obj/eden-cn/pipieh7nupabozups/toutiao_web_pc/icon_tt_192.png",
+            "src": "/192.png",
             "sizes": "192x192",
             "type": "image/png"
           },
           {
-            "src": "https://lf9-static.bytednsdoc.com/obj/eden-cn/pipieh7nupabozups/toutiao_web_pc/icon_tt_128.png",
+            "src": "/128.png",
             "sizes": "128x128",
             "type": "image/png"
           }
     ],
-    "start_url": "index.html",
+    "start_url": "https://blog.usword.cn",
     "display": "minimal-ui",
-    "theme_color": "#B12A34",
-    "background_color": "#B12A34"
+    "theme_color": "#747bff",
+    "background_color": "#747bff"
 }
 ```

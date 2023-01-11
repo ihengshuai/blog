@@ -25,7 +25,10 @@
           }
     ],
     "start_url": "https://blog.usword.cn",
-    "display": "minimal-ui",
+    "display": "standalone",
     "theme_color": "#747bff",
-    "background_color": "#747bff"
+    "background_color": "#747bff",
+    "orientation": "portrait",
+    "related_applications": [],
+    "prefer_related_applications": false
 }
