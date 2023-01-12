@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xxx</title>
+    <meta name="description" content="A list of A-Frame entries submitted to the js13kGames 2017 competition, used as an example for the MDN articles about Progressive Web Apps.">
+	<meta name="author" content="end3r">
+	<meta name="theme-color" content="#B12A34">
+    <meta name="description" content="A list of A-Frame entries submitted to the js13kGames 2017 competition, used as an example for the MDN articles about Progressive Web Apps.">
+	<meta name="author" content="end3r">
+    <meta property="og:image" content="icons/icon.png">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <h2>hello...</h2>
+
+    <img width="300" src="/ssr.jpg" >
+    
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("worker.js").then(res => {
+                    console.log(res, "register")
+                }).catch(err => {
+                    console.log(err)
+                })
+
+                navigator.serviceWorker.getRegistration().then(registration => {
+                    registration.showNotification("測試", {
+                        body: "測試信息",
+                        data: {
+                            url: "https://www.baidu.com"
+                        },
+                        actions: [
+                            {
+                                action: "like",
+                                title: "點讚"
+                            }
+                        ],
+                        icon: "/ssr.jpg",
+                        image: "/ssr.jpg",
+                        badge: "/ssr.jpg",
+                        direction: "ltr",
+                        vibrate: [200, 100]
+                    })
+
+                })
+            })
+        }
+
+        window.addEventListener('beforeinstallprompt', function (e) {
+            e.userChoice.then(function (choiceResult) {
+                if (choiceResult.outcome === 'accept') {
+                    console.log("accept...")
+                } else {
+                    console.log("cancle...")
+                }
+            })
+        })
+
+        console.log(Notification.permission)
+
+        Notification.requestPermission().then(permission => {
+            console.log(permission)
+        })
+
+        if (Notification.permission ==="granted") {
+            // window.notification = new Notification("測試", {
+            //     body: "測試信息",
+            //     data: {
+            //         url: "https://www.baidu.com"
+            //     },
+            //     actions: [
+            //         {
+            //             action: "like",
+            //             title: "點讚"
+            //         }
+            //     ],
+            //     icon: "/ssr.jpg",
+            //     image: "/ssr.jpg",
+            //     badge: "/ssr.jpg",
+            //     direction: "ltr",
+            //     vibrate: [200, 100]
+            // })
+        }
+
+    </script>
+</body>
+</html>
