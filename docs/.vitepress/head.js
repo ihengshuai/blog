@@ -41,6 +41,7 @@ export const getHeaders = () => ([
   ["meta", { name: "apple-mobile-web-app-title", content: "hengshuai's blog" }],
   ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
   ["meta", { name: "apple-mobile-web-app-status-bar-style", content: "#747bff" }],
+  ["meta", { rel: "apple-touch-startup-image", href: "/192.png" }],
   ["link", { rel: "manifest", href: "/manifest.json" }],
   ["link", { defer: true, rel: "stylesheet", href: "https://cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.css" }],
   ["script", { defer: true, src: "https://cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.js" }],
