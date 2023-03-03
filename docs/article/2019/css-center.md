@@ -9,7 +9,7 @@ head:
 
 # css的10中居中方式
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gk67fvy7eqj30id06y3yk.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gk67fvy7eqj30id06y3yk.jpg)
 
 >要实现上图的效果看似很简单，实则暗藏玄机，本文总结了一下CSS实现水平垂直居中的方式大概有下面这些，本文将逐一介绍一下
 仅居中元素定宽高适用

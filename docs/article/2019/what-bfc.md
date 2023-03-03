@@ -88,7 +88,7 @@ head:
 ```
 **效果：**
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwumuirgrj30dr069gld.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwumuirgrj30dr069gld.jpg)
 
 以第一行来看，它距离顶部的垂直距离，和距离第二行的垂直距离是一样的。说明第一行的margin-bottom和第二行的margin-top发生了重叠，不然第一行到第二行的距离，应该是50px，是第一行距离顶部距离的两倍。
 
@@ -135,7 +135,7 @@ head:
 ```
 **效果**
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwunpjwzyj30dr07x3ya.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwunpjwzyj30dr07x3ya.jpg)
 
 这样就解决了margin重叠的问题
 
@@ -190,7 +190,7 @@ head:
 
 **效果：**
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwuocvrf7j30hq0ect8j.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwuocvrf7j30hq0ect8j.jpg)
 
 左栏是浮动元素，会脱离文档流，浮在文档流元素上。
 
@@ -209,11 +209,11 @@ BFC的解决方法：
 
 **效果**
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwuot30mmj30ht0egwea.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwuot30mmj30ht0egwea.jpg)
 
 不过我个人觉得这样做只是让BFC的区域不会与float元素区域重叠，实现了两栏布局效果，但并不是自适应的两栏布局，上述例子只是刚好父容器的宽度=左盒子宽度+右盒子宽度（大于时也可以）。如果把父容器的container的宽度，设为一个小于左盒子的宽度+右边盒子的宽度值（200px+300px），如400px时，就会看到这样的效果：
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwup92fwsj30ep0lbdfn.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwup92fwsj30ep0lbdfn.jpg)
 
 说明左右两个盒子并不会自动调整宽度来自适应的布局。
 
@@ -232,7 +232,7 @@ BFC的解决方法：
 
 **效果：**
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwupnyyabj30em0eeq2q.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwupnyyabj30em0eeq2q.jpg)
 
 可以看出左右盒子都按比例调整了自身的宽度:
 
@@ -246,11 +246,11 @@ BFC的解决方法：
 
 **左栏：**
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwuqsn22wj30jh0c4jrq.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwuqsn22wj30jh0c4jrq.jpg)
 
 **右栏：**
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwurathszj30jh0bhglw.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwurathszj30jh0bhglw.jpg)
 
 ### 解决浮动元素的父元素高度塌陷的问题
 
@@ -302,7 +302,7 @@ BFC的解决方法：
 
 **效果：**
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwurofo2qj30i10e80sk.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwurofo2qj30i10e80sk.jpg)
 
 如果父元素的子元素都是浮动元素，那么父元素的高度会发生高度塌陷。
 
@@ -321,7 +321,7 @@ BFC的解决方法：
 
 **效果：**
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkwus4cz3bj30i10eaglf.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkwus4cz3bj30i10eaglf.jpg)
 
 父元素的高度被撑起来了，为右盒子的高度400px;
 

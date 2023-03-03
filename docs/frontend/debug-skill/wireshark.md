@@ -23,23 +23,23 @@ wireshark可以用来检测网络环境、入侵侦测系统等网络层面的�
 
 下载后打开大概长这个样子
 
-![iShot_2022-10-22_15.44.16.png](http://cdn-blog.usword.cn/005HV6Avgy1h7e4163efwj31k413cths.jpg)
+![iShot_2022-10-22_15.44.16.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7e4163efwj31k413cths.jpg)
 
 ## 菜单栏
-![iShot_2022-10-21_08.43.06.png](http://cdn-blog.usword.cn/005HV6Avgy1h7cm8lmc0jj315o02agnc.jpg)
+![iShot_2022-10-21_08.43.06.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7cm8lmc0jj315o02agnc.jpg)
 
 菜单栏这里只讲下统计，它相对来说更加实用。统计内部有好多不同维度的分组，可以从不同维度去查看统计信息，如：流量、TCP流、UDP多播、HTTP等等。统计需要数据才可以统计出结果，可以先抓取少量的包，点击内部的流量图可以很清晰的看到网络通信
 
-![iShot_2022-10-21_08.41.25.png](http://cdn-blog.usword.cn/005HV6Avgy1h7cm6x7c2fj31wc15gb29.jpg)
+![iShot_2022-10-21_08.41.25.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7cm6x7c2fj31wc15gb29.jpg)
 
 ## 工具栏
 当进来时会进入欢迎页面，可以选择指定的网络接口(本地、wifi)或直接点击左上角的鲨鱼图标开始抓包。
 
-![iShot_2022-10-22_15.49.40.png](http://cdn-blog.usword.cn/005HV6Avgy1h7e46ruoeyj31k60nk1kx.jpg)
+![iShot_2022-10-22_15.49.40.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7e46ruoeyj31k60nk1kx.jpg)
 
 以上看到已经抓取了大量的网络数据包，下面开看看工具栏的作用
 
-![iShot_2022-10-22_15.09.52.png](http://cdn-blog.usword.cn/005HV6Avgy1h7e3neadwzj31bu04mtal.jpg)
+![iShot_2022-10-22_15.09.52.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7e3neadwzj31bu04mtal.jpg)
 
 工具栏主要使用来控制抓包的，以上的图标按顺序依次是开始抓包、停止抓包、重新捕获、捕获选项(网卡、过滤器)、打开本地捕获文件、保存捕获文件、关闭捕获、重新加载捕获文件、搜索(过滤器)，基本上的图标控制按钮就这么简单，后面的都是对界面的一些控制，没什么说的，自己动手试试即可。
 
@@ -50,13 +50,13 @@ wireshark可以用来检测网络环境、入侵侦测系统等网络层面的�
 
 在进入wireshark时的欢迎页面就可以对进行不同的接口进行选择，双击接口就可以抓取了，不需要选择时，默认会抓取所有接口的数据，可以直接点击左上角的鲨鱼按钮开始抓取。
 
-![iShot_2022-10-22_16.09.43.png](http://cdn-blog.usword.cn/005HV6Avgy1h7e4rn2cgqj31k413cdq0.jpg)
+![iShot_2022-10-22_16.09.43.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7e4rn2cgqj31k413cdq0.jpg)
 
 除了在欢迎页选择不同的网络接口外，也可以在抓包页面上方的类似设置的按钮中，也可以选择不同的接口和详细的抓包选项，如下图：
 
-![iShot_2022-10-22_16.38.32.png](http://cdn-blog.usword.cn/005HV6Avgy1h7e5lo5e3vj31f00zak92.jpg)
+![iShot_2022-10-22_16.38.32.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7e5lo5e3vj31f00zak92.jpg)
 更详细过滤一些选项
-![iShot_2022-10-22_16.02.54.png](http://cdn-blog.usword.cn/005HV6Avgy1h7e56c27ssj31hu0wk4c0.jpg)
+![iShot_2022-10-22_16.02.54.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7e56c27ssj31hu0wk4c0.jpg)
 
 上面的过滤器我选择了<u>抓取本地接口和端口为9999</u>的数据包，这里我用`Nodejs`监听`9999`端口号开启了一个web服务，接着用curl请求这个地址：
 ```sh
@@ -72,11 +72,11 @@ Connection: keep-alive
 Keep-Alive: timeout=5
 ```
 
-![iShot_2022-10-22_16.49.58.png](http://cdn-blog.usword.cn/005HV6Avgy1h7e5xien0lj31jq0kye3e.jpg)
+![iShot_2022-10-22_16.49.58.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7e5xien0lj31jq0kye3e.jpg)
 
 现在看看当前的抓包情况，可以看到已经抓取到了，原地址和目标地址都是`192.168.3.2`本机局域网地址，还看到TCP协议、HTTP协议，如果现在只想分析HTTP协议的数据包呢，就可以用上显示过滤器了。设置它很简单，在记录上方的输入框即可过滤。如下图：显示`http`协议的请求。
 
-![iShot_2022-10-22_16.57.26.png](http://cdn-blog.usword.cn/005HV6Avgy1h7e65qwx1fj31dq0awjxz.jpg)
+![iShot_2022-10-22_16.57.26.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7e65qwx1fj31dq0awjxz.jpg)
 
 以上还可以再细分，可以结合多个过滤选项使用`and`/`or`进行连接过滤，如http请求的携带了query
 ```
@@ -85,7 +85,7 @@ http and http and http.request.uri.query.parameter
 
 这里过滤选项不需要记下来，点击输入框前面的小图标，可以列出不同的选项，点击后可以在输入框中添加`.`进行属性的进一步过滤。除了这个内置的显示过滤外，可以点击菜单栏的放大镜按钮，也会显示出过滤的输入框。这里相对来说有了更广的过滤条件，可以使用显示过滤、正则搜索、十六进制、字符串等等，点击搜索即可，搜索后并不会将不在范围的记录隐藏掉，而知识将目标高亮而已。
 
-![iShot_2022-10-22_17.03.18.png](http://cdn-blog.usword.cn/005HV6Avgy1h7e6bdfsdzj31iy0a245k.jpg)
+![iShot_2022-10-22_17.03.18.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7e6bdfsdzj31iy0a245k.jpg)
 
 ## ARP协议
 通过前面的学习你应该对wireshark这款软件的抓包基本功能有了了解，现在就来使用它来抓取数据包分析吧，本文会分别介绍ARP协议、TCP协议等网络协议，让我们以ARP协议开始吧。
@@ -96,7 +96,7 @@ ARP是地址解析协议，从协议层次角度是个网络层协议，功能�
 
 上层应用程序只关心ip地址而不关系mac地址，<u>mac地址需要通过ARP协议获取目标主机地址</u>，完成数据的封装。那么ARP协议是如何获取目标主机的mac地址的，假如这里有两台机器：p1的ip地址`192.168.3.1`，p2的ip地址`192.168.3.2`，当p1想和p2通信时，从OSI协议封装顺序发送方自顶向下封装数据，ARP从上层知道了p2的目标ip地址，然后封装ARP数据包，将自己的ip地址和mac地址和对方的ip和mac占位地址封装，然后通过以太网的<u>**广播**</u>形式发送出去，交换机、网关或路由器等设备接收到广播包后，会将数据发给同一局域网的其他主机，当不同的主机接受到广播包后，会判断自己是不是这个发送者寻找的ip，如果不是则会将包丢弃掉不做任何应答；而如果当前主机和目的ip一致的话，将会接受此包并将自己的mac地址封装进去，并以单播的形式回应发送主机方，发送主机方就会知道目标ip所对应的mac地址了；如果在局域网中没找到响应的主机，交换机等会继续向上发送数据包直到找到位置。
 
-![iShot_2022-10-23_08.28.31.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h7exa6rqjlj31qo0xcjvw.jpg)
+![iShot_2022-10-23_08.28.31.jpg](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7exa6rqjlj31qo0xcjvw.jpg)
 
 上图简单的画了请求的过程：
 1. 发送方ARP广播发送数据包请求到交换机
@@ -132,13 +132,13 @@ arp -a # 查看ARP缓存表信息
 ```
 上面通过扫描工具扫描网关，再查看ARP缓存表中已经缓存了网关信息，接下来看看抓包情况：
 
-![iShot_2022-10-22_22.05.39.png](http://cdn-blog.usword.cn/005HV6Avgy1h7exxpipkwj31k60c2agi.jpg)
+![iShot_2022-10-22_22.05.39.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7exxpipkwj31k60c2agi.jpg)
 
 ARP请求：
-![iShot_2022-10-22_22.09.38.png](http://cdn-blog.usword.cn/005HV6Avgy1h7exyt2n3ej31js0i07dz.jpg)
+![iShot_2022-10-22_22.09.38.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7exyt2n3ej31js0i07dz.jpg)
 
 ARP应答：
-![iShot_2022-10-22_22.13.09.png](http://cdn-blog.usword.cn/005HV6Avgy1h7exz8j210j31k00jq13r.jpg)
+![iShot_2022-10-22_22.13.09.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7exz8j210j31k00jq13r.jpg)
 
 从抓包数据可以看到，首先`Apple`(192.168.3.8)主机以广播的形式发送数据包，ARP请求数据包中有自己的Send MAC address、ip address还有目标主机的ip`192.168.3.1`和mac地址`00:00:00:00:00:00`(这里0表示坑位待目标填写)，携带信息`Who has 192.168.3.1? tell 192.168.3.8`。当`Huawei`(网关192.168.3.1)接受到`Apple`发送来的数据包后，将自己的mac地址封装仅需其他的保持不变，再以单播的形式发送ARP Reply数据包，携带信息`192.168.3.1 at xx:xx:xx:xxx`，这样在`Apple`接收到数据包后就知道了目标的Mac地址了，就可以进行数据发送了。
 
@@ -157,7 +157,7 @@ ARP应答：
 
 ## TCP协议
 TCP协议是基于字节流面向连接、可靠的、全双工的单播协议，在通信前必须建立连接，也就是常说的三次握手，然后会断开进行四次挥手。我们来先了解下TCP头部。
-![g0ywreqte9.png](http://cdn-blog.usword.cn/005HV6Avgy1h7f8ebxzb4j30g905u40a.jpg)
+![g0ywreqte9.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7f8ebxzb4j30g905u40a.jpg)
 - 源端口、目标端口：TCP里没有源IP和目的IP，这是IP层协议的事情，源IP、源端口、目标IP、目标端口构成了TCP`四元组`，一个四元组可以标识一个连接。
 - 序列号：用于确认包的的顺序，序列号加上报文长度，用于确定传输的是哪一段数据。
 - 确认号：TCP使用确认号来告知对方下一个期望接受的序列号
@@ -192,7 +192,7 @@ app.listen(port, () => {
 ```
 
 wireshark我们选择本地回环地址网卡接口，端口选择`9999`
-![iShot_2022-10-23_15.32.54.png](http://cdn-blog.usword.cn/005HV6Avgy1h7f9dh3pluj31fm0p6476.jpg)
+![iShot_2022-10-23_15.32.54.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7f9dh3pluj31fm0p6476.jpg)
 
 ### 三次握手
 这里使用`curl`发起服务请求
@@ -202,22 +202,22 @@ wireshark我们选择本地回环地址网卡接口，端口选择`9999`
 ```
 
 看下抓包情况：
-![iShot_2022-10-23_15.45.40.png](http://cdn-blog.usword.cn/005HV6Avgy1h7f9ovwy7kj31k60dwdur.jpg)
+![iShot_2022-10-23_15.45.40.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7f9ovwy7kj31k60dwdur.jpg)
 从上图抓包记录可以将记录分为三部分：①TCP三次握手连接，②HTTP请求相关，③TCP四次挥手
 
 下面这张图概况了三次握手的摘要
-![iShot_2022-10-23_16.19.57.png](http://cdn-blog.usword.cn/005HV6Avgy1h7faoku3dyj31380lcdrx.jpg)
+![iShot_2022-10-23_16.19.57.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7faoku3dyj31380lcdrx.jpg)
 抓包记录：
-![iShot_2022-10-23_15.48.12.png](http://cdn-blog.usword.cn/005HV6Avgy1h7f9rj9jobj30ss03qtb1.jpg)
+![iShot_2022-10-23_15.48.12.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7f9rj9jobj30ss03qtb1.jpg)
 
 1. 这里看出两端通信的端口为`54987`(终端)和`9999`(服务器)，终端发送`SYN`类型请求，指明客户端的初始化序号为0，这里的0位相对值，其真实性值为`3059428279`，并告诉下次的序列号为1，如下图：
-![iShot_2022-10-23_15.52.26.png](http://cdn-blog.usword.cn/005HV6Avgy1h7f9zshnzlj311s0go102.jpg)
+![iShot_2022-10-23_15.52.26.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7f9zshnzlj311s0go102.jpg)
 
 2. 服务端接收到客户端的SYN数据包后，发送自己的应答SYN包，并指定自己的序列号0(真实值3338838224)，并将`客户端的序列号+1发送ACK=1确认包(acknumber=3059428280)`，并告诉下次序列号为1，如下图：
-![iShot_2022-10-23_16.01.16.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fa53pnh8j312a0jywnv.jpg)
+![iShot_2022-10-23_16.01.16.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fa53pnh8j312a0jywnv.jpg)
 
 3. 客户端接收到了服务端的SYN数据包和ACK包后，也将服务端的SYN+1(acknumber = 3338838225)作为ACK数据包发送给服务端，就完成了三次握手
-![iShot_2022-10-23_16.11.54.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fagk4km2j31280kewn3.jpg)
+![iShot_2022-10-23_16.11.54.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fagk4km2j31280kewn3.jpg)
 
 至于ACK值不断加1是为了标识数据包保证接收方的顺序性，因为发送时数据可能乱序，在收到数据后，TCP不会直接把数据交给上层，而会做一个缓存，直到传输完毕将包按顺序组装在上交给应用层。
 
@@ -232,19 +232,19 @@ wireshark我们选择本地回环地址网卡接口，端口选择`9999`
 当客户端请求毕后就会断开连接，由于为了提高传输效率http使用`keep-alive`会在一定时间内保持TCP的连接，这里设置HTTP头部`connection=close`表示请求完毕后立即断开连接。
 
 来看回收抓包记录：
-![iShot_2022-10-23_16.36.34.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fb5u12owj30yg04on1o.jpg)
+![iShot_2022-10-23_16.36.34.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fb5u12owj30yg04on1o.jpg)
 
 1. 在客户端请求完毕后会发送FIN报文给服务端，包含自己的序列号seq=79和ack=125来确认对方最近一次发送的数据，然后表示我没有其他请求了，这时客户端进入`FIN_WAIT1`状态
-![iShot_2022-10-23_16.44.22.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fbdyp9zzj31200hyjyp.jpg)
+![iShot_2022-10-23_16.44.22.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fbdyp9zzj31200hyjyp.jpg)
 2. 服务端接收到数据包后，发送包含自己的seq=125和ack=80的ACK报文给客户端，表示我知道了，并通知上层应用另一端发起了关闭操作，此时服务端并不会立马发起关闭操作，也就是发送服务端的FIN报文，此时服务端进入`CLOSE_WAIT`状态，客户端进入`FIN_WAIT2`状态
-![iShot_2022-10-23_16.47.36.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fbhbhh94j31240hwn4s.jpg)
+![iShot_2022-10-23_16.47.36.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fbhbhh94j31240hwn4s.jpg)
 3. 等一会时间服务端再发送包含seq=125，ack=80的FIN报文和ACK报文并期待下一次的ACK序列号为126，表示可以断开连接了，服务端进入`LAST_ACK`状态
-![iShot_2022-10-23_16.50.48.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fbkn6yf5j311g0g2wlf.jpg)
+![iShot_2022-10-23_16.50.48.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fbkn6yf5j311g0g2wlf.jpg)
 4. 客户端接收到后会在发送ack=126的ACK报文，最后断开连接，此时客户端进入`TIMED_WAIT`状态，服务端将会进入`CLOSED`状态，最后再等`2MSL`(Maximum Segment Lifetime)客户端也进入`CLOSED`状态
-![iShot_2022-10-23_16.52.15.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fbm614fxj311k0gatem.jpg)
+![iShot_2022-10-23_16.52.15.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fbm614fxj311k0gatem.jpg)
 
 通过上面的分析已经对四次挥手有了更深理解了，下面再画个图总结下
-![iShot_2022-10-23_17.17.26.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fccd75wkj31gi0qutn3.jpg)
+![iShot_2022-10-23_17.17.26.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fccd75wkj31gi0qutn3.jpg)
 
 以上就是TCP挥手的基本原理了。这里解释一下两个问题：
 1. 为什么挥手要四次，而握手是3次？
@@ -254,14 +254,14 @@ wireshark我们选择本地回环地址网卡接口，端口选择`9999`
 
 ### HTTP协议
 由于HTTP协议是基于TCP协议的，所以上面我们用`curl`发起的是HTTP请求，那我们看下http请求过程。
-![iShot_2022-10-23_17.35.00.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fcums2gkj30vq04edig.jpg)
+![iShot_2022-10-23_17.35.00.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fcums2gkj30vq04edig.jpg)
 - 首先客户端发送GET请求给服务端
 - 服务端发送TCP的ACK的数据包确认已经收到请求了
 - 服务端发送http响应，状态码200
 - 客户端接收到后，发送TCP的ACK数据包表示已经接收到了数据
 
 我们通过跟踪HTTP数据流看下细节：
-![iShot_2022-10-23_17.37.10.png](http://cdn-blog.usword.cn/005HV6Avgy1h7fcww5re2j311m0f2afi.jpg)
+![iShot_2022-10-23_17.37.10.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7fcww5re2j311m0f2afi.jpg)
 
 到这里已经了解了如何用wireshark分析ARP协议、TCP协议和HTTP协议了，当然这只是简单的讲解，其他协议都大同小异，更多功能自己可以动手试试。
 

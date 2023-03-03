@@ -18,7 +18,7 @@ head:
 
 引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体。
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkzf6w3c4lj30iz0bidgk.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkzf6w3c4lj30iz0bidgk.jpg)
 
 ## 浅拷贝与深拷贝
 
@@ -26,7 +26,7 @@ head:
 
 深拷贝和浅拷贝的示意图大致如下：
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkzf78qmgjj30dp08c3zy.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkzf78qmgjj30dp08c3zy.jpg)
 
 > 浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。但深拷贝会另外创造一个一模一样的对象，新对象跟原对象不共享内存，修改新对象不会改到原对象。
 
@@ -52,7 +52,7 @@ console.log("obj1", obj1);
 console.log("obj2", obj2);
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkzf7is8rcj30g90be0uv.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkzf7is8rcj30g90be0uv.jpg)
 
 ```js
 // 浅拷贝
@@ -77,7 +77,7 @@ console.log("obj1", obj1);
 console.log("obj3", obj3);
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkzf7ujeuwj30gz0b8aca.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkzf7ujeuwj30gz0b8aca.jpg)
 
 上面例子中，obj1 是原始数据，obj2 是赋值操作得到，而 obj3 浅拷贝得到。我们可以很清晰看到对原始数据的影响，具体请看下表：
 
@@ -128,7 +128,7 @@ console.log(arr);
 
 修改新对象会改到原对象:
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkzf84h465j30fg048t8y.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkzf84h465j30fg048t8y.jpg)
 
 ### 3.Array.prototype.slice()
 
@@ -147,7 +147,7 @@ console.log(arr);
 
 同样修改新对象会改到原对象:
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkzf8e1eydj30g203r3yo.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkzf8e1eydj30g203r3yo.jpg)
 
 >Array 的 slice 和 concat 方法不修改原数组，只会返回一个浅复制了原数组中的元素的一个新数组。
 
@@ -171,7 +171,7 @@ arr3[1] = 2;
 console.log(arr, arr3);
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkzf8o0bgdj30f504et9k.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkzf8o0bgdj30f504et9k.jpg)
 
 ## 深拷贝的实现方式
 
@@ -190,7 +190,7 @@ arr4[2].username = "duncan";
 console.log(arr, arr4);
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkzf8xu8epj30et0423zd.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkzf8xu8epj30et0423zd.jpg)
 
 原理： 用 JSON.stringify 将对象转成 JSON 字符串，再用 JSON.parse()把字符串解析成对象，一去一来，新的对象产生了，而且对象会开辟新的栈，实现深拷贝。
 
@@ -210,7 +210,7 @@ arr4[2].username = "duncan";
 console.log(arr, arr4);
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gkzf96zic7j30fr04pmxz.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gkzf96zic7j30fr04pmxz.jpg)
 
 这是因为 JSON.stringify() 方法是将一个 JavaScript 值(对象或者数组)转换为一个 JSON 字符串，不能接受函数
 

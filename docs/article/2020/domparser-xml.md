@@ -21,7 +21,7 @@ head:
 let domparser = new DOMParser();
 ```
 `domparser`是个`DOMParser`对象
-![iShot2022-04-06 22.02.43.png](http://cdn-blog.usword.cn/005HV6Avgy1h10cnj04f0j30q60ee430.jpg)
+![iShot2022-04-06 22.02.43.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h10cnj04f0j30q60ee430.jpg)
 
 ### 方法
 domparser对象拥有一个`parseFromString`的方法，使用如下：
@@ -44,7 +44,7 @@ let doc = domparser.parseFromString(string, mimeType);
 其中`Document`文档类型是会自动包含`<html>`和`<body>`标签的，而`XMLDocument`文档类型则不会主动添加`<html>`和`<body>`等标签
 
 例子：
-![iShot2022-04-06 22.14.17.png](http://cdn-blog.usword.cn/005HV6Avgy1h10czrtn93j30qc0gojwk.jpg)
+![iShot2022-04-06 22.14.17.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h10czrtn93j30qc0gojwk.jpg)
 
 ### 错误处理
 当`DOMParser`对象按指定的`mimeType`解析错误时，不会抛出任何异常，而是会返回一个给定的错误文档：
@@ -54,7 +54,7 @@ let doc = domparser.parseFromString(string, mimeType);
 <sourcetext>(a snippet of the source XML)</sourcetext>
 </parsererror>
 ```
-![iShot2022-04-06 22.17.12.png](http://cdn-blog.usword.cn/005HV6Avgy1h10d2mpudtj30qa0m012n.jpg)
+![iShot2022-04-06 22.17.12.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h10d2mpudtj30qa0m012n.jpg)
 
 ## XMLSerializer
 >XMLSerializer接口提供serializeToString() (en-US) 方法来构建一个代表 DOM 树的XML字符串。
@@ -64,7 +64,7 @@ let doc = domparser.parseFromString(string, mimeType);
 let s = new XMLSerializer();
 ```
 `s`是个`XMLSerializer`对象
-![iShot2022-04-06 22.19.45.png](http://cdn-blog.usword.cn/005HV6Avgy1h10d59333xj30q80csdk4.jpg)
+![iShot2022-04-06 22.19.45.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h10d59333xj30q80csdk4.jpg)
 
 ### 方法
 XMLSerializer对象拥有一个`serializeToString`的方法，使用如下：
@@ -77,7 +77,7 @@ const str = s.serializeToString(document);
 - document: 是一个dom节点
 
 例子：
-![iShot2022-04-06 22.25.22.png](http://cdn-blog.usword.cn/005HV6Avgy1h10db4mkdpj314w0qmqmt.jpg)
+![iShot2022-04-06 22.25.22.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h10db4mkdpj314w0qmqmt.jpg)
 
 ### 和outerHTML区别
 `serializeToString`方法和`outerHTML`有些类似，但还是有所区别，主要有有下面两个：

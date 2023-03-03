@@ -18,7 +18,7 @@ fiddler有[fiddler everywhere](https://www.telerik.com/download/fiddler-everywhe
 >注: 本文以fiddler classic版本进行介绍，以下fiddler文案全部代表的是fiddler classic
 
 ## 面板介绍
-![QQ截图20221010191428.png](http://cdn-blog.usword.cn/005HV6Avgy1h70eoatasoj31440ncqdb.jpg)
+![QQ截图20221010191428.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70eoatasoj31440ncqdb.jpg)
 当你下载安装完fiddler双击打开后，大概如上图这样；fiddler由不同的面板模块组成，主要包括：
 
 - 菜单栏
@@ -33,7 +33,7 @@ fiddler有[fiddler everywhere](https://www.telerik.com/download/fiddler-everywhe
 
 菜单栏对fiddler一般做一些全局的配置或功能，如：导入导出记录、保存、配置https、视图修改等等
 
-![menubar.png](http://cdn-blog.usword.cn/005HV6Avgy1h72crpxwf1j30ee01saae.jpg)
+![menubar.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72crpxwf1j30ee01saae.jpg)
 
 1. <u>**File**</u>：选项主要是加载最近、导入或保存存档，导入导出捕获记录，开关fiddler捕获抓包等功能；对于需要将测试抓包的一些数据分享给别人排查场景，导入导出功能便会发挥友好作用
 2. <u>**Edit**</u>：主要用来编辑抓包监控记录，如复制、粘贴、选择、查找等等，比较简单
@@ -45,7 +45,7 @@ fiddler有[fiddler everywhere](https://www.telerik.com/download/fiddler-everywhe
 ## 工具栏
 
 工具栏基本是对抓包做一些具体配置和操作，如断点、目标、查找、重放等功能，下面对常用的做简单介绍(简单的就不赘述了)
-![QQ截图20221012120535.png](http://cdn-blog.usword.cn/005HV6Avgy1h72diodhl0j314b01jmzd.jpg)
+![QQ截图20221012120535.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72diodhl0j314b01jmzd.jpg)
 
 1. **WinConfig**：针对windows做的一些配置
 2. **replay**：重放功能，重新发起请求
@@ -101,11 +101,11 @@ cls
 
 ## 详情面板
 
-![QQ截图20221012163749.png](http://cdn-blog.usword.cn/005HV6Avgy1h72ldz8drnj316y060aeo.jpg)
+![QQ截图20221012163749.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72ldz8drnj316y060aeo.jpg)
 
 1. **FiddlerScript**：用来修改脚本，fiddler是由C#写的所以要懂一些C#知识，其实和JS差不多
 2. **Filters(重要)**：用来配置相应规则来抓包，相对来说更加自由一些，使用时需要把`use filters`打开
-  ![QQ截图20221012164715.png](http://cdn-blog.usword.cn/005HV6Avgy1h72loco6gtj30l70jl453.jpg)
+  ![QQ截图20221012164715.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72loco6gtj30l70jl453.jpg)
   如上图，可以从多个维度去配置规则去抓包
     - host: 主机
       - 可以选择本地或互联网抓包
@@ -125,23 +125,23 @@ cls
     当选择好对应的配置后，要勾选`Use Filters`选项，点击面板右上角`Actions`的`Run filterset now`
 
 3. **Inspectors**：当点击具体的抓包信息后，点击`Inspectors`可以查看请求的具体信息
-  ![QQ截图20221012184349.png](http://cdn-blog.usword.cn/005HV6Avgy1h72p0y94rvj30lb0kugvj.jpg)
+  ![QQ截图20221012184349.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72p0y94rvj30lb0kugvj.jpg)
 
     主要分为请求报文和响应报文，可以按照不同的格式去查看内容，当打了断点时，还可以修改请求内容
 4. **AutoResponder**：自动响应请求内容，可以添加多个规则针对不同的请求做不同的响应
-  ![QQ截图20221012184905.png](http://cdn-blog.usword.cn/005HV6Avgy1h72p6hwsf4j30l308an0q.jpg)
+  ![QQ截图20221012184905.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72p6hwsf4j30l308an0q.jpg)
     如上图，在请求`http://localhost:10000`时，返回本地图片，达到篡改目的
 
     除了返回本地资源文件外，还可以模拟其他操作，如：返回不同状态码、重定向、请求代理等等
-    ![QQ截图20221012185428.png](http://cdn-blog.usword.cn/005HV6Avgy1h72pdecqsdj30l00i7q96.jpg)
+    ![QQ截图20221012185428.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72pdecqsdj30l00i7q96.jpg)
     
 
     >注：需要勾选`Enble Rules`才会工作，如果不影响其他的请求，需勾选`Unmatched request passthrough`选项，不然其他的也会被阻塞；当不用的时候记得关掉面板规则，防止影响其他操作
 
 5. **Composer**：用fiddler发送请求，可以自定义请求，修改请求内容，点击`Execute`发送请求；也可以将左侧的抓包记录鼠标按住拖到当前面板
-  ![QQ截图20221012190550.png](http://cdn-blog.usword.cn/005HV6Avgy1h72pnu76xyj30l40azdn1.jpg)
+  ![QQ截图20221012190550.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72pnu76xyj30l40azdn1.jpg)
     如上图，在请求头部添加自定义的字段`name:小明`，点击右上角执行，请求便会发送出去，执行结果如下图：会看到请求头中会携带刚刚添加的字段
-  ![QQ截图20221012190740.png](http://cdn-blog.usword.cn/005HV6Avgy1h72ppqcuw9j30l30j2gug.jpg)
+  ![QQ截图20221012190740.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72ppqcuw9j30l30j2gug.jpg)
 
 ### 面板小结
 
@@ -156,7 +156,7 @@ cls
 
 这里以IPhone为例，其他大同小异
 1. 首先在菜单栏中一次点击`Tools > Options`弹出options面板，选择`Connections`Tab，可以看到fiddler监听的端口为`8088`(不同版本可能不同)，你也可以修改它；下面有一个选项为`Allow remote computers to connect`勾选上☑️，允许远程连接；右侧有一个`Act as system proxy`让fiddler作为系统代理(默认)，点击保存后最好重启下fiddler，如果后续配置后正常话不重启也行，如下图：
- ![QQ截图20221012191525.png](http://cdn-blog.usword.cn/005HV6Avgy1h72pyn1uyzj30fp0c779p.jpg)
+ ![QQ截图20221012191525.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72pyn1uyzj30fp0c779p.jpg)
 
 2. 为了不让其他本地请求影响到我们分析抓包，这里把抓包改为只抓远程的包。打开`rules > custom rules`，搜索`static function OnBeforeRequest`，将以下代码粘贴进去，保存配置后最好重启一下
   ```c#
@@ -169,51 +169,51 @@ cls
   ```
 
 3. 远程连接fiddler所在的计算机，这里以IPhone为例；首先查询计算机ip，可以通过fiddler右上角计算机图标提示，也可以在终端输入`ipconfig`查询或其他方法，如下图：
- ![QQ截图20221012191720.png](http://cdn-blog.usword.cn/005HV6Avgy1h72q0phv0oj30c9070dhm.jpg)
+ ![QQ截图20221012191720.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72q0phv0oj30c9070dhm.jpg)
 
-  ![QQ截图20221012191812.png](http://cdn-blog.usword.cn/005HV6Avgy1h72q0w6n1sj30ie06rjs6.jpg)
+  ![QQ截图20221012191812.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72q0w6n1sj30ie06rjs6.jpg)
  手机在同一局域网下，配置wifi代理，找到和电脑连接相同的wifi，点击wifi，配置代理选择手动，输入刚刚查询的ip和fiddler监听的端口，点击保存
- ![IMG_0556.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h72u78gr62j30n00qt3zr.jpg)
+ ![IMG_0556.jpg](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72u78gr62j30n00qt3zr.jpg)
 
   打开Safari输入网址`http://192.168.11.224:10000`回车后，查看fiddler抓包记录
 
-   ![1525E81FFFF883D1CAE399097D7DDF52.png](http://cdn-blog.usword.cn/005HV6Avgy1h73pfw5tn6j30n00cdjrj.jpg)
+   ![1525E81FFFF883D1CAE399097D7DDF52.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73pfw5tn6j30n00cdjrj.jpg)
 
-  ![QQ截图20221013154539.png](http://cdn-blog.usword.cn/005HV6Avgy1h73pi66t4kj30z30900xz.jpg)
+  ![QQ截图20221013154539.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73pi66t4kj30z30900xz.jpg)
 
   重新输入输入`https://blog.usword.cn`
-  ![C8A68661E2.png](http://cdn-blog.usword.cn/005HV6Avgy1h73pm8kyoaj30n00gxdge.jpg)
+  ![C8A68661E2.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73pm8kyoaj30n00gxdge.jpg)
 
   再看看抓包记录，会发现啥记录都没有
 
-  ![QQ截图20221013155018.png](http://cdn-blog.usword.cn/005HV6Avgy1h73pmrzkj4j30h808375m.jpg)
+  ![QQ截图20221013155018.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73pmrzkj4j30h808375m.jpg)
 
   `https://blog.usword.cn`是https协议地址，fiddler默认不会抓取https的，需要手动打开配置选项，而且需要安装fiddler证书为根证书，接下来一起配置https
 
 ## 配置HTTPS
 
-![QQ截图20221013164038.png](http://cdn-blog.usword.cn/005HV6Avgy1h73r35d3enj30sf0cywff.jpg)
+![QQ截图20221013164038.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73r35d3enj30sf0cywff.jpg)
 
 首先打开`Tools > Options > HTTPS`，将下图中的选项全部勾选，为方便测试`Descript HTTPS traffic`选择`from remote clients only`，如下图：
 
-![QQ截图20221013155947.png](http://cdn-blog.usword.cn/005HV6Avgy1h73pwn5dmzj30g90c1gpu.jpg)
+![QQ截图20221013155947.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73pwn5dmzj30g90c1gpu.jpg)
 
 在Safari中访问远程fiddler地址`192.168.11.224:8088`，点击允许下载证书
-![5DD9EE10FD.png](http://cdn-blog.usword.cn/005HV6Avgy1h73q8hmbq5j30n00megne.jpg)
+![5DD9EE10FD.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73q8hmbq5j30n00megne.jpg)
 
-![B4D670F449.png](http://cdn-blog.usword.cn/005HV6Avgy1h73q9nfd59j30n00urtan.jpg)
+![B4D670F449.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73q9nfd59j30n00urtan.jpg)
 
 打开手机设置，找到描述文件，点击信任安装证书iphone要输入手机密码(不同手机型号操作有差异)，最后会看到已验证
 
-![FB1F83102D9AF2773325155581A75FE7.png](http://cdn-blog.usword.cn/005HV6Avgy1h73qacxc4xj30n00madgh.jpg)
+![FB1F83102D9AF2773325155581A75FE7.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73qacxc4xj30n00madgh.jpg)
 
-![A7D37E643BF4136954A5AABF8F78C20E.png](http://cdn-blog.usword.cn/005HV6Avgy1h73qao8qylj30n00piwfe.jpg)
+![A7D37E643BF4136954A5AABF8F78C20E.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73qao8qylj30n00piwfe.jpg)
 
-![2F6F6322E2EC59919FD479FAA5D5E20D.png](http://cdn-blog.usword.cn/005HV6Avgy1h73qatqbquj30n00lgaaq.jpg)
+![2F6F6322E2EC59919FD479FAA5D5E20D.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73qatqbquj30n00lgaaq.jpg)
 
 现在打开Safari重新访问`https://blog.usword.cn`查看抓包记录，会发现已经抓到了
 
-![20221013161635.png](http://cdn-blog.usword.cn/005HV6Avgy1h73qe4pb57j30gs066adb.jpg)
+![20221013161635.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h73qe4pb57j30gs066adb.jpg)
 
 当打开抖音App发现抓取不到信息，这是因为现在有的app已经有了反抓包手段
 

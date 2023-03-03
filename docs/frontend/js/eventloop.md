@@ -96,7 +96,7 @@ console.log(bar(7)); // 返回 42
 
 EventLoop就是通过事件循环的机制当执行栈空闲时，主线程判断任务队列中是否有合适的任务，取出最老的一个任务将其压入调用栈中执行，执行完后再次出栈，如此反复不断循环，就是所谓的事件循环机制EventLoop，如下图。
 
-![eventloop.png](http://cdn-blog.usword.cn/005HV6Avgy1h7z3bthpsfj30bm0a0go1.jpg)
+![eventloop.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7z3bthpsfj30bm0a0go1.jpg)
 
 ## MacroTask和MicroTask
 浏览器EventLoop会有一个或多个Macro任务队列，存放着来自不同任务源(Task Source)的任务，这里有人喜欢将其作为队列结构遵循先进先出的规则，事实上却是个[Set集合](https://html.spec.whatwg.org/multipage/webappapis.html#event-loops)，每次循环都会选择不同类型任务队列的第一个可执行任务。
@@ -121,7 +121,7 @@ MacroTask Source的定义非常广泛，常见的键盘、鼠标、Ajax、setTim
 <u>那么为什么任务队列中会有宏任务(Macro Task)和微任务(Mirco Task)呢？其目的就是让不同类型的任务源有不同的执行优先级。</u>
 
 在EventLoop中的每一次循环成一个`tick`，每一次tick都会先执行同步任务，然后查看是否有微任务，将所有的微任务在这个阶段执行完，如果执行微任务阶段再次产生微任务也会把他执行完（<u>每次tick只会有一个微任务队列</u>），接下来会<u>可能</u>会进行视图的渲染，然后再从MacroTask队列中选择一个合适的任务放入执行栈执行，然后重复前面的步骤不断循环，再次拿出经典图：
-![eventloop.png](http://cdn-blog.usword.cn/005HV6Avgy1h7z3bthpsfj30bm0a0go1.jpg)
+![eventloop.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7z3bthpsfj30bm0a0go1.jpg)
 
 <u>**需要注意的是所谓的`微任务`并不会交给其他线程处理，而是V8自己内部的实现，微任务V8会将其放入一个专门的队列，待当前同步任务执行完后，便会清空当前队列**</u>，而MacroTask会交给其他线程去处理。
 
@@ -174,7 +174,7 @@ console.log('script end');
 
 通过一步一步的分析相信你已经对其执行过程有了初步认识，为了加深大家的印象，这里录制了一个视频来动画展示其运行过程，[点击这里查看](https://www.bilibili.com/video/BV1RW4y147Xv)
 
-![iShot_2022-11-12_10.59.25.png](http://cdn-blog.usword.cn/005HV6Avgy1h825tdqysdj31920pg7l9.jpg)
+![iShot_2022-11-12_10.59.25.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h825tdqysdj31920pg7l9.jpg)
 
 ## 定时器误差
 我们已经知道异步的MacroTask其实会交给其它线程去处理，当执行栈中的代码执行完后，才会通过EventLoop去获取下一个Task执行。而定时任务(如：setTimeout)当指定了时间后执行，若执行栈的任务还没有执行完，就算定时器时间到了，也永远不会去执行，直到清空当前执行栈后才会执行，来看下面代码：
@@ -207,7 +207,7 @@ for(let count = 0;count<10000000000;count++);
   }, 4);
 </script>
 ```
-![](http://cdn-blog.usword.cn/2022-11-10-08-25-41.gif)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/2022-11-10-08-25-41.gif)
 上面代码每次都是宏任务会经历10次tick，dom也会更新10次，而实际图中也就一两次，这再次说明了更新视图会在合适的点进行更新，一般都是根据系统帧率60fps，若果用setTimeout做动画时间设置成17ms，应该不会掉太多帧，但setTimeout可能会被执行栈延迟调用，所以用setTimeout做动画掉帧的可能性非常大。
 
 ## requestAnimationFrame
@@ -251,7 +251,7 @@ rF();
 
 Node中的事件循环机制是基于[Libuv(Asynchronous I/O)](https://libuv.org)引擎实现的，v8引擎会分析对应的js代码然后调用node的api，而node又被libuv驱动执行对应的任务，并把任务放入到对应的任务队列等待主线程的调度，因此node的EventLoop是libuv里实现的，看下node原理图：
 
-![node-system.png](http://cdn-blog.usword.cn/005HV6Avgy1h817cbtjngj30i5074di0.jpg)
+![node-system.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h817cbtjngj30i5074di0.jpg)
 
 ### 执行阶段
 
@@ -264,7 +264,7 @@ node事件循环机制中和浏览器的不太一样，在node中一般不说微
 - **`close`**：执行socket等关闭操作回调
 
 以下是来自官网的一张[事件循环图](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#event-loop-explained):arrow_down:
-![node-eventloop.png](http://cdn-blog.usword.cn/005HV6Avgy1h815w92ru3j30ka0aw40g.jpg)
+![node-eventloop.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h815w92ru3j30ka0aw40g.jpg)
 
 以上每个阶段的任务执行完在进入下一个阶段前会先清空当前阶段的微任务队列，而老版本的node则会先把当前阶段的代码回调执行完后才会执行微任务队列，如下代码：
 ```js

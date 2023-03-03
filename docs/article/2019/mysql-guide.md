@@ -20,17 +20,17 @@ head:
 `MySQL Community Server`社区免费版，打开下载页面后，选择不同的操作系统，点击下面不同格式的安装包，如下：下载`8.0.22版本的dmg安装包`，
 点击下载即可
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zdwp0nsj32761f0ar7.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zdwp0nsj32761f0ar7.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zetgs71j32761f0h5c.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zetgs71j32761f0h5c.jpg)
 
 2. 安装
 
 等待下载完成后双击安装包进行安装(Mac双击后点击里面的*.pkg安装包)，现在就进入MySQL的安装界面了
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zh66pyxj31lc0w0n6v.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zh66pyxj31lc0w0n6v.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zhof8hfj314o0uwgxu.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zhof8hfj314o0uwgxu.jpg)
 
 接下来就是傻瓜式的安装，一直点继续就可以了
 
@@ -39,23 +39,23 @@ head:
 这个版本会让你自己设置密码，至少8位，设置后安装完成后登录使用
 :::
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zkc2srej314o0uw4cc.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zkc2srej314o0uw4cc.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zkjmqqdj314o0uw17n.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zkjmqqdj314o0uw17n.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zkr4mojj314o0uwk29.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zkr4mojj314o0uwk29.jpg)
 
 最后点击安装，等待安装完成...
 
 安装完成后，打开我们的`系统偏好设置`就多出现MySQL服务，默认MySQL的服务开启状态
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zo2j7vrj317c17yaxx.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zo2j7vrj317c17yaxx.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zovitn7j317c11g4ex.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zovitn7j317c11g4ex.jpg)
 
 MYSQL的默认安装路径
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl4zpwgxwej317c11gash.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl4zpwgxwej317c11gash.jpg)
 
 ## 终端配置MySQL
 打开终端，Mac目前基本都是zsh终端，因此我们在`~`目录进行zsh配置，添加MySQL环境变量，如果没有`.zshrc`配置文件，自行创建即可
@@ -66,21 +66,21 @@ vim .zshrc
 export PATH=${PATH}:/usr/local/mysql/bin 
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl50t01q8tj31ia1047lt.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl50t01q8tj31ia1047lt.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl50t9fsn0j31l412iqv5.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl50t9fsn0j31l412iqv5.jpg)
 
 环境变量配置好后，就可以进行终端登录了，如下图表示配置成功(输入安装过程中创建的密码)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl50vcigobj31ia104nd8.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl50vcigobj31ia104nd8.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl50vlfz3fj31ia104e1e.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl50vlfz3fj31ia104e1e.jpg)
 
 ## 工具推荐
 推荐一个强大的数据可视化工具：`Navicat Premium`，这款工具不仅可以连接MySQL数据库，
 也可以连接SQL Server等数据库，非常强大，唯一一点不好就是收费，可以自行百度下载破解版，这里我下载了15.0版本的
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52a4201lj32341g8qkr.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52a4201lj32341g8qkr.jpg)
 
 ## 基本操作
 
@@ -101,7 +101,7 @@ show databases;
 create database demo;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl513ywzicj31ia104e33.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl513ywzicj31ia104e33.jpg)
 
 ## 删除数据库
 ```shell script
@@ -110,7 +110,7 @@ create database demo;
 drop database demo;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl51n7a5tpj31ia104aub.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl51n7a5tpj31ia104aub.jpg)
 
 使用数据库
 ```bash
@@ -119,7 +119,7 @@ drop database demo;
  use demo;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl51psr1rsj31ia104h62.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl51psr1rsj31ia104h62.jpg)
 
 
 2. 表的操作
@@ -128,7 +128,7 @@ drop database demo;
 show tables;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl51uj9ab2j31ia104as7.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl51uj9ab2j31ia104as7.jpg)
 
 我去没一个表，那就创建表吧...
 
@@ -147,9 +147,9 @@ create table user (
 ) ENGINE=InnoDB CHARSET=UTF8;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl51zf0psnj31ia104nj6.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl51zf0psnj31ia104nj6.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52bmvlqqj31wm0qa0yh.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52bmvlqqj31wm0qa0yh.jpg)
 
 >MySQL常用数据类型传送门: [常用数据类型](https://www.cnblogs.com/nick-huang/p/6697010.html)
 
@@ -161,7 +161,7 @@ create table user (
 drop table user;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl5234h746j31ia104h82.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl5234h746j31ia104h82.jpg)
 
 ## 插入数据 Insert into
 1.全部插入
@@ -171,9 +171,9 @@ drop table user;
 insert into user values (1, 'Peachick', 10, NOW());
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52crr1t2j31ia1047r3.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52crr1t2j31ia1047r3.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52dekd9xj317y0b20ut.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52dekd9xj317y0b20ut.jpg)
 
 2.选择插入对应值
 >选择插入，键值是对应的，因此值可以根据键的顺序，填写值
@@ -184,9 +184,9 @@ insert into user values (1, 'Peachick', 10, NOW());
 insert into user (name, birth) values ("Peachick2", NOW());
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52hcc6pnj310c04itdw.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52hcc6pnj310c04itdw.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52htmpdhj31ei0ban00.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52htmpdhj31ei0ban00.jpg)
 
 刷新发现多了一条数据...
 
@@ -199,9 +199,9 @@ insert into user (name, birth) values ("Peachick2", NOW());
 insert into user (name, age, birth) values ('Peachick3', 11, NOW()), ('Peachick4', 12, NOw());
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52mgxnu0j31c406egsd.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52mgxnu0j31c406egsd.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52mu74xgj31gk0ec41x.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52mu74xgj31gk0ec41x.jpg)
 
 >插入多条，前面的语法和前面插入单条是一样的，VALUES之后的，每一个小括号算是一条数据，每条数据之间用逗号隔开就行了。
 
@@ -213,9 +213,9 @@ insert into user (name, age, birth) values ('Peachick3', 11, NOW()), ('Peachick4
 update user set name = 'Peachick1' where id = 1;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52sj6ubyj313o05s0zm.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52sj6ubyj313o05s0zm.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52swgmmhj31hg0eqtby.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52swgmmhj31hg0eqtby.jpg)
 
 2.修改对个值
 
@@ -224,9 +224,9 @@ update user set name = 'Peachick1' where id = 1;
 update user set name = 'Peachick02', age = 2 where id = 2;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52vgwe94j312g05iafg.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52vgwe94j312g05iafg.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52w0xp4jj31gy0du0vy.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52w0xp4jj31gy0du0vy.jpg)
 
 3.不带条件
 
@@ -234,9 +234,9 @@ update user set name = 'Peachick02', age = 2 where id = 2;
 update user set name = 'Peachick', age = 0, birth = NOW();
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52yauhb9j311k05mdma.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52yauhb9j311k05mdma.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl52yhq1fgj31cq0cqq62.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl52yhq1fgj31cq0cqq62.jpg)
 
 我们会发现表中的数据全被改了，有点流氓...，所以在修改数据库时一定要加上`条件语句`!!!
 
@@ -247,9 +247,9 @@ update user set name = 'Peachick', age = 0, birth = NOW();
 delete from user where id = 1;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl5333qtyrj312i04gdl0.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl5333qtyrj312i04gdl0.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl533fkuabj31by0b6go4.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl533fkuabj31by0b6go4.jpg)
 
 可以看出id为1的数据被删除了...
 
@@ -259,9 +259,9 @@ delete from user where id = 1;
 delete from user;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl535lt2uwj30xu04cwiv.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl535lt2uwj30xu04cwiv.jpg)
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl535uedt8j319m0csaco.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl535uedt8j319m0csaco.jpg)
 
 我去数据全部被删除了，有点魔鬼!!! 所以在删除数据时，一定要非常谨慎的加上条件，否则会产生很严重的后果...
 
@@ -272,7 +272,7 @@ delete from user;
 select * from user;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl53b4l6jij30su0bqdr5.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl53b4l6jij30su0bqdr5.jpg)
 
 2. 查询指定字段
 ```shell script
@@ -280,7 +280,7 @@ select * from user;
 select name, age from user;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl53doevwuj30uy0bi48a.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl53doevwuj30uy0bi48a.jpg)
 
 3. 条件查询
 ```shell script
@@ -288,7 +288,7 @@ select name, age from user;
 select name, age from user where id = 1;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl53fk0aiuj30u2086qag.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl53fk0aiuj30u2086qag.jpg)
 
 ## 查询排序 Order By
 1. 单个字段
@@ -297,7 +297,7 @@ select name, age from user where id = 1;
 select * from user order by age DESC;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl53jsdjkqj30s40mmx0p.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl53jsdjkqj30s40mmx0p.jpg)
 
 通过观察上述两个语句的执行结果，我们可以得出以下几点结论：
 - MYSQL的排序命令是ORDER BY + 排序字段 + 排序方式,这个命令要加在语句的最后面（如果带了查询条件，查询条件应该放到ORDER BY 前面，否则会报错）
@@ -311,7 +311,7 @@ select * from user order by age DESC;
 select * from user order by age DESC, id ASC;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl53mtjkj6j30u20b4qdy.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl53mtjkj6j30u20b4qdy.jpg)
 
 
 通过观察上述两条语句的结果可以得出：
@@ -326,14 +326,14 @@ select 字段名 (as) "别名", ... from 表名;
 ```
 `as`可以省略
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl9uczc3avj30rs0ayn6s.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl9uczc3avj30rs0ayn6s.jpg)
 
 
 ```shell script
 select 字段名 (as) "别名", ... from 表名 "别名";
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gl9ug4xvi1j30ts0aowlf.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gl9ug4xvi1j30ts0aowlf.jpg)
 
 
 ## 常用函数
@@ -342,7 +342,7 @@ select 字段名 (as) "别名", ... from 表名 "别名";
 select count(*) from 表名;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1glc46kve01j310g07uwju.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glc46kve01j310g07uwju.jpg)
 
 >应用场景：统计人数，点赞量。。。
 
@@ -351,7 +351,7 @@ select count(*) from 表名;
 select SUM(字段名) from 表名;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcph59rjlj30qe07maex.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcph59rjlj30qe07maex.jpg)
 
 >应用场景：sum()一般用于金钱、分数等数据的计算，比如求平台用户每个月收入多少钱，支出多少钱等等。另外sun()函数不仅可以求数字类型的字段的和还可以对字符串进行求和，但是它会只计算能求和的数据的和。
 
@@ -360,7 +360,7 @@ select SUM(字段名) from 表名;
 select AVG(字段名) from 表名;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcpkmo0yxj30ty08g0xt.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcpkmo0yxj30ty08g0xt.jpg)
 
 4.其它
 
@@ -628,17 +628,17 @@ select 字段名 from 表名 group by 字段名,...;
 ```
 
 先查下表里的数据
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcq75e7pnj30x20g2doz.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcq75e7pnj30x20g2doz.jpg)
 
 接下来分组查询
 
 1.单个字段与多个字段
 
 - 根据`age`字段
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcq9b4c40j312y0amk0p.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcq9b4c40j312y0amk0p.jpg)
 
 - 根据`age和name`字段
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcqa4gralj31300gu18g.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcqa4gralj31300gu18g.jpg)
 
 :::tip 总结
 从上面的两个分组查询我们可以得出结论：`group by`会根据后面的字段进行分组，一样的为一组，不一样就是不同的组，要查询的字段必须是 `group by`后面的字段
@@ -647,13 +647,13 @@ select 字段名 from 表名 group by 字段名,...;
 - 应用:
 查询每个年龄的人数
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcqel8g6uj315m0ayn7u.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcqel8g6uj315m0ayn7u.jpg)
 
 2.多个字段的顺序
 以`age和name`两个字段分组，不同的排序又会是啥样子呢？
 - age, name 顺序
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcqrtcuicj314o0vsx29.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcqrtcuicj314o0vsx29.jpg)
 
 可以发现，如果是age在前面就主要以age来进行分组，然在此基础上再以name为基础再继续分组，如果是name在前面就主要以name来进行分组，然在此基础上再以age为基础再继续分组
 
@@ -662,7 +662,7 @@ select 字段名 from 表名 group by 字段名,...;
 select * from 表名 where 字段 like 值(%, _, regexp);
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcwe96vzlj310k0vo1kx.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcwe96vzlj310k0vo1kx.jpg)
 
 - 如果%通配符放到结尾，开头是固定内容，那就是查找以这个内容开头的数据，如’大%’
 - 如果%通配符放到开头，结尾是固定内容，那就是查找以这个内容结尾的数据，如’%叔’
@@ -686,7 +686,7 @@ CREATE TABLE `student` (
 // 插入数据
 INSERT INTO student (name, age, class_id) values ('喜羊羊', 10, 2), ('美羊羊', 9, 1), ('懒羊羊', 9, 3), ('沸羊羊', 11, 2), ('老村长', 33, 2), ('灰太狼', 10, 3), ('红太狼', 9, 1);
 ```
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcx3btz5dj30py0fugpc.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcx3btz5dj30py0fugpc.jpg)
 
 - 班级表
 ```sh
@@ -699,30 +699,30 @@ CREATE TABLE `class` (
 // 插入数据
 INSERT INTO class (name) values ('仙女班'), ('汉子班'), ('娘炮班');
 ```
-![](http://cdn-blog.usword.cn/005HV6Avgy1glcx3ibf9zj30ni0d8770.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glcx3ibf9zj30ni0d8770.jpg)
 
 1. 左联接 LEFT JOIN
-![](http://cdn-blog.usword.cn/005HV6Avgy1gld5kip3j5j31bo0f8atd.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gld5kip3j5j31bo0f8atd.jpg)
 
 左联查询的定义：首先取出表1（LEFT JOIN左边的表格）中所有数据和表2（LEFT JOIN右边的表格）中与表1所取数据相对应的所有数据，合成新的表格，没有数据则显示NULL。表1的数据为主，并显示在合成表格的左边。
 
 2. 右联接 RIGHT JOIN
-![](http://cdn-blog.usword.cn/005HV6Avgy1glkcubfgx4j31by0ee161.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glkcubfgx4j31by0ee161.jpg)
 
 右联查询的定义：首先取出表1（RIGHT JOIN右边的表格）中所有数据和表2（RIGHT JOIN左边的表格）中与表1所取数据相对应的所有数据，合成新的表格，没有数据则显示NULL。表2的数据为主，并显示在合成表格的右边。
 
 3. 内联 INNER JOIN
-![](http://cdn-blog.usword.cn/005HV6Avgy1glkcx34dm4j31c00eiarg.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glkcx34dm4j31c00eiarg.jpg)
 
 内联理解起来比左右联更简单，就是把两个表中，class的id和student的class_id都存在并且两个相等的数据连接成一条数据。因此在数据库中有前面两种连接有部分为null的数据这一整行都没有了。
 
 
 ## 联表查询综合应用
 现在创建一张老师的表，一个老师只能交一个班级
-![](http://cdn-blog.usword.cn/005HV6Avgy1glkt2avbddj30pw0eqq69.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glkt2avbddj30pw0eqq69.jpg)
 
 如果要用联表查询查出每个学生所在的班级，还有老师，以及老师所教的课程
-![](http://cdn-blog.usword.cn/005HV6Avgy1glkt174kplj31bu0gk4fv.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glkt174kplj31bu0gk4fv.jpg)
 这样联表的思路是，首先先用student表和class表联表，以联表之后的大表作为一张虚拟表，再用这张虚拟表和teacher表联表，最后查询出结果。
 那么这样一来，和第三张表联表的方式可以是右联还可以是自联，甚至还可以是其它后面要学到的查询方式
 
@@ -731,35 +731,35 @@ INSERT INTO class (name) values ('仙女班'), ('汉子班'), ('娘炮班');
 现在有一个这样的需求，假如有一张成绩表，里面是每个同学课程1的分数和课程2的分数，现在要查出课程2比课程1分数要高的学生
 
 先创建一个分数表：
-![](http://cdn-blog.usword.cn/005HV6Avgy1glktc0w94bj30wu0dujug.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glktc0w94bj30wu0dujug.jpg)
 
 查询每个学生课程2分数高于课程1的学生：
-![](http://cdn-blog.usword.cn/005HV6Avgy1glkthdofyzj31c40aek3x.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glkthdofyzj31c40aek3x.jpg)
 
 这样就行啦。通过语句可以看出，其实这是一个内联，只不过是score表自己和自己联表，因此自联和左联右联不一样，所以单独开了一张出来没有和左联这几章一起写。自联其实是一种联表的用法，并不是一种联表方式，原理就是让一张表自己和自己联表，联表的方式可以是内联，也可以是左联右联。自联的用途也挺广泛的，除了文中这样，还有别的场景可以使用，比如有一个职工表，里面有姓名，职位，部门，还有上级id，如果是最高级，上级id是0，以及多级回复等等场景，都可以通过自联的方式获取想要的结果。
 
 ## 子查询
 还是班级表，查询每个学生所在的班级，除了联表查询，也可以子查询：
-![](http://cdn-blog.usword.cn/005HV6Avgy1glktovfluwj31bw086104.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glktovfluwj31bw086104.jpg)
 
 ## 分页 LIMIT
 ```sh
 select * from 表名 LIMIT 起始位置，查询条数;
 ```
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1glkttrpwkzj30uq08wjz2.jpg)
-![](http://cdn-blog.usword.cn/005HV6Avgy1glktty4bpnj30zk09on6l.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glkttrpwkzj30uq08wjz2.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glktty4bpnj30zk09on6l.jpg)
 
 后面的依次类推。
 可以看出，分页，主要是用了LIMIT关键字。这个关键字是这样的:LIMIT 开始位置,查询条数，
 比如LIMIT 0,2说明是从第一条开始查询(下标都是由0开始)，查询两条，那么返回的结果就是第一条和第二条。我们可以吧这个看做是一页，那么下一页就是第三条和第四条了，那就是LIMIT 2,2。
 
 LIMIT也可以和我们上述的其它语句一起结合使用，并且一定是放在最后面的，比如：
-![](http://cdn-blog.usword.cn/005HV6Avgy1glktwtyi53j313m0ikasa.jpg)
-![](http://cdn-blog.usword.cn/005HV6Avgy1glktyb5qjsj319o09awq7.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glktwtyi53j313m0ikasa.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glktyb5qjsj319o09awq7.jpg)
 
 如果不把limit放在最后面就会报错：
-![](http://cdn-blog.usword.cn/005HV6Avgy1glktzcuxhxj31bq06ownx.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1glktzcuxhxj31bq06ownx.jpg)
 语法错误...
 
 ## 外键

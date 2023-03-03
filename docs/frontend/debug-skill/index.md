@@ -31,15 +31,15 @@ node inspect index.js
 打开浏览器输入`chrome://inspect`，在`Devices`tab中的`Discover network targets`中配置`localhost:9229`，端口对应node的debugger server的端口就可以了，配置好后，就会发现下面`Remove Target`里会发现node的debugger server，点击`inspect`会打开新的调试窗口，就可以在浏览器中调试了，和在浏览器调试一模一样，关闭调试窗口后，会结束调试
 
 启动：
-![1.png](http://cdn-blog.usword.cn/005HV6Avgy1h70daxjwpfj314c0l07d4.jpg)
-![5.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dbimbttj31ak0uanbb.jpg)
+![1.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70daxjwpfj314c0l07d4.jpg)
+![5.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dbimbttj31ak0uanbb.jpg)
 上面两种启动都会在首行断住
 
 用Chrome DevTools连接：
-![2.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dbrbuk0j31c40vwgud.jpg)
-![3.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dbykwl6j31360kudml.jpg)
+![2.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dbrbuk0j31c40vwgud.jpg)
+![3.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dbykwl6j31360kudml.jpg)
 调试：
-![4.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dc72q8yj319613sawp.jpg)
+![4.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dc72q8yj319613sawp.jpg)
 
 ### node debugger模式+vscode调试
 同上，用node debugger模式启动，会开启node debugger server，然后通过vscode连接这个server就可以调试了
@@ -69,8 +69,8 @@ node inspect index.js
 ```
 配置好`client server`后，点击`vscode 左侧 debugger`选项切换成调试面板，做上面like播放键就可以看到刚刚配置的调试名字，如果有多个时，可以选择，和其他IDE调试类似，点击播放键，就开始调试了，这个就直接在vscode中调试了，调试面板中会和Chrome一样有`作用域`、`变量`、`调用堆栈`等信息，如果你熟悉Java的IDE调试这个没啥问题
 
-![7.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dcx1uaoj31cs0kathm.jpg)
-![6.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dd2i6dej31wa1bqe81.jpg)
+![7.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dcx1uaoj31cs0kathm.jpg)
+![6.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dd2i6dej31wa1bqe81.jpg)
 
 ### 仅vscode调试
 上面都是要在命令行启动node debugger模式开启debugger server，在启动一个server client去连接server，总体来说有点麻烦，可以用vscode将两者异步完成
@@ -91,7 +91,7 @@ node inspect index.js
   ]
 }
 ```
-![8.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dd8w41uj31wa18ke54.jpg)
+![8.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dd8w41uj31wa18ke54.jpg)
 
 ### 调试需编译的程序
 
@@ -110,8 +110,8 @@ function clickCB(e) {
 }
 
 ```
-![22.png](http://cdn-blog.usword.cn/005HV6Avgy1h70ddh034nj30y00yu1cn.jpg)
-![23.png](http://cdn-blog.usword.cn/005HV6Avgy1h70ddm7lcqj30yc0bwq9i.jpg)
+![22.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70ddh034nj30y00yu1cn.jpg)
+![23.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70ddm7lcqj30yc0bwq9i.jpg)
 
 2. 条件断点
 同样这里也是先在源码中指定位置debugger，或者如果你的源码并没有采取打包，源码好找的情况下可以直接在浏览器中找到对应的js文件直接打个条件注释断点就行
@@ -122,12 +122,12 @@ const add = (x, y) => {
   return x + y;
 }
 ```
-![24.png](http://cdn-blog.usword.cn/005HV6Avgy1h70ddthaabj30qw0e2427.jpg)
-![25.png](http://cdn-blog.usword.cn/005HV6Avgy1h70ddzfrv7j30r40fiq63.jpg)
-![26.png](http://cdn-blog.usword.cn/005HV6Avgy1h70de4pbf9j30xo0ekadq.jpg)
-![27.png](http://cdn-blog.usword.cn/005HV6Avgy1h70de9swgij30r00f0dj2.jpg)
+![24.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70ddthaabj30qw0e2427.jpg)
+![25.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70ddzfrv7j30r40fiq63.jpg)
+![26.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70de4pbf9j30xo0ekadq.jpg)
+![27.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70de9swgij30r00f0dj2.jpg)
 3. DOM断点
-![28.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dee3faij30uw0vk17p.jpg)
+![28.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dee3faij30uw0vk17p.jpg)
 DOM断点只能在浏览器中调试，有三种：
 - subtree modifications
 - attribute modifications
@@ -177,21 +177,21 @@ DOM断点只能在浏览器中调试，有三种：
 ```
 - subtree modifications
 节点监听:
-![29.png](http://cdn-blog.usword.cn/005HV6Avgy1h70delr5ftj30xc0iwwni.jpg)
+![29.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70delr5ftj30xc0iwwni.jpg)
 当监听子节点变化时，只有当子节点(node)发生变化时，才会监听的到，如：`子节点替换`、`子节点删除`、`子节点增加`、`子节点的字节点变化(像：文本节点、注释节点、元素节点等等都会监听的到)`，但是节点的属性发生变化不会监听到
-![30.png](http://cdn-blog.usword.cn/005HV6Avgy1h70des5fqlj30po05441h.jpg)
+![30.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70des5fqlj30po05441h.jpg)
 当点击上面的删除节点时就会被监听到，如上图；而当点击更新子节点属性或者当前元素属性时反而监听不到的
 - attribute modifications
 属性监听:
-![31.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dex8uq1j30xs0hetga.jpg)
+![31.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dex8uq1j30xs0hetga.jpg)
 监听当前元素属性发生变化时，而子节点属性变化监听不到;(想监听子节点的属性变化或者或者节点变化可以用开头提到的`MutatorObserver`API)
 当点击更新当前元素属性时如下图所示，点击更新子节点属性不会监听到
-![32.png](http://cdn-blog.usword.cn/005HV6Avgy1h70df1ndgtj30qq07i426.jpg)
+![32.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70df1ndgtj30qq07i426.jpg)
 - node removal
-![34.png](http://cdn-blog.usword.cn/005HV6Avgy1h70df7nhfuj30g006g3zn.jpg)
+![34.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70df7nhfuj30g006g3zn.jpg)
 这个只监听当前元素被删除，子几点的改变不会监听到，比较单一
 当点击删除自己就会监听到
-![33.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dfcm963j30qo04k40o.jpg)
+![33.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dfcm963j30qo04k40o.jpg)
 
 > 除了单独监听外，还可以同时监听三种类型，只要勾选上就行；除了这种调试，也可以通过前面提到的`MutatorObserver`API来调试
 
@@ -224,8 +224,8 @@ app.listen(port, () => {
 })
 ```
 以上请求`http://localhost:3001`服务，现在我们在浏览器中添加对应的断点
-![35.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dfizqknj30r60es0y3.jpg)
-![36.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dforazej317o0syqil.jpg)
+![35.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dfizqknj30r60es0y3.jpg)
+![36.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dforazej317o0syqil.jpg)
 
 5. 时间监听断点
 监听对应的事件当触发时就会打住断点，如：点击、鼠标、键盘事件等等
@@ -237,9 +237,9 @@ target.addEventListener("click", () => console.log('click...'))
 target.addEventListener("mouseover", () => console.log('mouseover...'))
 ```
 在浏览器上打上对应的断点
-![37.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dfw3slwj30o00w6wkj.jpg)
-![38.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dg1ngtkj317a0pqh1j.jpg)
-![39.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dg6kpj1j31760medu8.jpg)
+![37.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dfw3slwj30o00w6wkj.jpg)
+![38.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dg1ngtkj317a0pqh1j.jpg)
+![39.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dg6kpj1j31760medu8.jpg)
 
 6. 异常断点
 异常断点可以在vscode中设置，如果抛出异常就会打住断点
@@ -257,7 +257,7 @@ target.addEventListener("mouseover", () => console.log('mouseover...'))
 // 主动抛出错误
 throw new Error('This is a test error');
 ```
-![40.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dgcww3tj31920jeqib.jpg)
+![40.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dgcww3tj31920jeqib.jpg)
 
 ### 调试React
 React项目，用react-create-app启动项目，然后添加.vscode配置，点击debugger，在vscode中打个断点，就可以在vscode中调试代码了
@@ -270,7 +270,7 @@ React项目，用react-create-app启动项目，然后添加.vscode配置，点�
         "webRoot": "${workspaceFolder}"
 }
 ```
-![20.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dgn6qi9j31xk18s1kx.jpg)
+![20.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dgn6qi9j31xk18s1kx.jpg)
 
 ### 调试Vue
 目前用vite或者webpack生成的vue项目目前这样的都可以这样调试，以前的wepack要用sourcemap进行映射
@@ -287,22 +287,22 @@ React项目，用react-create-app启动项目，然后添加.vscode配置，点�
         }
 }
 ```
-![21.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dguvau8j31xk18s4n6.jpg)
+![21.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dguvau8j31xk18s4n6.jpg)
 
 ### 线上Override调试
 可能有一种调试需要在线上环境下直接调试代码，对于简单的调试直接使用debugger即可，有时候需要改代码啥的，可能直接用debugger可能会变得有点麻烦，要是可以将线上运行的代码代理到本地，就可以在本地调试代码了，`Chrome Override DevTools`就是干这个的
 >此方式不能代理XHR请求
 
 首先打开`Source`面板，选择`Overrides`，然后点击`Select Folder for overrides`按钮，会打开本地文件系统让你选择一个文件夹，用来保存后面调试的代码（这里最好新建一个空文件夹）
-![41.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dh1g764j30p60aijt5.jpg)
-![42.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dh92scaj30rs0i2q63.jpg)
+![41.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dh1g764j30p60aijt5.jpg)
+![42.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dh92scaj30rs0i2q63.jpg)
 选择完后Chrome会提示访问权限，点击允许，此时`network`面板会出现一个黄色三角形，则证明Override第一步成功了
-![43.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dhhcwgdj31n00f4dlc.jpg)
+![43.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dhhcwgdj31n00f4dlc.jpg)
 现在比如我们想调试一个`index.js`文件，点击netword面板，右击想要调试的文件，选择`Save for overrides`，此时当前文件就会被保存到目标文件夹里了
-![44.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dhmupqzj310m0mwwrd.jpg)
-![45.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dhr8sbzj30ww0fejyo.jpg)
+![44.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dhmupqzj310m0mwwrd.jpg)
+![45.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dhr8sbzj30ww0fejyo.jpg)
 现在可以用编辑器打开目标文件夹，进行修改，修改会同步保存到浏览器，而且刷新浏览器也同样会被代理到本地文件夹哦，如下：文件开头添加debugger
-![46.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dhyc4xcj31da0rwqjl.jpg)
+![46.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dhyc4xcj31da0rwqjl.jpg)
 
 ## 线上调试（异常上报+监控系统+map映射）
 假如有一个场景，开发好的项目上线后，发现一个bug报错了，潜意识下会打开控制台看下哪里错了，但不幸的是，一般上线项目都会打包压缩，而且不会有soucemap，这让错误排查变得棘手。
@@ -310,25 +310,25 @@ React项目，用react-create-app启动项目，然后添加.vscode配置，点�
 通常情况在发布生产时，同时生成soucemap，将soucemap放到指定位置，用来和生产环境错误做映射，这样就可以在开发环境中查看错误的位置了，这样就可以更快的解决错误了，同时也能将错误记录到系统中
 
 假如发布一个react项目如下：
-![9.png](http://cdn-blog.usword.cn/005HV6Avgy1h70di52hg5j315o0mcn6q.jpg)
+![9.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70di52hg5j315o0mcn6q.jpg)
 代码很简单，点击按钮手动抛出一个错误，现在发布上线，当点击按钮时就会报错
-![10.png](http://cdn-blog.usword.cn/005HV6Avgy1h70diacln6j314u0jqtig.jpg)
-![11.png](http://cdn-blog.usword.cn/005HV6Avgy1h70diegpufj314i0m4449.jpg)
+![10.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70diacln6j314u0jqtig.jpg)
+![11.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70diegpufj314i0m4449.jpg)
 潜意识下打开控制台点击报错信息，带我们去目标文件，发现竟是打包后的，顿时懵逼，一头雾水；不嫌麻烦的同学可能会在本地重启项目排查，但不同环境数据可能不同，导致也很难排查，那为何不直接线上排查呢
 
 通过映射线上环境的sourcemap，不就可以查找到错误位置了吗
 
 ### 手动添加
 
-![12.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dioi6gvj312u0igtf1.jpg)
-![13.png](http://cdn-blog.usword.cn/005HV6Avgy1h70ditvxnpj31180kqdny.jpg)
-![14.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dizm8ilj30rm05q75g.jpg)
-![15.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dj4h06gj313m0kwk20.jpg)
-![16.png](http://cdn-blog.usword.cn/005HV6Avgy1h70dj8tjopj314e0j8ao6.jpg)
-![17.png](http://cdn-blog.usword.cn/005HV6Avgy1h70djd9losj312s0oitoi.jpg)
-![18.png](http://cdn-blog.usword.cn/005HV6Avgy1h70djho8z0j31vo14ue6h.jpg)
+![12.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dioi6gvj312u0igtf1.jpg)
+![13.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70ditvxnpj31180kqdny.jpg)
+![14.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dizm8ilj30rm05q75g.jpg)
+![15.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dj4h06gj313m0kwk20.jpg)
+![16.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70dj8tjopj314e0j8ao6.jpg)
+![17.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70djd9losj312s0oitoi.jpg)
+![18.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70djho8z0j31vo14ue6h.jpg)
 Vue项目同理
-![19.png](http://cdn-blog.usword.cn/005HV6Avgy1h70djm2we7j310s0ja7dn.jpg)
+![19.png](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h70djm2we7j310s0ja7dn.jpg)
 
 ### 自动映射
 

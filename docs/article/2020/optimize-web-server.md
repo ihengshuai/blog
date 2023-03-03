@@ -82,9 +82,9 @@ nginx -s reload # nginx 重新加载配置
 
 ## 性能优化
 以上配置好了应用及域名，然而结果总是出人意料:joy:，当打开网站时发现，我来个去的蜗牛速度，打开需要`10几秒`，简直要吐了，然而当我点击某篇文章时，发现居然要加载15s才能进来，我差点一头撞死:sob:，突然对白嫖的感觉不那么香了。这要是真的是这样，别说别人浏览文章，我自己都嫌弃。
-![](http://cdn-blog.usword.cn/005HV6Avgy1gvzpknsk8vj30tv0d60z9.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gvzpknsk8vj30tv0d60z9.jpg)
 上图是后来优化后的性能分析一张图（刚开始忘记截图），可以很明显看出`entry.js`加载了10多s，大小972kb(当时加载快20s，大小1.4M)，这对于1M宽带的服务器来说加载很慢是肯定的
-![](http://cdn-blog.usword.cn/005HV6Avgy1gvzpx69v9gj30ui09owic.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gvzpx69v9gj30ui09owic.jpg)
 上图是js加载网络图(这是优化后的，请忽略时间，还有size大小，主要是讲没有命中缓存)
 
 从上面可以分析出:
@@ -145,10 +145,10 @@ script(src="https://cdn.bootcdn.net/ajax/libs/jquery/2.2.4/jquery.min.js")
 
 以上简单概述了使用webpack`代码分割`和`忽略打包采用cdn`引用
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gvzqm3eg86j30t704labr.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gvzqm3eg86j30t704labr.jpg)
 (首次加载)
-![](http://cdn-blog.usword.cn/005HV6Avgy1gvzqjhu8faj30y106ttbw.jpg)
-![](http://cdn-blog.usword.cn/005HV6Avgy1gvzqk7lwb6j30u706wtbv.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gvzqjhu8faj30y106ttbw.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gvzqk7lwb6j30u706wtbv.jpg)
 
 上图即在使用cdn后的网络加载图，而且cdn自带缓存，可以看出首次加载还是很快的，基本上200ms，并且完全不会消耗自己服务器的性能，当再次刷新时cdn全部命中缓存，time全部为0，这也太香了...
 
@@ -178,9 +178,9 @@ import(/*webpackPrefetch: true*/ "@/components/ByteMd/ByteMd")
 ```
 采用合适的时机进行资源 `prefetch`
 
-![](http://cdn-blog.usword.cn/005HV6Avgy1gvzrbxnufqj30ru0bswjd.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gvzrbxnufqj30ru0bswjd.jpg)
 上图便是进行了`prefetch`配置后的网络加载图，可以看出，在空闲时间浏览器主动加载了 `0.3373.js`资源，并且用 `prefetch` 标记了 此次请求，可以很清楚当前是 预加载
-![](http://cdn-blog.usword.cn/005HV6Avgy1gvzrfz6eflj30my084whc.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gvzrfz6eflj30my084whc.jpg)
 当点击文章跳转到详情页时，只是加载了`16.32..js`文件，只花了`424ms`，其依赖的`0.3373.js`文件已经预加载好了，实现了秒开:scream:，实在是太香了，此时心里突然对 白嫖 好感十足:joy:
 
 接着 资源缓存 :point_down:
@@ -238,7 +238,7 @@ module.exports = {
     add_header Is-Cache true;                                              
  }                                                                              
 ```
-![](http://cdn-blog.usword.cn/005HV6Avgy1gvzs1comyfj30th0a50x6.jpg)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1gvzs1comyfj30th0a50x6.jpg)
 上图即添加nginx缓存后，非首次访问，浏览器会命中缓存，实现秒开功能
 
 ### 懒加载

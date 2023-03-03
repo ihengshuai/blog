@@ -15,7 +15,7 @@ head:
 本篇就来用Vue和TypeScript来撸一个懒加载插件，在阅读本编之前，请先了解vue插件注册机制和自定义指令，如果你还不了解，可以看看[官方文档](https://cn.vuejs.org/v2/guide/custom-directive.html)
 
 实现效果
-![](http://cdn-blog.usword.cn/giphy.webp)
+![](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/giphy.webp)
 
 ## 功能实现
 > 功能分析：在实现此功能前，可以将功能拆分为多个小功能，将不同的功能模块化，抽象出来，提高代码可读性
