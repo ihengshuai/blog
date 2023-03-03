@@ -11,8 +11,19 @@ const { cwd } = require("process");
 const oldCdnURLPrefix = 'http://cdn-blog.usword.cn';
 const newCdnURLPrefix = 'https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com'
 
-
-const replaceDirs = ['docs/article', 'docs/frontend', 'docs/fullstack', 'docs/me', 'docs/super-nav']
+// 待替换的目标文件夹?
+const replaceDirs = [
+  'README.md',
+  'docs/index.md',
+  'docs/article',
+  'docs/frontend',
+  'docs/fullstack',
+  'docs/me',
+  'docs/super-nav',
+  'docs/.vitepress/theme',
+  'docs/.vitepress/head.js',
+  'docs/.vitepress/config.js',
+]
 
 async function handleReplaceURL(currentPath) {
   const filePath = path.resolve(__dirname, currentPath);
