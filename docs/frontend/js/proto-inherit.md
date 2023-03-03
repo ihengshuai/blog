@@ -64,7 +64,7 @@ JS中当访问对象的属性时，会先查看当前对象是否存在此属性
 
 这是一张非常经典的原型链图，如果你已经掌握了原型的知识，相信看懂它想必并不难。如果有看不懂的，别着急接着下面的内容阅读完后再回头试试。
 
-![proto-chain.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7cwsf7066j30gz0l4jv0.jpg)
+![proto-chain.png](http://cdn-blog.usword.cn/005HV6Avgy1h7cwsf7066j30gz0l4jv0.jpg)
 
 首先设置原型的方式有多种，下面介绍多种方式加深大家的理解。
 
@@ -89,7 +89,7 @@ cat.eat(); // => mouse
 
 从代码可以看出cat的原始原型就是`Object.prototype`(10行)，当手动给原型添加eat方法时，并没有覆盖原型，而是在Object.prototype的基础上添加了`eat`方法，因此cat的原型还是`Object.prototype`对象，看下此时的cat结构
 
-![QQ截图20221021105110.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7cpy1resdj30le0bewip.jpg)
+![QQ截图20221021105110.png](http://cdn-blog.usword.cn/005HV6Avgy1h7cpy1resdj30le0bewip.jpg)
 
 接着上面代码，直接设置原型对象而不是添加属性：
 
@@ -108,16 +108,16 @@ console.dir(cat);
 
 上面高亮那行代码，通过直接覆盖原型对象的方式添加原型不再是`Object.prototype`，而原型的原型才会是`Object.prototype`，现在看下`cat`的结构。
 
-![QQ截图20221021111204.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7cqjnm2azj30n40bzafq.jpg)
+![QQ截图20221021111204.png](http://cdn-blog.usword.cn/005HV6Avgy1h7cqjnm2azj30n40bzafq.jpg)
 
 以上便是`__proto__`方式添加原型，对于`prototype`属性接下来看看构造器。
 
 ### 构造函数
 在JS世界里只有函数才会有[构造器](https://baike.baidu.com/item/%E6%9E%84%E9%80%A0%E5%99%A8)(尽管ES6有class这种类似Java的语法，其本质还是函数)，如前面的`Object`是个创建对象的构造器，可以用`o = new Object([...args])`来构造一个普通对象。每个函数都有`prototype`属性，它和原型对象`[[Prototype]]`不是一个概念，可以认为是个普通的对象，<u>**默认只有一个属性`constructor`，它指向函数本身。**</u>
 
-![QQ截图20221021121302.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7csb2wjjdj30fm048js6.jpg)
+![QQ截图20221021121302.png](http://cdn-blog.usword.cn/005HV6Avgy1h7csb2wjjdj30fm048js6.jpg)
 
-![QQ截图20221021113431.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7cr7016vjj30t905q40n.jpg)
+![QQ截图20221021113431.png](http://cdn-blog.usword.cn/005HV6Avgy1h7cr7016vjj30t905q40n.jpg)
 
 函数也可以看做是一个特殊的对象也有自己的原型，<u>**JS中所有函数的原型指向它的构造函数Function的`prototype`属性**</u>如：`App.__proto__ === Function.prototype`、`Object.__proto__ === Function.prototype`、`Function.__proto__ === Function.prototype`
 
@@ -169,7 +169,7 @@ customProto.length = 1;
 console.dir(u1);
 ```
 
-![QQ截图20221021125128.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7ctf3fx0tj30nv0dvgqk.jpg)
+![QQ截图20221021125128.png](http://cdn-blog.usword.cn/005HV6Avgy1h7ctf3fx0tj30nv0dvgqk.jpg)
 
 从上图和代码中可以证明原型链都是以引用的方式存在，修改原型的属性会同步改变，函数prototype的改变也会影响到对象的原型。<u>如果将prototype设置为null，将不会影响到已有的对象，为什么呢？已生成的对象已经对原型对象做了引用，当赋值prototype为null时，原型对象的引用数将会变成已经存在的对象的数量。如果再次给原型对象赋值新的值，也不会影响到原有的对象。</u>
 
@@ -213,7 +213,7 @@ console.log(Object.getPrototypeOf(user) === proto); // true
 console.log(Object.getPrototypeOf(user));
 ```
 
-![QQ截图20221021142342.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7cw31x3vaj30ij09mq7e.jpg)
+![QQ截图20221021142342.png](http://cdn-blog.usword.cn/005HV6Avgy1h7cw31x3vaj30ij09mq7e.jpg)
 
 讲了这么多原型和原型链大家应该已经明白是怎么回事了，那它到底有什么用呢？我们知道js访问对象的属性时会先访问对象本身是否存在该属性，如果不存在则会从它的原型链上去查询。假如已经定义了一个People对象，内部有很多属性和方法，现在要求新建一个Student对象，它不但会有People的所有方法还会有自定义的方法。所以能从People那边将方法移植到Student上，将会大大减小代码量，这也是个非常好的代码架构方式。
 
@@ -302,11 +302,11 @@ c2.eat(); // I eat rice
 console.log(c2.sons); // ['Tom', 'Jerry']
 
 c1.sons.push("Lucky");
-console.log(c1.sons, c2.sons); //  ['Tom', 'Jerry', 'Lucky'], ['Tom', 'Jerry', 'Lucky']
+console.log(c1.sons, c2.sons); //  ['Tom', 'Jerry', 'Lucky'], ['Tom', 'Jerry', 'Lucky']
 console.log(c1.__proto__ === c2.__proto__); // true
 ```
 以上就是最简单原型链继承，当你了解原型链和new的原理相信一看就懂。这样继承子类可以拿到父类的属性还有`prototype`上的方法，但很明显的缺点就是，父类是个实例对象，那么所有子类对于父类的继承都是引用(28行已经证明了引用)，当一个子类修改父类中的属性或方法时，都会影响到其它的子类(代码26,27行)；还有一个缺点无法对父类进行传参。一图胜千言：
-![iShot_2022-10-29_16.38.34.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7m8xrb8jyj314i0mwgow.jpg)
+![iShot_2022-10-29_16.38.34.png](http://cdn-blog.usword.cn/005HV6Avgy1h7m8xrb8jyj314i0mwgow.jpg)
 - 优点：<u>可以继承父类的属性和原型方法；</u>
 - 缺点：<u>父类在子类之间共享，会造成数据之间的污染和篡改；无法给父类传参；</u>
 
@@ -331,7 +331,7 @@ child.run(); // I am running...
 child.say(); // 报错 => child.say is not a function
 ```
 在实例化Child时，内部会执行Parent方法(9行)并将child绑定为this，并将name传递给Parent，然后parent内部的this上绑定的属性转移到child上，这样child就会拥有`name`和`run`属性，这就是构造函数继承。再来看下child的原型链：
-![iShot_2022-10-29_16.13.47.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7m88egs6qj317i0nsdse.jpg)
+![iShot_2022-10-29_16.13.47.png](http://cdn-blog.usword.cn/005HV6Avgy1h7m88egs6qj317i0nsdse.jpg)
 从图中可以看到child的原型为Child的prototype属性，却没有Parent的prototype相关方法(say)，父类只有将所有的属性定义在函数体内才能得到继承，所以这种继承并不能继承父类的`prototype`中的属性。
 - 优点：<u>可以继承父类函数体内的属性和方法，并且向父类传参，并且多个实例不共享，不会造成污染</u>
 - 缺点：<u>无法继承父类的prototype中的属性和方法</u>
@@ -364,7 +364,7 @@ console.log(c1.name, c2.name); // c1, parent
 首先从上面16行看到子类的原型都指向同一个父类对象parent；在17-18行c1往children中添加了一个数据，c2中的children也发生了变化；同样的最后两行看到，c1改变了name后，c2却没有改变，这是为什么呢？当执行`c1.children`获取属性时，由于c1本身是不存在的，就会往原型链中找，所以会在parent中找到然后执行push方法，当然会改变其中的值，由于parent也是c2原型链，所以也会被改掉。而当执行`c1.name=c1`时，只要记住赋值操作`=`不会查找原型链，只会在当前对象中修改或添加属性，所以c1修改name时，只是在自己身上添加了name属性，并没有改变原型链中的name属性，所以c2的name还是parent中的不会发生变化。
 
 来看下这种继承的原型结构：
-![iShot_2022-10-29_17.18.34.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7ma3d4p1ej31600d2wkx.jpg)
+![iShot_2022-10-29_17.18.34.png](http://cdn-blog.usword.cn/005HV6Avgy1h7ma3d4p1ej31600d2wkx.jpg)
 一般这种继承应用场景如上面代码那样，继承对象是个对象的形式(parent)，而子类也是个简单的对象。但这种方式可以用原型链继承代替，如：`Object.create、__proto__、setPrototypeOf`(前面讲的设置原型的几种方式)，不用这么麻烦啰嗦。
 
 - 优点：<u>继承操作简单容易理解</u>
@@ -394,7 +394,7 @@ c1.intro(); // my name is 小明, 18 age
 c2.intro(); // my name is 小红, 17 age
 ```
 上面组合继承看上去没什么问题，拿来看下原型图：
-![iShot_2022-10-29_17.41.34.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7marb48ivj310u0f2gqj.jpg)
+![iShot_2022-10-29_17.41.34.png](http://cdn-blog.usword.cn/005HV6Avgy1h7marb48ivj310u0f2gqj.jpg)
 从图中可以明显看到，子类实例会拥有父类相同的属性的实例属性，由于原型链的作用父类中的实例属性并没有作用，为什么呢？从上面第8行中看到，会执行一个实例化parent的操作，前面我们知道new时会生成一个权限的对象作为this指向，所以就会实例属性或方法，但由于在实例child时，借用了parent的构造函数(第5行)，child实例也会拥有parent内部的实例属性和方法，对于原型链查找的规则，parent实例中的属性永远访问不到，很明显多余。
 
 - 优点：<u>可以给父类构造器传参，拥有父类的实例属性和原型方法</u>
@@ -425,7 +425,7 @@ console.log(c1.children, c2.children); // ['child1', 'child2', 'pushed by c1c1',
 ```
 如上寄生式和原型式继承一样，只不过添加了一些相同的属性和方法，还可以添加自定义属性或方法（5-7行）。上面给c2添加了属性privateAttr属性，c1并没有该属性。但是缺点也很明显和原型式继承一样(19行)，这里就不说了，看下原型图：
 
-![iShot_2022-10-29_18.04.53.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7mbfjx1epj31am0nggyk.jpg)
+![iShot_2022-10-29_18.04.53.png](http://cdn-blog.usword.cn/005HV6Avgy1h7mbfjx1epj31am0nggyk.jpg)
 
 - 优点：<u>原型式继承加强，可以添加自定义属性和方法</u>
 - 缺点：<u>子类实例共享父类状态易篡改，无法给父类传参</u>
@@ -472,7 +472,7 @@ console.log(c1 instanceof Child); // true
 以上通过将Child的prototype对象的原型设置为Parent的prototype对象，这样首先继承了Parent的prototype对象中的属性和方法，然后将Child的prototype的constructor指向Child自己，这是正常情况，然后添加Child自己的属性和方法intro。在Child函数体内借用Parent构造函数继承实例属性和方法(11行)，这样在创建Child实例时，不会实例化父类的构造函数。
 
 这种方法巧妙的将父类原型方法拿到自己身上，实例方法也会在new时巧妙借用，而且父类构造器只会执行一次，在修改子类原型后，通过改变`prototype.constructor`属性为自己，又可以冒充正常的原型对象，并且instanceof等判断原型的方法也可以正常工作，这其实就是组合继承和寄生继承的加强版，这种方式比较成熟，通常情况下以这个作为继承版本。来看看原型结构：
-![iShot_2022-10-30_08.01.14.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7mzlsi41xj31760mkgzf.jpg)
+![iShot_2022-10-30_08.01.14.png](http://cdn-blog.usword.cn/005HV6Avgy1h7mzlsi41xj31760mkgzf.jpg)
 从上图可以很明显的看到继承关系，推荐使用。
 
 - 优点：<u>不会实例化父类构造器，巧妙的借用父类实例和原型属性</u>
@@ -520,7 +520,7 @@ console.log(Child.getUUid()); // parent
 需要注意的是在Child的构造器中调用了`super(name)`(20行)，这个是什么？这其实就是执行了父类的构造函数，如果你了解过如Java的继承，那这个一定不陌生。那在JS中如何解释这个呢，其实在寄生组合继承中借用父类实例属性时会执行父类构造函数并将this指向子类，而这里super方法其实就是这个逻辑，并向Parent传递了参数name，这样子类就会拥有父类的实例属性`name、children`，并且规定：[在class继承中若子类执行constructor构造器时必须执行super方法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/super)。另外，<u>**super在子类构造函数中必须先于this属性相关操作调用**</u>，这又是为什么？其实就是让子类的属性能够覆盖父类的实例属性，这样子类可以更加灵活的修改父类的实例属性。
 
 来看下实例的原型结构：
-![iShot_2022-10-30_09.04.01.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7n1f3t85oj31640kidrg.jpg)
+![iShot_2022-10-30_09.04.01.png](http://cdn-blog.usword.cn/005HV6Avgy1h7n1f3t85oj31640kidrg.jpg)
 基本和我们自己写的寄生组合式继承的对象一致，在途中可以很明显看到class关键字继承。
 
 上面给Parent添加了静态属性`getUUid`，Child也会拥有相同的静态属性，那什么是静态属性呢？在class中用`static`来标识这是类的静态属性或方法，而以函数的角度去看，其实就是函数的一个普通属性而已，来看下面代码：
@@ -530,9 +530,9 @@ function App() {}
 App.getUUid = () => console.log('static method');
 ```
 通过上面代码了解到静态属性就是一个函数的普通属性而已，而class其实也是这个道理(本质也是函数)，在上面的继承中，Child也会继承Parent的静态属性，那不就是`Child.__proto__ = Parent`吗？我们来证明下：
-![iShot_2022-10-30_09.11.43.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7n1n3em33j30xi04saao.jpg)
+![iShot_2022-10-30_09.11.43.png](http://cdn-blog.usword.cn/005HV6Avgy1h7n1n3em33j30xi04saao.jpg)
 果然是这样，那我们就明白了class继承时，也会将构造器本身作为子类构造器的原型来让其拥有其静态属性，即`Child.__proto__=Parent`，来看下Child本身的原型：
-![iShot_2022-10-30_09.22.04.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7n2106dotj31b40redu7.jpg)
+![iShot_2022-10-30_09.22.04.png](http://cdn-blog.usword.cn/005HV6Avgy1h7n2106dotj31b40redu7.jpg)
 这样Child也会拥有Parent自身上其他的属性。在寄生组合继承中，也来稍微改造，让其支持静态属性这个特点：
 ```js
 Child.__proto__ = Parent;

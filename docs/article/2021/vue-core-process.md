@@ -17,7 +17,7 @@ head:
 ## 从构建开始
 首先我们得找到Vue的入口，`new Vue`Vue是在哪里定义的，因为Vue是基于[`Rollup`](https://rollupjs.org/guide/zh/)（一个 JavaScript 模块打包器常用于构建库）进行构建的，可以在源码项目中`build.js`中看到rollup的相关配置，我们在`package.json`中看到有很多脚本用于vue的构建，
 
-![](http://tva1.sinaimg.cn/large/005HV6Avgy1gxc2l0lqp1j31cm0s9twt.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gxc2l0lqp1j31cm0s9twt.jpg)
 
 从脚本中可以看出，运行不同脚本用来构建不同版本的文件，我们直接看`build`，实际运行`node scripts/build.js`，也就是说打包运行的就是这个文件，接下来看看build.js里面都是些什么内容。
 

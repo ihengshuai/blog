@@ -415,7 +415,7 @@ iterator.next() // => {value: [5], done: false}
 iterator.next() // => {value: undefined, done: true}
 ```
 
-![迭代器截图](http://tva1.sinaimg.cn/large/005HV6Avgy1gwzlkiq4scj30oy0l5ai8.jpg)
+![迭代器截图](http://cdn-blog.usword.cn/005HV6Avgy1gwzlkiq4scj30oy0l5ai8.jpg)
 
 4. search：匹配正则表达式，如果匹配成功返回第一个匹配的位置，否则返回-1
 

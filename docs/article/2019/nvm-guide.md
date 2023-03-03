@@ -14,34 +14,34 @@ head:
 ## 下载安装NVM
 1.github下载地址[https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases)
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk66bu5vrtj315i0p977t.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk66bu5vrtj315i0p977t.jpg)
 
 2.下载完毕后,点击安装,目标盘随便更改. 如果是win10,请用管理员方式安装
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk66ceyahuj30ip0edjw2.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk66ceyahuj30ip0edjw2.jpg)
 
 3.查看是否安装成功
 >这里作者安装了1.1.7版本
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk66jdhqybj30m40akdg5.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk66jdhqybj30m40akdg5.jpg)
 
 ## 配置环境变量
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk66emw5c8j30lz01cwej.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk66emw5c8j30lz01cwej.jpg)
 
 
 ## 使用NVM查看信息
 1.`nvm list` 查看安装了所有的node版本
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk66nl7ldlj30o60aiwf7.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk66nl7ldlj30o60aiwf7.jpg)
 
 2.`nvm use 版本号`切换版本
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk66qqiya4j30ps0amjsp.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk66qqiya4j30ps0amjsp.jpg)
 
 3.在你还不知道下载Node哪个版本前,你可以 `nvm list available` 查看可以安装的版本号
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk66vsv1gpj30sj0i1n0f.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk66vsv1gpj30sj0i1n0f.jpg)
 
 
 ## 使用NVM下载Node等等
@@ -49,12 +49,12 @@ head:
 4.`nvm install  版本号`下载指定版本Node
 >这里演示下载8.9.4版本
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk66ydm8jej30s40emtbc.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk66ydm8jej30s40emtbc.jpg)
 
 5.`nvm uninstall 版本号`卸载指定Node含npm,以及当前版本全局工具
 >这里演示卸载8.9.4版本
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk670p8pdzj30qs0bltam.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk670p8pdzj30qs0bltam.jpg)
 
 >注意,当你卸载哪个版本的Node时,那个版本的全局环境下的工具也全部删除掉了,包括npm
 
@@ -74,7 +74,7 @@ npm install nodemon -g  重新安装nodemon
 
  Could not retrieve https://nodejs.org/dist/latest/SHASUMS256.txt:无法获得指定的校验文件
 ```
-	
+
 2.**解决办法:** `将nvm中node和npm的源设置到国内源(一般使用taobao)上。`
 
 3.在nvm的安装路径下找到settings.txt打开:

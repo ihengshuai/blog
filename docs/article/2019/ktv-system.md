@@ -12,7 +12,7 @@ head:
 **用Express教你写KTV点歌系统，包括前台内容和后台管理系统，整合Express框架和Mongodb数据库服务器开发；教你用Vue.JS，ElementUI和iViewUI写出超漂亮的页面,随心点歌随心听**
 
 ## 思维导图
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkwrwdltn0j30th0gjt90.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkwrwdltn0j30th0gjt90.jpg)
 
 
 ## **技术栈**
@@ -207,7 +207,7 @@ router.post("/account/register", (req, res) => {
 ```
 ### 然后用postman注册或者其他工具
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkwrxpa45uj30zk0kpweq.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkwrxpa45uj30zk0kpweq.jpg)
 
 ## 技术攻关
 
@@ -229,20 +229,20 @@ router.post("/account/register", (req, res) => {
 
 Date.prototype.format = function(format) {
     var o = {
-		"M+": this.getMonth() + 1, //月份
-		"d+": this.getDate(), //日
-		"H+": this.getHours(), //小时
-		"m+": this.getMinutes(), //分
-		"s+": this.getSeconds(), //秒
-		"q+": Math.floor((this.getMonth() + 3) / 3), //季度
-		"f+": this.getMilliseconds() //毫秒
-	};
-	if (/(y+)/.test(format))
-		format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
-	for (var k in o)
-		if (new RegExp("(" + k + ")").test(format))
-			format = format.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
-	return format;
+                "M+": this.getMonth() + 1, //月份
+                "d+": this.getDate(), //日
+                "H+": this.getHours(), //小时
+                "m+": this.getMinutes(), //分
+                "s+": this.getSeconds(), //秒
+                "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+                "f+": this.getMilliseconds() //毫秒
+        };
+        if (/(y+)/.test(format))
+                format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+                if (new RegExp("(" + k + ")").test(format))
+                        format = format.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return format;
 }
 
 export default Date.prototype.format
@@ -310,8 +310,8 @@ refreshCaptcha(){
 
 最后用 填写的验证码进行对比
 ```
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkws2kolu3j31ad0pynjn.jpg)
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkws3p8r50j30xg0k9jsj.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkws2kolu3j31ad0pynjn.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkws3p8r50j30xg0k9jsj.jpg)
 
 ### 上传歌曲或图片
 formidable来处理文件上传信息,用起来方便,很友好,如果你没有接触过文件操作,赶紧收藏起来
@@ -381,7 +381,7 @@ module.exports = (req, res) => {
     })
 };
 ```
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkws464tcqj314p0jxq4c.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkws464tcqj314p0jxq4c.jpg)
 
 
 ### Vue、ElementUI分页使用
@@ -451,7 +451,7 @@ methods:{
     },
 }
 ```
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkws4mc698j30vn0b7glu.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkws4mc698j30vn0b7glu.jpg)
 
 
 >没了吗?对,分页就是这么简单!你学会了吗?有些前端开发的同学总是对分页比较陌生,学会这个,让你不再产生烦恼!
@@ -563,15 +563,15 @@ router.post("/test", passport.authenticate("jwt", {session:false}), async (req, 
 })
 
 ```
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkws5h567cj30xf09umy3.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkws5h567cj30xf09umy3.jpg)
 
 详细的文档地址：[Passport-Jwt合法验证](https://www.npmjs.com/package/passport-jwt),[token加密](https://www.npmjs.com/package/jsonwebtoken)
 
 ## 截图(只给出部分截图)
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkws5ugmiwj31cc0pywhk.jpg)
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkws6dtns5j31bu0pumz2.jpg)
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkws7dhk1gj31b80phq5z.jpg)
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gkws7pxjmoj31cd0q2do0.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkws5ugmiwj31cc0pywhk.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkws6dtns5j31bu0pumz2.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkws7dhk1gj31b80phq5z.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gkws7pxjmoj31cd0q2do0.jpg)
 
 
 ## 源码在这里

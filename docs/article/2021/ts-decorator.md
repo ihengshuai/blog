@@ -155,7 +155,7 @@ function constant(value: any) {
 // 让当前service变成可注入
 @Inject
 class UserService {
-	// 模拟获取用户信息
+        // 模拟获取用户信息
   public getUser(...args: any) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -272,7 +272,7 @@ class UserPage extends React.Component{
 
 上面点击登录后会记录请求耗时，控制台打印的结果如下：
 
-![http://tva1.sinaimg.cn/large/005HV6Avgy1h3tgd7rxirj30r60a640p.jpg](http://tva1.sinaimg.cn/large/005HV6Avgy1h3tgd7rxirj30r60a640p.jpg)
+![http://cdn-blog.usword.cn/005HV6Avgy1h3tgd7rxirj30r60a640p.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h3tgd7rxirj30r60a640p.jpg)
 
 ## 访问器装饰器
 
@@ -334,7 +334,7 @@ class UserPage extends React.Component{
 
 现在给PORT赋值，将不会改变_PORT的值，如下图：
 
-![http://tva1.sinaimg.cn/large/005HV6Avgy1h3ti440ni7j312w0sgqbp.jpg](http://tva1.sinaimg.cn/large/005HV6Avgy1h3ti440ni7j312w0sgqbp.jpg)
+![http://cdn-blog.usword.cn/005HV6Avgy1h3ti440ni7j312w0sgqbp.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h3ti440ni7j312w0sgqbp.jpg)
 
 ## 参数装饰器
 
@@ -404,7 +404,7 @@ function validator(
         if (validate && !validate(arg)) {
           throw new TypeError(errorMsg);
         }
-	// 没有自定义验证器执行默认验证器
+        // 没有自定义验证器执行默认验证器
         else if (!validate) {
           if (metaValidate !== arg?.constructor) {
             throw new TypeError(errorMsg);
@@ -412,7 +412,7 @@ function validator(
         }
       });
     }
-		
+
     // 执行源函数
     return origin.call(this, ...args);
   };
@@ -436,15 +436,15 @@ class LoginPage {
 
 现在当点击登录时，调用toLogin方法，就会验证username的参数是否合法（当然前提是参数不能为空的，ts也是无法知道参数是否必填，只是来验证参数的类型罢了），打印如下：
 
-![http://tva1.sinaimg.cn/large/005HV6Avgy1h3tt2o96xrj315k11ob29.jpg](http://tva1.sinaimg.cn/large/005HV6Avgy1h3tt2o96xrj315k11ob29.jpg)
+![http://cdn-blog.usword.cn/005HV6Avgy1h3tt2o96xrj315k11ob29.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h3tt2o96xrj315k11ob29.jpg)
 
 当将isString代码改为 typeDecoratorFactory((*str*:  object) => str?.name === ‘Mr Ming’);
 
-![http://tva1.sinaimg.cn/large/005HV6Avgy1h3ttid8rcnj31360e4alm.jpg](http://tva1.sinaimg.cn/large/005HV6Avgy1h3ttid8rcnj31360e4alm.jpg)
+![http://cdn-blog.usword.cn/005HV6Avgy1h3ttid8rcnj31360e4alm.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h3ttid8rcnj31360e4alm.jpg)
 
 当删除自定义验证器，再次执行会验证默认的类型验证器：
 
-![http://tva1.sinaimg.cn/large/005HV6Avgy1h3ttkha08bj31460lqh5j.jpg](http://tva1.sinaimg.cn/large/005HV6Avgy1h3ttkha08bj31460lqh5j.jpg)
+![http://cdn-blog.usword.cn/005HV6Avgy1h3ttkha08bj31460lqh5j.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h3ttkha08bj31460lqh5j.jpg)
 
 ## 执行顺序
 
@@ -506,7 +506,7 @@ class People {
 
 上面的打印结果如下：
 
-![http://tva1.sinaimg.cn/large/005HV6Avgy1h3tubgm2udj31680ymx4h.jpg](http://tva1.sinaimg.cn/large/005HV6Avgy1h3tubgm2udj31680ymx4h.jpg)
+![http://cdn-blog.usword.cn/005HV6Avgy1h3tubgm2udj31680ymx4h.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h3tubgm2udj31680ymx4h.jpg)
 
 从上面的结果可以得出结论：
 **装饰器访问顺序**

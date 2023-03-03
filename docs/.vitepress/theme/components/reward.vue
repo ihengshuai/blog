@@ -7,13 +7,13 @@
     <div style="text-align: center">
       <img
         style="display: inline"
-        src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72anu40usj30dw0dw40j.jpg"
+        src="http://cdn-blog.usword.cn/005HV6Avgy1h72anu40usj30dw0dw40j.jpg"
         width="200"
         alt="支付宝捐赠"
       />
       <img
         style="display: inline"
-        src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg"
+        src="http://cdn-blog.usword.cn/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg"
         width="200"
         alt="微信支付捐赠"
       />

@@ -9,7 +9,7 @@ head:
 
 # 从零配置webpack工程
 
-![](http://ww1.sinaimg.cn/large/005HV6Avgy1gk68qmqy13j30e807waan.jpg)
+![](http://cdn-blog.usword.cn/005HV6Avgy1gk68qmqy13j30e807waan.jpg)
 
 >本篇文章主要针对`webpack4.x`进行配置，如果你的版本有差别，或者配置有出入，请移步[官网](https://webpack.js.org/concepts/)查询更多详细配置，各个版本大同小异，不影响学习
 

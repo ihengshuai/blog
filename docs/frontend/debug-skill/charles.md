@@ -13,7 +13,7 @@ head:
 
 [charles](https://www.charlesproxy.com)抓包工具和[fiddler](/frontend/debug-skill/fiddler.html)原理类似也是基于HTTP请求中间人代理，通过和服务端、客户端建立通信将客户端的请求数据发送服务器，并将响应数据传输给客户端，实现抓包记录。
 
-![iShot_2022-10-18_07.58.05.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7943v0e35j31520hsdu3.jpg)
+![iShot_2022-10-18_07.58.05.png](http://cdn-blog.usword.cn/005HV6Avgy1h7943v0e35j31520hsdu3.jpg)
 
 虽然原理相同，由于是不同工具，一些功能还是有细微差距的，charles相比[fiddler](/frontend/debug-skill/fiddler.html)更加简洁，但并不是更弱一些。其界面简单宜人，比较清爽，这点可能已经吸了一大半的用户了吧。再者charles把一些常用的功能选项直接封装好了(如：模拟不同的网络俗)，而[fiddler](/frontend/debug-skill/fiddler.html)可能有时需要修改代码，这对一些基础薄弱的小伙伴是非常不友好的，那么你可以试试charles，让我们开始吧！
 
@@ -28,10 +28,10 @@ charles支持windows、macOS、linux等多个版本
 
 最下面还展示了下载firefox插件，看描述的意思是firefox旧版本可能会需要下载charles的插件来支持抓包，新版本就不需要下载了，大家可以根据自己的环境进行配置。这里作者是macOS，就安装了mac版，以下内容都以mac版charles作为基础，windows基本一样。
 
-![iShot_2022-10-18_08.09.53.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h794f49qczj31800uy4dg.jpg)
+![iShot_2022-10-18_08.09.53.png](http://cdn-blog.usword.cn/005HV6Avgy1h794f49qczj31800uy4dg.jpg)
 
 ## 面板介绍
-![iShot_2022-10-18_08.59.50.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h795v729hmj310u0og4d0.jpg)
+![iShot_2022-10-18_08.59.50.png](http://cdn-blog.usword.cn/005HV6Avgy1h795v729hmj310u0og4d0.jpg)
 
 可以将charles的分为以下几个模块：
 - **菜单栏**：一些全局相关的配置，如：偏好设置、记录显示与编辑、记录展示方式、代理配置、常用的工具、帮助等等
@@ -52,38 +52,38 @@ charles支持windows、macOS、linux等多个版本
   - 自定义请求的请求或响应的查看方式(不怎么用)
 - **Proxy**(重要)：用来设置代理、网速、HTTPS、断点、DNS等等功能
   - Start Throttling & Throttle Setting：用来模拟网速，弱网测试比较方便
-    ![iShot_2022-10-18_09.59.42.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h797ldqxzjj30vc0z4gtg.jpg)
+    ![iShot_2022-10-18_09.59.42.png](http://cdn-blog.usword.cn/005HV6Avgy1h797ldqxzjj30vc0z4gtg.jpg)
   - Enable Breakpoints & Breakpoints Settings：用来设置断点请求，可以根据不同的域名、路径、请求方法等多个维度来设置，比较实用
-    ![iShot_2022-10-18_10.08.21.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h797ur6yttj31lo0kqahr.jpg)
+    ![iShot_2022-10-18_10.08.21.png](http://cdn-blog.usword.cn/005HV6Avgy1h797ur6yttj31lo0kqahr.jpg)
   - Proxy Setting：用来设置HTTP、Socket代理，也可以设置系统代理。默认HTTP Proxy代理监听端口为8888，可以修改如7777。macOS可以设置启动设置为系统代理(目前高版本window都会默认设置为系统代理)，默认这些都是开启的。
-    ![iShot_2022-10-18_10.10.47.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h7980ya73aj30ya0ug79c.jpg)
-    ![iShot_2022-10-18_10.11.08.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79812y8dwj30xg0ecwgh.jpg)
+    ![iShot_2022-10-18_10.10.47.png](http://cdn-blog.usword.cn/005HV6Avgy1h7980ya73aj30ya0ug79c.jpg)
+    ![iShot_2022-10-18_10.11.08.png](http://cdn-blog.usword.cn/005HV6Avgy1h79812y8dwj30xg0ecwgh.jpg)
   - Reverse Proxy：反向代理，可以将本地的请求反向代理到其他请求
   - DNS Setting：配置DNS
   - Access Control Setting：用来配置局域网中的其他机器代理规则，可以配置哪些ip允许代理，默认会允许所有ip代理的
 - **Tools**：一些请求相关配置工具，如：阻塞cookie、请求拦截代理、请求rewrite、执行请求等等功能
   - Block Cookie：阻塞请求的cookie，可以自定义匹配地址来阻塞，下图模拟了当请求`http://192.168.3.58:9999/cookie`cookie会被拦截，而`http://192.168.3.58:9999`则不会
-    ![iShot_2022-10-18_14.36.29.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79fnv26ioj30ve0m8juo.jpg)
-    ![iShot_2022-10-18_14.38.38.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79fo7viq0j315m0fyjw0.jpg)
-    ![iShot_2022-10-18_14.38.51.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79fodzs7yj312u0fc42v.jpg)
+    ![iShot_2022-10-18_14.36.29.png](http://cdn-blog.usword.cn/005HV6Avgy1h79fnv26ioj30ve0m8juo.jpg)
+    ![iShot_2022-10-18_14.38.38.png](http://cdn-blog.usword.cn/005HV6Avgy1h79fo7viq0j315m0fyjw0.jpg)
+    ![iShot_2022-10-18_14.38.51.png](http://cdn-blog.usword.cn/005HV6Avgy1h79fodzs7yj312u0fc42v.jpg)
   - Map Remote & Map Local & Rewrite：用来拦截请求可以代理到其他地址也可以返回本地的文件等等，自己可以试试
   - Block List & Allow List：阻塞和允许指定的请求
   - Compose & Repeat：可以手动用charles来执行某个请求，可以指定并发数
 - **help**：用来安装证书，配置https的
-    ![iShot_2022-10-18_14.48.23.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79fyedjnwj31a40hs7m0.jpg)
+    ![iShot_2022-10-18_14.48.23.png](http://cdn-blog.usword.cn/005HV6Avgy1h79fyedjnwj31a40hs7m0.jpg)
 
 ## 工具栏
 工具栏主要是一些快捷设置菜单栏，如：清除记录、开关抓包、ssl开关、网速配置、断点设置、手动请求、重新请求、一些配置等等，基本上在菜单栏已经介绍的差不多了，这里自己手动操作一遍就可以了
-![工具栏](https://tva1.sinaimg.cn/large/005HV6Avgy1h77z66zbt6j31460gumzr.jpg)
+![工具栏](http://cdn-blog.usword.cn/005HV6Avgy1h77z66zbt6j31460gumzr.jpg)
 
 ## 抓包记录
 抓包记录是用来记录抓包的记录的，可以根据域名来归纳记录也可以使用请求顺序的方式展示记录，推荐使用域名归纳方式方便调试，一目了然；底部的`Filter`可以简单的过滤抓包记录，其他的高亮、聚焦展示前面已经讲过了。
-![iShot_2022-10-18_14.57.07.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79g6w1qwej30q80nctgf.jpg)
+![iShot_2022-10-18_14.57.07.png](http://cdn-blog.usword.cn/005HV6Avgy1h79g6w1qwej30q80nctgf.jpg)
 
 ## 抓包详情
 抓包详情通常就是我们用来分析返回来的内容和一些请求信息等，前端可以根据请求相关时间做一些优化
-![iShot_2022-10-18_15.10.19.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79gm4bechj314o0yiahy.jpg)
-![iShot_2022-10-18_15.11.47.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79gma4ixjj31500y6ne7.jpg)
+![iShot_2022-10-18_15.10.19.png](http://cdn-blog.usword.cn/005HV6Avgy1h79gm4bechj314o0yiahy.jpg)
+![iShot_2022-10-18_15.11.47.png](http://cdn-blog.usword.cn/005HV6Avgy1h79gma4ixjj31500y6ne7.jpg)
 
 ## 请求代理与篡改
 请求代理与篡改可以参考菜单栏`Tools`中的`Map Remote & Map Local & Rewrite`等几个来调试，非常简单，这里就不介绍了，你也可以查看上一篇[fiddler](/frontend/debug-skill/fiddler.html)这块，基本都一样
@@ -93,15 +93,15 @@ charles支持windows、macOS、linux等多个版本
 
 这里设置断点`http://192.168.3.58`，当请求是这个域名时，就是命中断点，刷新浏览器发现已经命中断点
 1. 当前请求断点，查看请求体，也可以编辑请求内容
-![iShot_2022-10-18_15.22.46.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79h40gw64j31ju0xe10i.jpg)
+![iShot_2022-10-18_15.22.46.png](http://cdn-blog.usword.cn/005HV6Avgy1h79h40gw64j31ju0xe10i.jpg)
 2. GET请求手动添加两个字段，点击`Execute`执行下一步
-![iShot_2022-10-18_15.23.54.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79h47z9vvj31b80xugqz.jpg)
+![iShot_2022-10-18_15.23.54.png](http://cdn-blog.usword.cn/005HV6Avgy1h79h47z9vvj31b80xugqz.jpg)
 3. 当前为响应断点，可以看到刚刚添加的两个字段已经带上了，现在也可以编辑响应内容了
-![iShot_2022-10-18_15.25.42.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79h4elr6nj31fq0xugv2.jpg)
+![iShot_2022-10-18_15.25.42.png](http://cdn-blog.usword.cn/005HV6Avgy1h79h4elr6nj31fq0xugv2.jpg)
 4. 编辑响应内容，删除了原来的返回数据，自定义一条数据
-![iShot_2022-10-18_15.27.46.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79h4mh80nj31dc0x6gsh.jpg)
+![iShot_2022-10-18_15.27.46.png](http://cdn-blog.usword.cn/005HV6Avgy1h79h4mh80nj31dc0x6gsh.jpg)
 5. 查看浏览器内容已经经结果修改了
-![iShot_2022-10-18_15.28.26.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79h4swgb3j31680wcaly.jpg)
+![iShot_2022-10-18_15.28.26.png](http://cdn-blog.usword.cn/005HV6Avgy1h79h4swgb3j31680wcaly.jpg)
 
 以上就是断点调试的基本使用，其他的可以根据自己的需求进行配置即可
 
@@ -111,43 +111,43 @@ charles可以模拟不同的网络环境，很方便进行网速相关的测试�
 同样关于网络配置其前面已经讲述了，可以往上翻阅。需要注意的是，要开启`Start Throttle`和配置`Throttle Setting`。
 
 这里没有用内置的网络环境，自定义下载速率为`5kb`，已经相当慢了
-![iShot_2022-10-18_15.48.05.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79hnzga3wj30vc0z4agt.jpg)
+![iShot_2022-10-18_15.48.05.png](http://cdn-blog.usword.cn/005HV6Avgy1h79hnzga3wj30vc0z4agt.jpg)
 查看本地请求4s才完成，通过修改不同的网速可以模拟不同的网络环境
-![iShot_2022-10-18_15.48.35.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79hof3ko8j315003cjsb.jpg)
+![iShot_2022-10-18_15.48.35.png](http://cdn-blog.usword.cn/005HV6Avgy1h79hof3ko8j315003cjsb.jpg)
 
 ## 配置HTTPS
 在没有配置HTTPS下，对于HTTPS请求的请求和响应数据无法解码都是乱码，需要配置了HTTPS后才能查看解码后的内容，下图是在没有配置HTTPS的情况下，抓取`https://www.baidu.com`地址的请求，全是乱码
-![iShot_2022-10-18_15.53.58.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79hu3emtyj31kw1507sk.jpg)
+![iShot_2022-10-18_15.53.58.png](http://cdn-blog.usword.cn/005HV6Avgy1h79hu3emtyj31kw1507sk.jpg)
 
 **配置HTTPS步骤**：
 1. `Help > SSL Proxying > Install Charles Root Certificate`，系统安装charles证书并信任
-  ![iShot_2022-10-18_15.58.48.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79hz6566rj314m0e679n.jpg)
+  ![iShot_2022-10-18_15.58.48.png](http://cdn-blog.usword.cn/005HV6Avgy1h79hz6566rj314m0e679n.jpg)
 2. `Proxy > SSL Proxying Settings > Enable SSL Proxying`开启SSL Proxy，添加抓取的`IP为*`，`端口为443`
-  ![iShot_2022-10-18_16.03.50.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79i4tyqqpj30y80rwq7z.jpg)
+  ![iShot_2022-10-18_16.03.50.png](http://cdn-blog.usword.cn/005HV6Avgy1h79i4tyqqpj30y80rwq7z.jpg)
 
 再次查看抓取的HTTPS请求，已经完美解码了
-![iShot_2022-10-18_16.05.24.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79i627esuj31jm0y84qp.jpg)
+![iShot_2022-10-18_16.05.24.png](http://cdn-blog.usword.cn/005HV6Avgy1h79i627esuj31jm0y84qp.jpg)
 
 ## 客户端抓包
 配置客户端抓包首先需要和主机在同一局域网下，并且基于HTTPS步骤，主要步骤如下：（这里以ios为例）
 1. 打开Safari输入charles地址`192.168.3.58:7777`，fiddler会弹出是否允许抓包当前ip(手机ip)，点击允许，你也可以在`Proxy > Access Control Setting`中直接配置允许的ip，就不会有当前弹窗提示了
-  ![iShot_2022-10-18_16.17.39.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jcz33ohj318m0amwi6.jpg)
+  ![iShot_2022-10-18_16.17.39.png](http://cdn-blog.usword.cn/005HV6Avgy1h79jcz33ohj318m0amwi6.jpg)
 2. 配置手机代理到charles
-  ![IMG_0587.jpg](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jf076enj30n00p0wel.jpg)
+  ![IMG_0587.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h79jf076enj30n00p0wel.jpg)
 3. 当前其实已经可以抓取手机包了，但是https请求还是有一些问题，因为没有在手机上安装charles证书。安装charles证书，点击`Help > SSL Proxying > Install Charles Root Certificate On a Mobile Device...`点击，会弹出手机的步骤，共两步，1.手机网络代理到charles和2.手机浏览器访问`chls.pro/ssl`来安装证书，上一步已经讲了配置手机代理，这里我们访问地址`chls.pro/ssl`来安装证书即可
 
-  ![iShot_2022-10-18_16.36.11.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jg4n7u4j31aa0ow4ps.jpg)
-  ![iShot_2022-10-18_16.37.09.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jhcded2j318m0begqm.jpg)
-  ![IMG_0585.jpg](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jehmj65j30n00ti768.jpg)
+  ![iShot_2022-10-18_16.36.11.png](http://cdn-blog.usword.cn/005HV6Avgy1h79jg4n7u4j31aa0ow4ps.jpg)
+  ![iShot_2022-10-18_16.37.09.png](http://cdn-blog.usword.cn/005HV6Avgy1h79jhcded2j318m0begqm.jpg)
+  ![IMG_0585.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h79jehmj65j30n00ti768.jpg)
 4. 安装证书到系统，需要信任证书，输入手机密码等等，一直下一步即可
 
-  ![IMG_0586.jpg](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jfaysdfj30n00p40uj.jpg)
+  ![IMG_0586.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h79jfaysdfj30n00p40uj.jpg)
 5. 在`关于手机 > 证书 > 信任证书`信任刚刚添加的证书
 
-  ![IMG_0588.jpg](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jfk5uckj30n00g5765.jpg)
+  ![IMG_0588.jpg](http://cdn-blog.usword.cn/005HV6Avgy1h79jfk5uckj30n00g5765.jpg)
 6. 打开Safari访问`https://blog.usword.cn`查看charles的抓包，发现已经抓包成功
 
-  ![iShot_2022-10-18_16.35.21.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jgr3mmaj31js0zqkbl.jpg)
+  ![iShot_2022-10-18_16.35.21.png](http://cdn-blog.usword.cn/005HV6Avgy1h79jgr3mmaj31js0zqkbl.jpg)
 
 以上便是ios的配置抓包流程，其他手机系统大同小异
 
@@ -161,13 +161,13 @@ https://www.52pojie.cn/thread-1350618-1-1.html
 ### 本地地址无法抓取
 这个问题大概对于所有charles新手来说都会遇到，也就是在自己本地启动一个服务器，用`localhost:port`去访问服务，charles却抓取不到，很纳闷。这是由于一些系统硬编码的问题，charles抓取不到localhost的流量，因此charles做了一个代理，让我们用`localhost.charlesproxy.com`来代替`localhost`域名，其实将域名`localhost.charlesproxy.com`映射到了`127.0.0.1`所以可以抓到包了，点击这里官方做了[解释](https://www.charlesproxy.com/documentation/faqs/)
 
-![iShot_2022-10-18_17.02.57.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jtshwmrj317q0leqgo.jpg)
+![iShot_2022-10-18_17.02.57.png](http://cdn-blog.usword.cn/005HV6Avgy1h79jtshwmrj317q0leqgo.jpg)
 
 现在访问`http://localhost.charlesproxy.com:9999`确实抓取到了
-![iShot_2022-10-18_17.04.41.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jvlaiamj31le1ccb29.jpg)
+![iShot_2022-10-18_17.04.41.png](http://cdn-blog.usword.cn/005HV6Avgy1h79jvlaiamj31le1ccb29.jpg)
 
 除了上面的方法，你可以使用本地局域网ip也可以抓取到
-![iShot_2022-10-18_17.07.11.png](https://tva1.sinaimg.cn/large/005HV6Avgy1h79jy6k0jjj31kq18s4qp.jpg)
+![iShot_2022-10-18_17.07.11.png](http://cdn-blog.usword.cn/005HV6Avgy1h79jy6k0jjj31kq18s4qp.jpg)
 
 ## 总结
 以上就是charles的使用方法，相信到这里已经可以满足你的常用需求了，一定要自己动手实践才能熟能生巧；当然本篇也是挑了一些必懂的使用方法，其他使用可以自行摸索，都很简单的。和[fiddler](/frontend/debug-skill/fiddler.html)一样，charles也是基于客户端和服务端中间的代理，所以可以抓取记录，原理图可以看[fiddler](/frontend/debug-skill/fiddler.html)这篇。
