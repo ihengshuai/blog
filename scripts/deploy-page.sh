@@ -12,6 +12,8 @@ git checkout -b gh-pages
 BUNDLE_DIST=dist
 
 cp -a ../$BUNDLE_DIST/* .
+# 删除本地使用的图片
+rm -rf ./local-images
 echo ${DOMAIN} > CNAME
 git config --global user.email $EMAIL
 git config --global user.name $OWNER

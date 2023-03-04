@@ -5,3 +5,6 @@ dist
 .idea
 .env
 .DS_Store
+
+# 图片文件
+local-images
