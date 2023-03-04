@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "vitepress dev docs --port=9999",
-    "build": "vitepress build docs"
+    "build": "vitepress build docs",
+    "rlimage": "node scripts/replace-local-image.js",
+    "rc": "node scripts/replace-cdn.js"
   },
   "keywords": [
     "blog",

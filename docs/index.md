@@ -7,7 +7,7 @@ hero:
   text: A web developer base on ShenZhen, China
   tagline: A blog for sharing web development experiences...
   image:
-    src: /logo.png
+    src: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/logo.png
     alt: hengshuai's blog
   actions:
     - theme: brand

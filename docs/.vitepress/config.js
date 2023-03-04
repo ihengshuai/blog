@@ -1,12 +1,12 @@
-import { getNavMenu } from "./menu/nav"
+import { getNavMenu } from "./menu/nav";
 import { getSidebarMenu } from "./menu/sidebar";
-import { getHeaders } from "./head"
-import dotenv from "dotenv"
+import { getHeaders } from "./head";
+import dotenv from "dotenv";
 // import markdown_anchor from "markdown-it-anchor"
 
-dotenv.config({ path: './.env' })
+dotenv.config({ path: "./.env" });
 
-const isProd = process.env.NODE_ENV === "production"
+const isProd = process.env.NODE_ENV === "production";
 
 export default {
   lang: "zh-CN",
@@ -19,17 +19,15 @@ export default {
     toc: { level: [1, 2, 3] },
     config: (md) => {
       // md.use(markdown_anchor)
-    }
+    },
   },
   outDir: "../dist",
   description: "a blog for sharing web development experiences...",
   themeConfig: {
-    logo: "/logo.png",
+    logo: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/logo.png",
     siteTitle: "Hengshuai's blog",
     nav: getNavMenu(),
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/ihengshuai' },
-    ],
+    socialLinks: [{ icon: "github", link: "https://github.com/ihengshuai" }],
     sidebar: getSidebarMenu(),
     editLink: {
       pattern: "https://github.com/ihengshuai/blog/edit/main/docs/:path",
@@ -43,6 +41,6 @@ export default {
       appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_APP_KEY,
       indexName: process.env.ALGOLIA_APP_INDEXNAME,
-    }
+    },
   },
 };

@@ -13,7 +13,7 @@ head:
     <img
       width="200"
       height="200"
-      src="/logo.png"
+      src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/logo.png"
     />
   </a>
 
@@ -48,7 +48,7 @@ hi all, welcome here! :sparkles:
 
 ## 联系
 扫描下方二维码关注公众号，输入联系作者会得到我的微信二维码，就可以加我了。有需要的话，我会考虑建个微信交流群，大家一起来探讨技术。
-<img src="https://tva1.sinaimg.cn/large/005HV6Avgy1h7t9nb6in9j3076076glx.jpg" alt="hengshuai公众号" width=200>
+<img src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h7t9nb6in9j3076076glx.jpg" alt="hengshuai公众号" width=200>
 
 ## 贡献
 关于贡献内容，你可以fork本篇博客，本地跑起，或直接修改对应的文章，修改完后，发个pull request请求即可，我会及时处理的。
@@ -68,8 +68,8 @@ As a token of appreciation there is also a list of all the contributors, as well
 If you think this blog is helpful to you, if you don't mind, enjoy a cup of coffee, encourage the author to continue to share technical articles, thank you here!
 
 <div class="sm-center">
-<img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72anu40usj30dw0dw40j.jpg" width=200 alt="支付宝捐赠">
-<img style="display:inline" src="https://tva1.sinaimg.cn/large/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg" width=200 alt="微信支付捐赠">
+<img style="display:inline" src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72anu40usj30dw0dw40j.jpg" width=200 alt="支付宝捐赠">
+<img style="display:inline" src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/005HV6Avgy1h72ap99ym1j30b40b4abq.jpg" width=200 alt="微信支付捐赠">
 </div>
 
 ## 版权
