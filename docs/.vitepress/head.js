@@ -15,6 +15,11 @@ const enhanceEnv = `${decodeURIComponent(
   })
 )}`;
 
+/**
+ *  twitter share link card docs
+ *  https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/abouts-cards 
+ */
+
 export const getHeaders = () => [
   ["meta", { name: "renderer", content: "webkit" }],
   ["meta", { name: "author", content: "ihengshuai@foxmail.com" }],
@@ -62,7 +67,7 @@ export const getHeaders = () => [
   ["meta", { name: "twitter:url", value: "https://blog.usword.cn" }],
   ["meta", { name: "twitter:title", value: "hengshuai's blog" }],
   ["meta", { name: "twitter:domain", value: "https://blog.usword.cn" }],
-  ["meta", { name: "twitter:card", content: "summary_large_image" }],
+  ["meta", { name: "twitter:card", content: "summary" }],
   [
     "meta",
     {
@@ -74,12 +79,12 @@ export const getHeaders = () => [
   [
     "meta",
     {
-      name: "twitter:image:src",
+      name: "twitter:image",
       content: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/logo.png",
     },
   ],
-  ["meta", { name:"twitter:image:width", content:"400" }],
-  ["meta", { name:"twitter:image:height", content:"400" }],
+  // ["meta", { name:"twitter:image:width", content:"400" }],
+  // ["meta", { name:"twitter:image:height", content:"400" }],
   ["link", { rel: "apple-touch-icon", href: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/192.png" }],
   ["meta", { name: "apple-mobile-web-app-title", content: "hengshuai's blog" }],
   ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
