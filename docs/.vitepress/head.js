@@ -74,12 +74,12 @@ export const getHeaders = () => [
   [
     "meta",
     {
-      name: "twitter:image",
-      value: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/logo.png",
+      name: "twitter:image:src",
+      content: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/logo.png",
     },
   ],
-  ["meta", { name:"twitter:image:width", content:"600" }],
-  ["meta", { name:"twitter:image:height", content:"600" }],
+  ["meta", { name:"twitter:image:width", content:"400" }],
+  ["meta", { name:"twitter:image:height", content:"400" }],
   ["link", { rel: "apple-touch-icon", href: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/192.png" }],
   ["meta", { name: "apple-mobile-web-app-title", content: "hengshuai's blog" }],
   ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
