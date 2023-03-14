@@ -62,7 +62,7 @@ export const getHeaders = () => [
   ["meta", { name: "twitter:url", value: "https://blog.usword.cn" }],
   ["meta", { name: "twitter:title", value: "hengshuai's blog" }],
   ["meta", { name: "twitter:domain", value: "https://blog.usword.cn" }],
-  ["meta", { name: "twitter:card", content: "summary_large_image" }],
+  ["meta", { name: "twitter:card", content: "summary" }],
   [
     "meta",
     {
