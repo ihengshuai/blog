@@ -62,7 +62,7 @@ export const getHeaders = () => [
   ["meta", { name: "twitter:url", value: "https://blog.usword.cn" }],
   ["meta", { name: "twitter:title", value: "hengshuai's blog" }],
   ["meta", { name: "twitter:domain", value: "https://blog.usword.cn" }],
-  ["meta", { name: "twitter:card", content: "summary" }],
+  ["meta", { name: "twitter:card", content: "summary_large_image" }],
   [
     "meta",
     {
@@ -78,6 +78,8 @@ export const getHeaders = () => [
       value: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/logo.png",
     },
   ],
+  ["meta", { name:"twitter:image:width", content:"600" }],
+  ["meta", { name:"twitter:image:height", content:"600" }],
   ["link", { rel: "apple-touch-icon", href: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/192.png" }],
   ["meta", { name: "apple-mobile-web-app-title", content: "hengshuai's blog" }],
   ["meta", { name: "apple-mobile-web-app-capable", content: "yes" }],
