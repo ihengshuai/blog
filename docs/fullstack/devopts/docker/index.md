@@ -9,6 +9,9 @@ head:
     - name: og:description
       content: 从头到尾完整的讲解docker容器化技术，打通容器化技术大门
   - - meta
+    - name: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
+  - - meta
     - name: twitter:description
       content: 从头到尾完整的讲解docker容器化技术，打通容器化技术大门
   - - meta
