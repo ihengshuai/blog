@@ -81,12 +81,39 @@ export const getSidebarMenu = () => ({
     },
   ],
   "/fullstack/": [
+    // {
+    //   text: "Java",
+    //   collapsible: true,
+    //   items: [
+    //     { text: "Docker", link: "/fullstack/docker/index.html" },
+    //     { text: "Kubernetes", link: "/fullstack/k8s/index.html" },
+    //   ],
+    // },
+    // {
+    //   text: "Database",
+    //   collapsible: true,
+    //   items: [
+    //     { text: "Docker", link: "/fullstack/docker/index.html" },
+    //     { text: "Kubernetes", link: "/fullstack/k8s/index.html" },
+    //   ],
+    // },
     {
-      text: "Development of cloud",
+      text: "DevOpts",
       collapsible: true,
       items: [
-        { text: "Docker", link: "/fullstack/docker/index.html" },
-        { text: "k8s", link: "/fullstack/k8s/index.html" },
+        {
+          text: "Docker",
+          link: "/fullstack/devopts/docker/index.html",
+          items: [
+            { text: "安装与配置", link: "/fullstack/devopts/docker/install-configure.html" },
+          ]
+        },
+        {
+          text: "Kubernetes",
+          items: [
+            { text: "Kubernetes", link: "/fullstack/devopts/k8s/index.html" }
+          ]
+        }
       ],
     },
   ],

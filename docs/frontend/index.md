@@ -1,6 +1,6 @@
 ---
 title: 前端知识体系
-description: 前端知识体系学习清单,不断更新前端热门技术和分享热门文章
+description: 前端知识体系学习清单,不断更新前端热门技术和分享优质文章
 head:
   - - meta
     - name: keywords
@@ -25,42 +25,7 @@ head:
 
 这几年大前端技术呈爆炸式发展中，作者本人也是在不断学习中，文章难免会有一些疏漏或者错误之处，欢迎每个细心的读者随时[提供issue](https://github.com/ihengshuai/blog/issues)(<u>直接在文章下面留言更加方便</u>)，让我们共同进步！
 
-- Frontend basic
-  - [Javascript](/frontend/js/index.html)
-  - [CSS](/frontend/css/index.html)
-  - [Vue](/frontend/vue/index.html)
-  - [React](/frontend/react/index.html)
-  - [Regexp](/frontend/regexp/index.html)
-  - [Babel](/frontend/babel/index.html)
-  - [Webpack](/frontend/webpack/index.html)
-  - [Building Tool](/frontend/building-tool/index.html)
-  - [Debug Skill](/frontend/debug-skill/index.html)
-  - [NodeJS](/frontend/node/index.html)
-  - [Typescript](/frontend/ts/index.html)
-  - [NestJS](/frontend/nestjs/index.html)
-  - [Render Mode](/frontend/render-mode/index.html)
-  - [Project Specification](/frontend/project-specification/index.html)
-  - [HTTP Protocol](/frontend/http-protocol/index.html)
-  - [Nginx](/frontend/nginx/index.html)
-- Frontend advance
-  - [Compiler](/frontend/compiler/index.html)
-  - [Optimize](/frontend/optimize/index.html)
-  - [Monitor](/frontend/monitor/index.html)
-  - [Pattern](/frontend/pattern/index.html)
-  - [Npm Package](/frontend/npm/index.html)
-  - [Design Cli](/frontend/cli/index.html)
-  - [LowerCoding](/frontend/lowcoding/index.html)
-  - [Micro Frontend](/frontend/micro-frontend/index.html)
-  - [Node BFF](/frontend/node-bff/index.html)
-  - [Node Optimize](/frontend/node-optimize/index.html)
-  - [Sandbox](/frontend/sandbox/index.html)
-- Frontend extension
-  - [Micro Program](/frontend/micro-program/index.html)
-  - [Hybrid App](/frontend/hybrid-app/index.html)
-  - [Desktop App](/frontend/desktop-app/index.html)
-  - [Visual](/frontend/visual/index.html)
-  - [Webassembly](/frontend/wasm/index.html)
-
+由于工作原因，写作时间有限，尽力更新中...
 
 
 <Gitalk />
