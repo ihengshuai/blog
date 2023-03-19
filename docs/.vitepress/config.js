@@ -16,7 +16,7 @@ export default {
   markdown: {
     theme: "material-palenight",
     lineNumbers: true,
-    toc: { level: [1, 2, 3] },
+    toc: { level: [1, 2, 3, 4] },
     config: (md) => {
       // md.use(markdown_anchor)
     },
