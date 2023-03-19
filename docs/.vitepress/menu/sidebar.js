@@ -85,22 +85,34 @@ export const getSidebarMenu = () => ({
       text: "Docker",
       link: "/fullstack/docker/index.html",
       items: [
-        { text: "安装与配置", link: "/fullstack/docker/install-configure.html" },
+        {
+          items: [
+            { text: "安装与配置", link: "/fullstack/docker/install-configure.html" },
+          ]
+        }
       ]
     },
     {
       text: "Gitlab",
       collapsible: true,
       items: [
-        { text: "1. 安装与配置", link: "/fullstack/gitlab/install-configure.html" },
-        { text: "2. Gitlab Runner安装与配置", link: "/fullstack/gitlab/gitlab-runner-install-configure.html" },
-        { text: "3. 流水线配置", link: "/fullstack/gitlab/gitlab-pipeline.html" },
+        {
+          items: [
+            { text: "安装与配置", link: "/fullstack/gitlab/install-configure.html" },
+            { text: "Gitlab Runner安装与配置", link: "/fullstack/gitlab/gitlab-runner-install-configure.html" },
+            { text: "流水线配置", link: "/fullstack/gitlab/gitlab-pipeline.html" },
+          ]
+        }
       ]
     },
     {
       text: "Kubernetes",
       items: [
-        { text: "Kubernetes", link: "/fullstack/k8s/index.html" }
+        {
+          items: [
+            { text: "Kubernetes", link: "/fullstack/k8s/index.html" }
+          ]
+        }
       ]
     }
     // {
