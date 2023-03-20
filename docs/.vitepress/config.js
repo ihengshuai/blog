@@ -27,6 +27,7 @@ export default {
     logo: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/logo.png",
     siteTitle: "Hengshuai's blog",
     outline: [2, 4],
+    outlineTitle: '目录',
     nav: getNavMenu(),
     socialLinks: [{ icon: "github", link: "https://github.com/ihengshuai" }],
     sidebar: getSidebarMenu(),

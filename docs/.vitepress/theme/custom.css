@@ -3,7 +3,8 @@
   --vp-c-brand-light: #747bff;
   --vp-c-brand-dark: rgb(74, 72, 196);
   --vp-layout-max-width: 1500px;
-  --vp-sidebar-width: 300px
+  --vp-sidebar-width: 300px;
+  --vp-custom-block-tip-text: var(--vp-c-green-dark);
 }
 
 .VPDoc.has-aside .content-container {
