@@ -8,3 +8,6 @@ dist
 
 # 图片文件
 local-images
+
+# 缓存
+docs/.vitepress/cache
