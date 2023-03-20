@@ -88,6 +88,8 @@ export const getSidebarMenu = () => ({
         {
           items: [
             { text: "安装与配置", link: "/fullstack/docker/install-configure.html" },
+            { text: "使用Docker搭建npm仓库", link: "/fullstack/docker/npm-repository.html" },
+            { text: "nexus搭建docker仓库", link: "/fullstack/docker/docker-repository.html" },
           ]
         }
       ]
@@ -101,6 +103,7 @@ export const getSidebarMenu = () => ({
             { text: "安装与配置", link: "/fullstack/gitlab/install-configure.html" },
             { text: "Gitlab Runner安装与配置", link: "/fullstack/gitlab/gitlab-runner-install-configure.html" },
             { text: "流水线配置", link: "/fullstack/gitlab/gitlab-pipeline.html" },
+            { text: "Gitlab搭建npm仓库", link: "/fullstack/gitlab/npm-repository.html" },
           ]
         }
       ]
