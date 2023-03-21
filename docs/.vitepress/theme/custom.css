@@ -29,6 +29,10 @@
   font-size: 13px !important;
 }
 
+.vp-doc h2 {
+  margin: 28px 0 16px;
+}
+
   .sm-center {
 @media screen and (max-width: 600px) {
     text-align: center;

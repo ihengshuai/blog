@@ -1,5 +1,5 @@
 ---
-title: nexus搭建docker仓库
+title: 搭建docker私有仓库
 description: 使用nexus3搭建属于自己的docker私有镜像仓库完整教程
 head:
   - - meta
@@ -19,4 +19,7 @@ head:
       content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
 ---
 
-# nexus搭建docker仓库
+# 搭建docker私有仓库
+
+## 官方镜像搭建
+## 使用nexus3搭建
