@@ -87,7 +87,7 @@ export const getSidebarMenu = () => ({
       items: [
         {
           items: [
-            { text: "安装与配置", link: "/fullstack/docker/install-configure.html" },
+            { text: "Docker安装与配置", link: "/fullstack/docker/install-configure.html" },
             { text: "使用Docker搭建npm仓库", link: "/fullstack/docker/npm-repository.html" },
             { text: "搭建docker私有仓库", link: "/fullstack/docker/docker-repository.html" },
           ]
