@@ -11,15 +11,38 @@
     reactionsEnabled="1"
     emitMetadata="1"
     inputPosition="top"
-    theme="light"
+    :theme="theme"
     lang="zh-CN"
     loading="lazy"
   />
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import Giscus from '@giscus/vue'
+
+const theme = ref('light');
+const ob = ref();
+
+onMounted(() => {
+  setCommentTheme();
+  watchHTMLAttr();
+})
+
+const setCommentTheme = () => {
+  if (document.documentElement.classList.contains("dark")) {
+    theme.value = "dark_dimmed";
+  } else {
+    theme.value = "light";
+  }
+}
+const watchHTMLAttr = () => {
+  ob.value = new MutationObserver(setCommentTheme);
+  ob.value.observe(document.documentElement, { attributes: true, childList: false, attributeFilter: ["class"] });
+}
+onUnmounted(() => {
+  ob?.value?.disconnect?.();
+})
 
 // 注释掉gittalk，使用giscus
 // let gitalkRender = false;
