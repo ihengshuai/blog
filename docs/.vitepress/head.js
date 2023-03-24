@@ -94,21 +94,21 @@ export const getHeaders = () => [
   ],
   ["meta", { rel: "apple-touch-startup-image", href: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/192.png" }],
   ["link", { rel: "manifest", href: "/manifest.json" }],
-  [
-    "link",
-    {
-      defer: true,
-      rel: "stylesheet",
-      href: "https://cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.css",
-    },
-  ],
-  [
-    "script",
-    {
-      defer: true,
-      src: "https://cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.js",
-    },
-  ],
+  // [
+  //   "link",
+  //   {
+  //     defer: true,
+  //     rel: "stylesheet",
+  //     href: "https://cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.css",
+  //   },
+  // ],
+  // [
+  //   "script",
+  //   {
+  //     defer: true,
+  //     src: "https://cdn.bootcdn.net/ajax/libs/gitalk/1.8.0/gitalk.min.js",
+  //   },
+  // ],
   [
     "script",
     { id: "ENV_VARIABLES" },
