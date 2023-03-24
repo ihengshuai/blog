@@ -5,7 +5,7 @@
     repoId="R_kgDOILaFbQ"
     category="Announcements"
     categoryId="DIC_kwDOILaFbc4CSXG3"
-    mapping="pathname"
+    mapping="url"
     strict="0"
     term="Welcome to @giscus/vue component!"
     reactionsEnabled="1"
