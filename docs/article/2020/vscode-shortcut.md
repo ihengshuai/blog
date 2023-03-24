@@ -5,6 +5,18 @@ head:
   - - meta
     - name: keywords
       content: vscode快捷键,快捷键,mac vscode快捷键,Mac vscode
+  - - meta
+    - property: og:description
+      content: 本文罗列常见的vscode快捷键
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-vscode.png
+  - - meta
+    - name: twitter:description
+      content: 本文罗列常见的vscode快捷键
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-vscode.png
 ---
 
 # vscode快捷键

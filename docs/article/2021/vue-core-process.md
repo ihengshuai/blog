@@ -5,6 +5,18 @@ head:
   - - meta
     - name: keywords
       content: Vue源码,vue core,vue核心原理,vue运行机制流程,vue双向绑定原理,模板编译
+  - - meta
+    - property: og:description
+      content: Vue核心流程原理解密，一起来窥探vue的内部运行机制
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-vue.png
+  - - meta
+    - name: twitter:description
+      content: Vue核心流程原理解密，一起来窥探vue的内部运行机制
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-vue.png
 ---
 
 # 谈谈Vue内部的运行机制

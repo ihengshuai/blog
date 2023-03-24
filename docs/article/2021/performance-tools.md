@@ -5,6 +5,18 @@ head:
   - - meta
     - name: keywords
       content: 性能优化,性能测试工具,PageSpeed Insights,Lighthouse,SiteSpeed,Speedcurve,webpagetest
+  - - meta
+    - property: og:description
+      content: 前端性能测试工具推荐,性能测试工具有哪些
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-perf.png
+  - - meta
+    - name: twitter:description
+      content: 前端性能测试工具推荐,性能测试工具有哪些
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-perf.png
 ---
 
 # 前端性能测试工具

@@ -5,6 +5,18 @@ head:
   - - meta
     - name: keywords
       content: 强缓存,协商缓存,HTTP缓存,浏览器缓存,内存缓存,缓存策略,缓存机制,性能优化
+  - - meta
+    - property: og:description
+      content: 什么是强缓存和协商缓存、HTTP缓存、浏览器缓存,web如何做缓存提高应用的加载效率
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-cache.png
+  - - meta
+    - name: twitter:description
+      content: 什么是强缓存和协商缓存、HTTP缓存、浏览器缓存,web如何做缓存提高应用的加载效率
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-cache.png
 ---
 
 # web缓存策略

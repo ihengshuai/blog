@@ -6,10 +6,10 @@ head:
     - name: keywords
       content: npm私有仓库,搭建npm仓库,docker搭建npm仓库
   - - meta
-    - name: og:description
+    - property: og:description
       content: 使用Docker搭建属于自己的npm私有仓库的完整教程
   - - meta
-    - name: og:image
+    - property: og:image
       content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-npm.png
   - - meta
     - name: twitter:description

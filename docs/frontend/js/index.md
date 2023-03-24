@@ -1,10 +1,22 @@
 ---
 title: 你不知道的Javascript
-description: 一起诡探JavaScript的奇淫技巧
+description: 一起来解密JavaScript的奇淫技巧
 head:
   - - meta
     - name: keywords
-      content: js高级使用,js进阶,js指南,闭包,es6,Promise,Set,Map,symbol,异步编程,毁掉地狱,设计模式
+      content: js高级使用,js进阶,js指南,闭包,es6,Promise,Set,Map,symbol,异步编程,回调地狱,设计模式
+  - - meta
+    - property: og:description
+      content: 一起来解密JavaScript的奇淫技巧
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+  - - meta
+    - name: twitter:description
+      content: 一起来解密JavaScript的奇淫技巧
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # 你不知道的Javascript

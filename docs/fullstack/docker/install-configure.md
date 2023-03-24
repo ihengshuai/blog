@@ -6,10 +6,10 @@ head:
     - name: keywords
       content: docker基础学习,docker安装配置,docker优缺点,centos安装docker
   - - meta
-    - name: og:description
+    - property: og:description
       content: docker基础入门从安装到配置
   - - meta
-    - name: og:image
+    - property: og:image
       content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
   - - meta
     - name: twitter:description

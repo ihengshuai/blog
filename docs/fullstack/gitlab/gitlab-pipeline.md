@@ -6,10 +6,10 @@ head:
     - name: keywords
       content: gitlab流水线,流水线,CI/CD,自动化构建
   - - meta
-    - name: og:description
+    - property: og:description
       content: 带你理解gitlab流水线的概念，熟练掌握流水线的常用技巧
   - - meta
-    - name: og:image
+    - property: og:image
       content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
   - - meta
     - name: twitter:description

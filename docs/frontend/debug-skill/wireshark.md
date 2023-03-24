@@ -5,6 +5,18 @@ head:
   - - meta
     - name: keywords
       content: wireshark,wireshark抓包工具,网络抓包工具,协议抓包,frontend debugger,chrome调试,调试技能,线上调试
+  - - meta
+    - property: og:description
+      content: 使用wireshark网络抓包工具分析网络数据包、协议、通信
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-icon.png
+  - - meta
+    - name: twitter:description
+      content: 使用wireshark网络抓包工具分析网络数据包、协议、通信
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-icon.png
 ---
 
 # wireshark网络抓包

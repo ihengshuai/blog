@@ -5,6 +5,18 @@ head:
   - - meta
     - name: keywords
       content: this指向,bind,apply,call,js,js改变this
+  - - meta
+    - property: og:description
+      content: js中如何使用bind、call、apply改变this指向
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+  - - meta
+    - name: twitter:description
+      content: js中如何使用bind、call、apply改变this指向
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # bind、call、apply使用技巧

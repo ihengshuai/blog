@@ -6,10 +6,10 @@ head:
     - name: keywords
       content: docker私有仓库,搭建docker仓库,nexus搭建docker仓库,registry搭建docker仓库
   - - meta
-    - name: og:description
+    - property: og:description
       content: 使用官方registry或nexus3搭建属于自己的docker私有镜像仓库完整教程
   - - meta
-    - name: og:image
+    - property: og:image
       content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
   - - meta
     - name: twitter:description

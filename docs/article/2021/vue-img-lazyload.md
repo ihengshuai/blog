@@ -1,10 +1,22 @@
 ---
 title: 手写一个vue图片懒加载插件
-description: 图片懒加载技术帮助加速页面的加载提高加载效率和网站跑分
+description: 如何利用使用vue写一个图片懒加载插件指令
 head:
   - - meta
     - name: keywords
       content: 图片懒加载,vue插件,vue图片懒加载,性能优化,页面懒加载,页面性能
+  - - meta
+    - property: og:description
+      content: 如何利用使用vue写一个图片懒加载插件指令
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-vue.png
+  - - meta
+    - name: twitter:description
+      content: 如何利用使用vue写一个图片懒加载插件指令
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-vue.png
 ---
 
 # 手写vue图片懒加载插件

@@ -5,6 +5,18 @@ head:
   - - meta
     - name: keywords
       content: fiddler,fiddler抓包工具,手机抓包,ios抓包,android抓包,抓包工具,前端调试,frontend debugger,chrome调试,调试技能,node调试,线上调试
+  - - meta
+    - property: og:description
+      content: fiddler抓包工具的使用,fiddler调试web应用程序和移动端的利器
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-debug.png
+  - - meta
+    - name: twitter:description
+      content: fiddler抓包工具的使用,fiddler调试web应用程序和移动端的利器
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-debug.png
 ---
 
 # Fiddler抓包

@@ -5,6 +5,18 @@ head:
   - - meta
     - name: keywords
       content: 性能优化,nginx,部署应用,deploy,缓存机制,强缓存,协商缓存,http缓存,CDN,服务器
+  - - meta
+    - property: og:description
+      content: 如何优化网页的加载速度和性能指标,提高网站的seo
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-perf.png
+  - - meta
+    - name: twitter:description
+      content: 如何优化网页的加载速度和性能指标,提高网站的seo
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-perf.png
 ---
 
 # 优化改善网页的加载及性能

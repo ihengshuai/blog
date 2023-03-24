@@ -5,6 +5,18 @@ head:
   - - meta
     - name: keywords
       content: 作用域,作用域链,执行上下文,闭包,JS编译,变量声明,变量提升,暂时性死区,JS此法环境,设计模式
+  - - meta
+    - property: og:description
+      content: 作用域、执行上下文、作用域链和闭包的理解
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+  - - meta
+    - name: twitter:description
+      content: 作用域、执行上下文、作用域链和闭包的理解
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # 作用域、执行上下文、作用域链和闭包

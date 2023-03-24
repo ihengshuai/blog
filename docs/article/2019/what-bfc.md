@@ -1,10 +1,22 @@
 ---
 title: BFC渲染规则
-description: 彻底搞懂CSS中的BFC概念帮助你写出更好地css
+description: 什么是BFC及它的作用又是什么
 head:
   - - meta
     - name: keywords
       content: CSS,BFC,块级格式化上下文,margin重叠,css渲染规则,两栏布局
+  - - meta
+    - property: og:description
+      content: 什么是BFC及它的作用又是什么
+  - - meta
+    - property: og:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-css.png
+  - - meta
+    - name: twitter:description
+      content: 什么是BFC及它的作用又是什么
+  - - meta
+    - name: twitter:image
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-css.png
 ---
 
 # BFC总结
