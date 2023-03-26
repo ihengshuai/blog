@@ -97,7 +97,7 @@ export const getSidebarMenu = () => ({
     },
     {
       text: "Gitlab",
-      collapsible: true,
+      // collapsible: true,
       items: [
         {
           items: [

@@ -46,15 +46,20 @@ head:
 
 有了容器化技术对于应用的部署更加方便，也更好维护，这也促使云原生的发展。
 
+## docker架构
+Docker 架构分为客户端-服务器架构和主从架构，具体如下：
+
+客户端-服务器架构：Docker 采用客户端-服务器架构，其中客户端是 Docker 命令行工具，用于与 Docker 服务端通信。Docker 服务端是 Docker 引擎，负责管理和运行 Docker 容器。客户端和服务端可以运行在同一台机器上，也可以通过网络连接运行在不同的机器上。
+
+主从架构：Docker Swarm 是一个用于管理多个 Docker 容器的集群工具，采用主从架构。Docker Swarm 集群由一个管理节点和多个工作节点组成，管理节点负责整个集群的管理和调度，工作节点负责运行 Docker 容器。管理节点和工作节点可以运行在同一台机器上，也可以通过网络连接运行在不同的机器上。
+![iShot_2022-09-04_18.05.31](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/iShot_2022-09-04_18.05.31.png)
+
+docker所安装的镜像在本地都是一个个文件，可以通过`docker info`查看存储位置
+
 ## Docker三大组件
 - 镜像（Image）：一个root文件系统的模板，相当于 一个类
 - 容器（Container）：docker run 镜像就是容器（最小的linux内核文件和运行的应用程序），镜像和容器的关系，就像是面向对象程序设计中的 `类` 和 `实例`一样，镜像是静态的定义，容器是镜像运行时的实体
 - 仓库（Repositry）：保存镜像的仓库，每个仓库可以包含多个Tag，对应不同的镜像
-
-## 架构图
-![iShot_2022-09-04_18.05.31](https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/iShot_2022-09-04_18.05.31.png)
-
-docker所安装的镜像在本地都是一个个文件，可以通过`docker info`查看存储位置
 
 ## 安装
 本文基于ARM架构Centos7虚拟机安装的，如果你的环境和我不一致，可以参考[官方文档](https://docs.docker.com/engine/install/)或其他资料
@@ -172,7 +177,9 @@ Hello from Docker!
 }
 ```
 
-重启服务：
+更多配置参考:point_right:[官方文档](https://docs.docker.com/engine/reference/commandline/dockerd/#daemon)
+
+修改了配置文件后需要重启服务：
 ```sh
 systemctl daemon-reload
 systemctl restart docker
