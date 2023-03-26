@@ -89,6 +89,10 @@ export const getSidebarMenu = () => ({
           items: [
             { text: "Docker安装与配置", link: "/fullstack/docker/install-configure.html" },
             { text: "Docker基础教程", link: "/fullstack/docker/base-tutorial.html" },
+            { text: "Docker数据卷与持久化", link: "/fullstack/docker/volume-store.html" },
+            { text: "Docker网络原理", link: "/fullstack/docker/network.html" },
+            { text: "使用Dockerfile构建镜像", link: "/fullstack/docker/dockerfile.html" },
+            { text: "使用DockerCompose部署服务", link: "/fullstack/docker/docker-compose.html" },
             { text: "使用Docker搭建npm仓库", link: "/fullstack/docker/npm-repository.html" },
             { text: "搭建docker私有仓库", link: "/fullstack/docker/docker-repository.html" },
           ]

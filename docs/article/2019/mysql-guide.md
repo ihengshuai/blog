@@ -16,7 +16,7 @@ head:
       content: mysql基础使用指南
   - - meta
     - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-ts.png
+      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-mysql.png
 ---
 
 # MySQL从入门到放弃
