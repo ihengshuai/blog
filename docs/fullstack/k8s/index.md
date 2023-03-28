@@ -1,5 +1,5 @@
 ---
-title: Kubernetes
+title: 初识Kubernetes
 description: Kubernetes使用指南
 head:
   - - meta

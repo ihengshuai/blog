@@ -118,7 +118,8 @@ export const getSidebarMenu = () => ({
       items: [
         {
           items: [
-            { text: "Kubernetes", link: "/fullstack/k8s/index.html" }
+            { text: "初始kubernetes", link: "/fullstack/k8s/index.html" },
+            { text: "k8s安装教程", link: "/fullstack/k8s/install.html" },
           ]
         }
       ]

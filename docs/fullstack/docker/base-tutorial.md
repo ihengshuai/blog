@@ -161,7 +161,7 @@ nginx        1.15.3    c5e5a72af32f   4 years ago   103MB
 	# 通过Dockerfile
 	docker build -t imageName:tag .
 	```
-	>有关Dockerfile的使用可以查看我的「[使用Dockerfile构建镜像](https://blog.usword.cn)」一文
+	>有关Dockerfile的概念和使用可以查看我的「[使用Dockerfile构建镜像](/fullstack/docker/dockerfile.html)」一文
 
 1. 删除
 	```sh
