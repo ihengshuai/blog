@@ -271,7 +271,7 @@ RUN ["curl", "-I", "http://localhost"]
 COPY [--chown=<user>:<group>] [--chmod=<perms>] <src>... <dest>
 COPY [--chown=<user>:<group>] [--chmod=<perms>] ["<src>",... "<dest>"]
 ```
-复制文件也支持设置指定的用户和权限组
+复制文件也支持设置指定的用户和权限组，同时支持`--from=xx`多阶段产物的复制，这种特性对于减小镜像构建体积作用很大，你可以从[多阶段构建](/fullstack/docker/dockerfile.html#多阶段构建)了解其作用
 
 例子：
 ```docker
@@ -533,13 +533,73 @@ docker build -f Dockerfile -t myimage .
 :::warning 注意
 规定在Dockerfile中第一条指令必须是`FROM`，作为制作镜像的最基础的镜像层，基础镜像可以是空镜像如：scratch 镜像
 :::
-上下文、错误细节
+或许你已经注意到了，以上镜像构建使用的是`docker build`命令，它就是用来构建镜像的。<u>**构建是在服务端(docker引擎)进行的，我们知道docker是典型的`C/S`架构，通过构建命令会将当前上下文的文件传递给服务端，然后进行构建，这种架构也天然的支持分布式远端构建，**</u>这里不用了解太多。
+
+语法：
+```sh
+docker build [OPTIONS] PATH | URL | -
+```
+支持本地Dockerfile文件，还支持远程URL，如果文件是个tar压缩包，将会自动解压。常用的参数如下：
+- `构建上下文`：指定上下文目录，默认`.`，可以是任何文件系统路径
+- `-f`：指定Dockerfile文件路径，其命名可以随意，默认当前路径下的Dockerfile文件
+- `-t`：镜像名及标签，如 nginx:1.1
+- `--build-arg`：Dockerfile构建arg参数
+- `--no-cache`：禁用构建缓存，强制重新构建镜像
+- `--pull`：强制每次重新拉取远程镜像
+
+例子：
+```sh
+docker build -t nginx:1.1 -f ../Dockerfile . --pull --no-cache
+```
+
+>更多关于`docker build`的用法可以使用`docker build -h`了解
 
 ## 多阶段构建
+到这里你基本上已经会简单的构建镜像了，但往往构建的镜像体积比较大，内部往往包含了一些无用的内容文件。如前端静态项目可能需要用node进行打包，最后用nginx提供http服务，实际并不需要node环境及文件，但还是一并放进了镜像中，体积会变大好多，这种情况可以使用多阶段构建解决。
+
+Dockerfile 多阶段构建是一种优化 Docker 镜像构建过程的技术。它可以在一个 Dockerfile 文件中定义多个阶段，每个阶段可以使用不同的基础镜像和构建步骤，并且可以挑取上一阶段的产物，最终生成一个精简的镜像。
+
+语法：
+```sh
+FROM xxx AS stageName
+```
+同样的每个阶段都是以`FROM`开始，使用`AS`可以为当前阶段命名，名字需小写
+
+例子：
+```docker{10}
+# build阶段
+FROM node:14.16.2 AS build
+WORKDIR /app
+COPY package.json .
+COPY src .
+RUN npm install && npm run build
+
+# 最后一个阶段
+FROM nginx:alpine
+COPY --from=build /app/dist /var/etc/nginx/html
+CMD ["nginx", "g", "daemon off;"]
+```
+这个Dockerfile定义了两个阶段的构建，第一阶段为`build`阶段，使用`node:14.16.2`为基础镜像，安装前端依赖并进行打包，产物为`dist`目录；第二阶段以`nginx:alpine`为基础镜像使用`COPY --from=build`将build阶段的`/app/dist`产物复制到第二阶段的nginx静态目录，最终设置容器的启动命令。最终打包出来的镜像只包含了最后一阶段的文件，不会包含build阶段的node内容，这样会使镜像的体积减小很多，也能在`CI/CD`中减小打包交付时间，提高效率
+
+>你可以尝试将以上的Dockerfile分别用单阶段和多阶段进行构建，对比下两者的大小，加深其作用印象
 
 ## dockerignore
+使用多阶段构建是一种优化手段，另一个重要的概念便是`dockerignore`，它是用来做什么的？前面也提到了docker是一个`C/S`架构，镜像的构建是在Docker Engine构建的，构建时会将构建上下文的文件全部上传到服务端，如果上传了一些不必要的文件，就会影响总体耗时。
 
-## 构建NodeJS
+docker也支持像`.gitignore`类似的配置文件`.dockerignore`，在构建上传文件时将会忽略掉`.gitignore`中匹配的文件或路径，从而缩短文件上传耗时。
+
+```dockerignore
+.DS_Store
+node_modules
+*.md
+*/dist
+```
+
+## 构建前端NodeJS
+本次就分别以前端的静态项目和NodeJS项目为例子做个简单的构建演示
+
+1. 静态项目用node打包，最终以nginx发布
+2. NodeJS服务项目，使用`pm2`进行发布
 
 ## 构建优化
 
