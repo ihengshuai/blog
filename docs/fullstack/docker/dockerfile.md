@@ -595,11 +595,116 @@ node_modules
 */dist
 ```
 
-## 构建前端NodeJS
+## 构建前端项目
 本次就分别以前端的静态项目和NodeJS项目为例子做个简单的构建演示
 
-1. 静态项目用node打包，最终以nginx发布
-2. NodeJS服务项目，使用`pm2`进行发布
+### 静态项目
+静态项目用node打包，最终以nginx发布
+
+这里使用`vite`简单创建一个demo，使用`react+ts`模板
+```sh
+npm create vite
+```
+编写Dockerfile：
+```docker
+# docker发布前端静态项目简单demo
+FROM node:alpine as builder
+WORKDIR /app
+COPY . .
+RUN npm install && npm run build
+
+# 大小只有20MB左右
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+CMD [ "nginx", "-g", "daemon off;" ]
+```
+构建镜像：
+```sh
+docker build -t blog:v1 .
+```
+运行容器：
+```sh
+docker run --rm -p 8088:80 blog:v1
+```
+以本人为例以上镜像大小只有`22.4MB`，浏览器输入`IP:8088`访问页面就可以看到静态页面了
+
+### NodeJS项目
+NodeJS服务项目，使用`pm2`进行发布
+初始化项目，并安装相应的依赖：
+```sh
+npm init -y
+
+# package.json文件
+{
+  "name": "frontend-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "express": "^4.18.2"
+  }
+}
+```
+创建`server.js`文件：
+```js
+const express = require("express");
+const app = express();
+const dayjs = require("dayjs");
+
+app.use((req, res) => {
+  console.log("【request】：" + req.url);
+  res.json({
+    code: 200,
+    date: dayjs().format("YYYY-MM-DD HH:mm:ss"),
+    path: req.url,
+    query: {
+      ...req.query,
+    },
+  });
+});
+
+app.listen(10001, () => console.log("server is running on port 10001."));
+```
+创建`pm2.json`配置文件：
+```json
+{
+  "apps": [
+    {
+      "name": "frontend-nodejs",
+      "script": "server.js",
+      "watch": false,
+      "instance": 3,
+      "autorestart": true,
+      "max_memory_restart": "1G",
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "env_production": {
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
+```
+Dockerfile配置文件：
+```docker
+FROM node:alpine
+WORKDIR /app
+COPY package.json .
+RUN npm install && npm install pm2 -g
+COPY . .
+EXPOSE 10001
+ENTRYPOINT ["pm2-runtime", "start", "pm2.json", "--env", "production"]
+```
+构建镜像：
+```sh
+docker build -t blog:v2 .
+```
+运行容器：
+```sh
+docker run --rm -p 8088:10001 blog:v2
+```
+以本人为例以上镜像大小有200MB大小，浏览器输入`IP:8088`访问页面就可以页面了，你还可以控制台查看日志输出
 
 ## 构建优化
 

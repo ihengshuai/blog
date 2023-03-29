@@ -1,0 +1,9 @@
+{
+  "name": "frontend-nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "express": "^4.18.2"
+  }
+}
