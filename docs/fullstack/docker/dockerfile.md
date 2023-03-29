@@ -599,7 +599,7 @@ node_modules
 本次就分别以前端的静态项目和NodeJS项目为例子做个简单的构建演示
 
 ### 静态项目
-静态项目用node打包，最终以nginx发布
+静态项目用node打包，最终以nginx发布，源码地址:point_right:[点击这里](https://github.com/ihengshuai/blog/tree/main/__example__/docker/frontend-static)
 
 这里使用`vite`简单创建一个demo，使用`react+ts`模板
 ```sh
@@ -629,7 +629,7 @@ docker run --rm -p 8088:80 blog:v1
 以本人为例以上镜像大小只有`22.4MB`，浏览器输入`IP:8088`访问页面就可以看到静态页面了
 
 ### NodeJS项目
-NodeJS服务项目，使用`pm2`进行发布
+NodeJS服务项目，使用`pm2`进行发布，源码地址:point_right:[点击这里](https://github.com/ihengshuai/blog/tree/main/__example__/docker/frontend-nodejs)。
 初始化项目，并安装相应的依赖：
 ```sh
 npm init -y

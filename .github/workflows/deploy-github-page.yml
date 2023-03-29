@@ -30,7 +30,7 @@ jobs:
       - name: set env variables
         run: echo ALGOLIA_APP_ID=${{ env.ALGOLIA_APP_ID }} >> .env && echo ALGOLIA_APP_KEY=${{ env.ALGOLIA_APP_KEY }} >> .env && echo ALGOLIA_APP_INDEXNAME=${{ env.ALGOLIA_APP_INDEXNAME }} >> .env && echo GITALK_ID=${{ env.GITALK_ID }} >> .env && echo GITALK_SECRET=${{ env.GITALK_SECRET }} >> .env
       - name: build project
-        run: pnpm install && pnpm build
+        run: pnpm install --no-frozen-lockfile && pnpm build
       - run: ls
       - name: generate sitemap
         run: chmod +x ./scripts/generate-sitemap.sh && ./scripts/generate-sitemap.sh
