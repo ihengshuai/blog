@@ -1,19 +1,19 @@
 ---
 title: 使用Dockerfile构建镜像
-description: 使用命令行commit的方式构建镜像比较繁琐且定制镜像困难,一起来学习使用Dockerfile一键式构建自己的镜像吧
+description: Dockerfile是一个文本文件里面包含了一条条构建镜像的指令，使用Dockerfile构建镜像更加方便、间接、透明
 head:
   - - meta
     - name: keywords
-      content: Dockerfile,docker镜像构建,定制docker镜像
+      content: Dockerfile构建镜像,Dockerfile构建优化,Dockerfile多阶段构建,Dockerfile如何运行,docker镜像构建,定制docker镜像
   - - meta
     - property: og:description
-      content: 使用命令行commit的方式构建镜像比较繁琐且定制镜像困难,一起来学习使用Dockerfile一键式构建自己的镜像吧
+      content: Dockerfile是一个文本文件里面包含了一条条构建镜像的指令，使用Dockerfile构建镜像更加方便、间接、透明
   - - meta
     - property: og:image
       content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
   - - meta
     - name: twitter:description
-      content: 使用命令行commit的方式构建镜像比较繁琐且定制镜像困难,一起来学习使用Dockerfile一键式构建自己的镜像吧
+      content: Dockerfile是一个文本文件里面包含了一条条构建镜像的指令，使用Dockerfile构建镜像更加方便、间接、透明
   - - meta
     - name: twitter:image
       content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
@@ -707,16 +707,21 @@ docker run --rm -p 8088:10001 blog:v2
 以本人为例以上镜像大小有200MB大小，浏览器输入`IP:8088`访问页面就可以页面了，你还可以控制台查看日志输出
 
 ## 构建优化
+构建优化在生产环境中是非常必要的，常见的优化手段有：
+- 多阶段构建：使用多阶段构建可以减小镜像大小，提高构建速度。多阶段构建可以将构建环境和运行环境分离，只保留必要的文件和组件。
+- 使用 .dockerignore 文件：使用 .dockerignore 文件可以避免将不必要的文件和目录复制到镜像中，从而减小镜像大小。
+- 构建时使用缓存：使用 Dockerfile 构建缓存可以加速镜像构建过程。例如，在 Dockerfile 中，可以将不经常更改的指令放在前面，从而利用缓存。
+- 使用更小的基础镜像：使用更小的基础镜像可以减小镜像大小，提高镜像构建和部署的效率。
 
 ## 参考文档
+- https://docs.docker.com/engine/reference/builder
+- https://docs.docker.com/engine/reference/commandline/build
+- https://docs.docker.com/language/nodejs/build-images
+- https://docs.docker.com/engine/reference/run
 
 ## 总结
+Dockerfile 是构建和管理 Docker 镜像的重要工具，使用它可以简化应用程序的部署和管理，并提高可重复性、可自动化性、可定制性和可扩展性。
 
 
-
-
-
-
-
-
-
+<Reward />
+<Gitalk />
