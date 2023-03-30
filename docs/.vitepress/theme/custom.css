@@ -5,6 +5,12 @@
   --vp-layout-max-width: 1500px;
   --vp-sidebar-width: 300px;
   --vp-custom-block-tip-text: var(--vp-c-green-dark);
+  --vp-c-mute: #f9e7ca;
+  --vp-button-alt-bg: #eee;
+}
+.dark {
+  --vp-c-text-code: #232528;
+  --vp-button-alt-bg: #454343;
 }
 
 .VPDoc.has-aside .content-container {
