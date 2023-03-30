@@ -1,22 +1,8 @@
 ---
 title: 7天撸完ktv点歌系统
 description: 使用express和vue全栈7天撸完ktv点歌系统(完整版)
-head:
-  - - meta
-    - name: keywords
-      content: KTV点歌系统,毕业设计,nodejs,vue,后台管理系统,创意毕设,全栈,mysql,koa,express,全栈系统
-  - - meta
-    - property: og:description
-      content: 使用express、koa、vue全栈7天撸完ktv点歌系统(完整版)
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-npm.png
-  - - meta
-    - name: twitter:description
-      content: 使用express、koa、vue全栈7天撸完ktv点歌系统(完整版)
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-npm.png
+keywords: KTV点歌系统,毕业设计,nodejs,vue,后台管理系统,创意毕设,全栈,mysql,koa,express,全栈系统
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-npm.png
 ---
 
 # 7天撸完ktv点歌系统

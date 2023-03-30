@@ -1,22 +1,8 @@
 ---
 title: 使用Dockerfile构建镜像
 description: Dockerfile是一个文本文件里面包含了一条条构建镜像的指令，使用Dockerfile构建镜像更加方便、间接、透明
-head:
-  - - meta
-    - name: keywords
-      content: Dockerfile构建镜像,Dockerfile构建优化,Dockerfile多阶段构建,Dockerfile如何运行,docker镜像构建,定制docker镜像
-  - - meta
-    - property: og:description
-      content: Dockerfile是一个文本文件里面包含了一条条构建镜像的指令，使用Dockerfile构建镜像更加方便、间接、透明
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
-  - - meta
-    - name: twitter:description
-      content: Dockerfile是一个文本文件里面包含了一条条构建镜像的指令，使用Dockerfile构建镜像更加方便、间接、透明
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
+keywords: Dockerfile构建镜像,Dockerfile构建优化,Dockerfile多阶段构建,Dockerfile如何运行,docker镜像构建,定制docker镜像
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
 ---
 
 # 使用Dockerfile构建镜像

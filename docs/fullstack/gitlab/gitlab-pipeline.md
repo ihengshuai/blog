@@ -1,22 +1,8 @@
 ---
 title: Gitlab流水线配置
 description: 带你理解gitlab流水线的概念，熟练掌握流水线的常用技巧
-head:
-  - - meta
-    - name: keywords
-      content: gitlab流水线,流水线,CI/CD,自动化构建
-  - - meta
-    - property: og:description
-      content: 带你理解gitlab流水线的概念，熟练掌握流水线的常用技巧
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
-  - - meta
-    - name: twitter:description
-      content: 带你理解gitlab流水线的概念，熟练掌握流水线的常用技巧
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
+keywords: gitlab流水线,流水线,CI/CD,自动化构建
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
 ---
 
 # Gitlab流水线配置

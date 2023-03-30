@@ -1,22 +1,8 @@
 ---
 title: Docker网络原理
 description: 你知道docker几种网络模式背后的原理吗
-head:
-  - - meta
-    - name: keywords
-      content: docker网络原理,docker网络桥接,docker网络主机模式,docker网络三种模式
-  - - meta
-    - property: og:description
-      content: 你知道docker几种网络模式背后的原理吗
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
-  - - meta
-    - name: twitter:description
-      content: 你知道docker几种网络模式背后的原理吗
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
+keywords: docker网络原理,docker网络桥接,docker网络主机模式,docker网络三种模式
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
 ---
 
 # Docker网络原理

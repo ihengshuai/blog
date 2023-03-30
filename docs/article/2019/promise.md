@@ -1,22 +1,8 @@
 ---
 title: Promise使用与原理
 description: 如何使用promise优雅的解决异步问题,promise使用技巧与原理
-head:
-  - - meta
-    - name: keywords
-      content: Promise,promise原理,异步操作,回调函数,异步机制
-  - - meta
-    - property: og:description
-      content: 如何使用promise优雅的解决异步问题,promise使用技巧与原理
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
-  - - meta
-    - name: twitter:description
-      content: 如何使用promise优雅的解决异步问题,promise使用技巧与原理
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+keywords: Promise,promise原理,异步操作,回调函数,异步机制
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # Promise使用与原理

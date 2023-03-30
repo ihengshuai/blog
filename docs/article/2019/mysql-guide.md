@@ -1,22 +1,8 @@
 ---
 title: MySQL从入门到放弃
 description: mysql基础使用指南
-head:
-  - - meta
-    - name: keywords
-      content: MySQL,数据持久化,数据库,nodejs使用mysql,redis,关系型数据库
-  - - meta
-    - property: og:description
-      content: mysql基础使用指南
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-mysql.png
-  - - meta
-    - name: twitter:description
-      content: mysql基础使用指南
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-mysql.png
+keywords: MySQL,数据持久化,数据库,nodejs使用mysql,redis,关系型数据库
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-mysql.png
 ---
 
 # MySQL从入门到放弃

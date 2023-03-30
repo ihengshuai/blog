@@ -1,22 +1,8 @@
 ---
 title: nvm切换node版本
 description: 使用nvm丝滑切换node版本提高开发效率
-head:
-  - - meta
-    - name: keywords
-      content: nvm,切换node版本工具,node版本工具,n,开发效率,nodejs
-  - - meta
-    - property: og:description
-      content: 使用nvm丝滑切换node版本提高开发效率
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-nodejs.png
-  - - meta
-    - name: twitter:description
-      content: 使用nvm丝滑切换node版本提高开发效率
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-nodejs.png
+keywords: nvm,切换node版本工具,node版本工具,n,开发效率,nodejs
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-nodejs.png
 ---
 
 # nvm切换node版本

@@ -1,4 +1,2 @@
 # node-bff
 
-
-<Gitalk />

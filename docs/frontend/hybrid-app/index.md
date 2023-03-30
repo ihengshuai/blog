@@ -1,4 +1,3 @@
 # hybrid app
 
 
-<Gitalk />

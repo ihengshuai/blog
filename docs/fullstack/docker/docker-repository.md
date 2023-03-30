@@ -1,22 +1,8 @@
 ---
 title: 搭建docker私有仓库
 description: 使用官方registry或nexus3搭建属于自己的docker私有镜像仓库完整教程
-head:
-  - - meta
-    - name: keywords
-      content: docker私有仓库,搭建docker仓库,nexus搭建docker仓库,registry搭建docker仓库
-  - - meta
-    - property: og:description
-      content: 使用官方registry或nexus3搭建属于自己的docker私有镜像仓库完整教程
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
-  - - meta
-    - name: twitter:description
-      content: 使用官方registry或nexus3搭建属于自己的docker私有镜像仓库完整教程
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
+keywords: docker私有仓库,搭建docker仓库,nexus搭建docker仓库,registry搭建docker仓库
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
 ---
 
 # 搭建docker私有仓库

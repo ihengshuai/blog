@@ -1,22 +1,8 @@
 ---
 title: css的10中居中方式
 description: css居中样式可以用10种方法完成
-head:
-  - - meta
-    - name: keywords
-      content: CSS居中,css垂直居中
-  - - meta
-    - property: og:description
-      content: css居中样式可以用10种方法完成
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-css.png
-  - - meta
-    - name: twitter:description
-      content: css居中样式可以用10种方法完成
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-css.png
+keywords: CSS居中,css垂直居中
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-css.png
 ---
 
 # css的10中居中方式

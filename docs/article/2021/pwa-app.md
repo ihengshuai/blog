@@ -1,22 +1,8 @@
 ---
 title: PWA渐进式应用
 description: PWA渐进式应用
-head:
-  - - meta
-    - name: keywords
-      content: 渐进式应用,离线app
-  - - meta
-    - property: og:description
-      content: PWA渐进式应用
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-pwa.png
-  - - meta
-    - name: twitter:description
-      content: PWA渐进式应用
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-pwa.png
+keywords: 渐进式应用,离线app,webApp
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-pwa.png
 ---
 
 # PWA渐进式应用

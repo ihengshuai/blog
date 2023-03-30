@@ -1,22 +1,8 @@
 ---
 title: JS的深拷贝和浅拷贝
 description: JS的深拷贝和浅拷贝,递归拷贝
-head:
-  - - meta
-    - name: keywords
-      content: 深拷贝,浅拷贝,递归拷贝,数据结构,lodash
-  - - meta
-    - property: og:description
-      content: JS的深拷贝和浅拷贝,递归拷贝
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
-  - - meta
-    - name: twitter:description
-      content: JS的深拷贝和浅拷贝,递归拷贝
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+keywords: 深拷贝,浅拷贝,递归拷贝,数据结构,lodash
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # JS的深浅拷贝

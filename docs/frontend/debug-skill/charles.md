@@ -1,22 +1,8 @@
 ---
 title: Charles抓包工具使用指南
 description: charles一个简洁适配多系统的强大的抓包工具,方便抓取web和移动端数据包,设置代理等等
-head:
-  - - meta
-    - name: keywords
-      content: charles,charles抓包工具,手机抓包,ios抓包,android抓包,客户端抓包,抓包工具,Mac抓包,前端调试,frontend debugger,chrome调试,调试技能,node调试,线上调试
-  - - meta
-    - property: og:description
-      content: charles一个简洁适配多系统的强大的抓包工具,方便抓取web和移动端数据包,设置代理等等
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-debug.png
-  - - meta
-    - name: twitter:description
-      content: charles一个简洁适配多系统的强大的抓包工具,方便抓取web和移动端数据包,设置代理等等
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-debug.png
+keywords: charles,charles抓包工具,手机抓包,ios抓包,android抓包,客户端抓包,抓包工具,Mac抓包,前端调试,frontend debugger,chrome调试,调试技能,node调试,线上调试
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-debug.png
 ---
 
 # Charles抓包工具

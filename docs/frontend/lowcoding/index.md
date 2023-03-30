@@ -1,4 +1,2 @@
 # lowcoding
 
-
-<Gitalk />

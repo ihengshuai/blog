@@ -1,22 +1,8 @@
 ---
 title: Docker安装与配置
 description: docker基础入门从安装到配置
-head:
-  - - meta
-    - name: keywords
-      content: docker基础学习,docker安装配置,docker优缺点,centos安装docker
-  - - meta
-    - property: og:description
-      content: docker基础入门从安装到配置
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
-  - - meta
-    - name: twitter:description
-      content: docker基础入门从安装到配置
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
+keywords: docker基础学习,docker安装配置,docker优缺点,centos安装docker
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
 ---
 
 # Docker安装与配置

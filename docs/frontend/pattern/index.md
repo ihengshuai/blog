@@ -1,4 +1,2 @@
 # pattern
 
-
-<Gitalk />

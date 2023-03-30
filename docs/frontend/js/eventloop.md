@@ -1,22 +1,8 @@
 ---
 title: 彻底搞懂EventLoop事件循环机制(浏览器和Node EventLoop)
 description: 由于JavaScript是个单线程的语言,异步任务都会通过回调来解决单线程问题,JavaScript内部通过EventLoop事件循环机制来调度异步任务,本篇会对比浏览器的EventLoop和Node的EventLoop展开讲解
-head:
-  - - meta
-    - name: keywords
-      content: JS EventLoop,JS事件循环机制,浏览器EventLoop,NodeJS EventLoop,JS Engine,JS Runtime,JS异步编程,Promise,回调地狱,async/await,迭代器
-  - - meta
-    - property: og:description
-      content: 由于JavaScript是个单线程的语言,异步任务都会通过回调来解决单线程问题,JavaScript内部通过EventLoop事件循环机制来调度异步任务,本篇会对比浏览器的EventLoop和Node的EventLoop展开讲解
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
-  - - meta
-    - name: twitter:description
-      content: 由于JavaScript是个单线程的语言,异步任务都会通过回调来解决单线程问题,JavaScript内部通过EventLoop事件循环机制来调度异步任务,本篇会对比浏览器的EventLoop和Node的EventLoop展开讲解
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+keywords: JS EventLoop,JS事件循环机制,浏览器EventLoop,NodeJS EventLoop,JS Engine,JS Runtime,JS异步编程,Promise,回调地狱,async/await,迭代器
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # EventLoop事件循环机制

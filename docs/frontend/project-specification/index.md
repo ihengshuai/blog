@@ -1,4 +1,2 @@
 # project specification
 
-
-<Gitalk />

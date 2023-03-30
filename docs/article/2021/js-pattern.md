@@ -1,22 +1,8 @@
 ---
 title: 从JavaScript中看设计模式
 description: 一文了解设计模式让你的代码更加茁壮
-head:
-  - - meta
-    - name: keywords
-      content: 设计模式,单例模式,发布订阅,策略模式,代理模式,装饰器模式,外观模式,工厂模式,迭代器模式,建造者模式,适配器模式等等
-  - - meta
-    - property: og:description
-      content: 一文了解设计模式让你的代码更加茁壮
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
-  - - meta
-    - name: twitter:description
-      content: 一文了解设计模式让你的代码更加茁壮
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+keywords: 设计模式,单例模式,发布订阅,策略模式,代理模式,装饰器模式,外观模式,工厂模式,迭代器模式,建造者模式,适配器模式等等
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # 从JavaScript中看设计模式

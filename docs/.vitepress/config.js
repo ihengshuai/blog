@@ -1,6 +1,6 @@
 import { getNavMenu } from "./menu/nav";
 import { getSidebarMenu } from "./menu/sidebar";
-import { getHeaders } from "./head";
+import { getHeaders, genSpecificHeads } from "./util/head";
 import dotenv from "dotenv";
 // import markdown_anchor from "markdown-it-anchor"
 
@@ -13,6 +13,17 @@ export default {
   title: "hengshuai's blog",
   lastUpdated: true,
   head: getHeaders(),
+  cleanUrls: true,
+  transformHead(ctx) {
+    return genSpecificHeads(
+      ctx.title,
+      ctx.description,
+      ctx.pageData?.frontmatter?.logo,
+      ctx.pageData?.frontmatter?.keywords,
+      "https://blog.usword.cn/" +
+        ctx.pageData.relativePath.replace(/md$/i, "html")
+    );
+  },
   markdown: {
     theme: "material-palenight",
     lineNumbers: true,
@@ -22,12 +33,13 @@ export default {
     },
   },
   outDir: "../dist",
-  description: "a blog for sharing web development experiences...",
+  description:
+    "大家好我是卫恒帅，这是我的个人博客，在这里我会分享web开发相关技能经验，也有自己的一些生活所思所悟，希望对你有所帮助，如你感觉不错可以将本站收藏！",
   themeConfig: {
     logo: "https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/logo.png",
     siteTitle: "Hengshuai's blog",
     outline: [2, 4],
-    outlineTitle: '目录',
+    outlineTitle: "目录",
     nav: getNavMenu(),
     socialLinks: [{ icon: "github", link: "https://github.com/ihengshuai" }],
     sidebar: getSidebarMenu(),

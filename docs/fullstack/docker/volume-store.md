@@ -1,22 +1,8 @@
 ---
 title: Docker数据卷与持久化
 description: docker数据卷挂载使用与数据持久化原理
-head:
-  - - meta
-    - name: keywords
-      content: docker数据卷,docker volume,docker持久化
-  - - meta
-    - property: og:description
-      content: docker数据卷挂载使用与数据持久化原理
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
-  - - meta
-    - name: twitter:description
-      content: docker数据卷挂载使用与数据持久化原理
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
+keywords: docker数据卷,docker volume,docker持久化
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
 ---
 
 # Docker数据卷与持久化

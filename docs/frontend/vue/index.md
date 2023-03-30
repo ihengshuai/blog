@@ -1,4 +1,2 @@
 # vue
 
-
-<Gitalk />

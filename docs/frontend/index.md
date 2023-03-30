@@ -1,22 +1,8 @@
 ---
 title: 前端知识体系
 description: 前端知识体系学习清单,不断更新前端热门技术和分享优质文章
-head:
-  - - meta
-    - name: keywords
-      content: 前端知识体系,前端知识清单,Javascript,css,vue,react,webpack,正则表达式,regexp,构建工具,building tool,前端调试技巧,debuger,nodejs,express,koa,nestjs,渲染模式,render mode,项目规范,project spectification,http协议,http protocol,nginx,反向代理,前端编译原理,compiler,optimize,前端性能优化,前端监控系统,设计模式,npm,yarn,pnpm,vite,低代码,lowercoding,微前端,node性能优化,node bff,沙箱,小程序,混合应用,webassembly
-  - - meta
-    - property: og:description
-      content: 前端知识体系学习清单,不断更新前端热门技术和分享优质文章
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
-  - - meta
-    - name: twitter:description
-      content: 前端知识体系学习清单,不断更新前端热门技术和分享优质文章
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+keywords: 前端知识体系,前端知识清单,Javascript,css,vue,react,webpack,正则表达式,regexp,构建工具,building tool,前端调试技巧,debuger,nodejs,express,koa,nestjs,渲染模式,render mode,项目规范,project spectification,http协议,http protocol,nginx,反向代理,前端编译原理,compiler,optimize,前端性能优化,前端监控系统,设计模式,npm,yarn,pnpm,vite,低代码,lowercoding,微前端,node性能优化,node bff,沙箱,小程序,混合应用,webassembly
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # Only Frontend

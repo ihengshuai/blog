@@ -1,4 +1,2 @@
 # micro-program
 
-
-<Gitalk />

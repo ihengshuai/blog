@@ -1,4 +1,2 @@
 # visual
 
-
-<Gitalk />

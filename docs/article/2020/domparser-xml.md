@@ -1,10 +1,7 @@
 ---
 title: 关于DOMParser、XMLSerializer、createTreeWalker使用
 description: 如何使用DOMParser、XMLSerializer、createTreeWalker,使用的场景有哪些
-head:
-  - - meta
-    - name: keywords
-      content: DOMParser,XMLSerializer,createTreeWalker,解析dom字符串,dom解析
+keywords: DOMParser,XMLSerializer,createTreeWalker,解析dom字符串,dom解析
 ---
 
 # 关于DOMParser、XMLSerializer、createTreeWalker使用

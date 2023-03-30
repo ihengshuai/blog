@@ -1,22 +1,8 @@
 ---
 title: GitLab安装与配置
 description: 一篇gitlab完整的安装教程教你玩转gitlab
-head:
-  - - meta
-    - name: keywords
-      content: gitlab,流水线,CI/CD,自动化构建
-  - - meta
-    - property: og:description
-      content: 一篇gitlab完整的安装教程教你玩转gitlab
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
-  - - meta
-    - name: twitter:description
-      content: 一篇gitlab完整的安装教程教你玩转gitlab
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
+keywords: gitlab,流水线,CI/CD,自动化构建
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
 ---
 
 # GitLab安装与配置

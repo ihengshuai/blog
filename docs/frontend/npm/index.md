@@ -1,4 +1,2 @@
 # npm package
 
-
-<Gitalk />

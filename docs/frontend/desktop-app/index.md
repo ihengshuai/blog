@@ -1,4 +1,2 @@
 # desktop app
 
-
-<Gitalk />

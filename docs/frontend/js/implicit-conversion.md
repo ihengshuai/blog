@@ -1,22 +1,8 @@
 ---
 title: JS类型隐式转换与装箱拆箱
 description: 搞明白JS动态弱类型语言的隐式转换规则及装箱拆箱规则来提高你的程序稳定性
-head:
-  - - meta
-    - name: keywords
-      content: 类型隐式转换,装箱拆箱,运算转换,类型转换规则,type conversion,toPrimitive,弱类型,OrdinaryToPrimitive
-  - - meta
-    - property: og:description
-      content: 搞明白JS动态弱类型语言的隐式转换规则及装箱拆箱规则来提高你的程序稳定性
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
-  - - meta
-    - name: twitter:description
-      content: 搞明白JS动态弱类型语言的隐式转换规则及装箱拆箱规则来提高你的程序稳定性
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+keywords: 类型隐式转换,装箱拆箱,运算转换,类型转换规则,type conversion,toPrimitive,弱类型,OrdinaryToPrimitive
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # JS类型隐式转换与装箱拆箱

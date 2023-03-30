@@ -1,11 +1,6 @@
 ---
 title: 恒帅博客(关于我)
 editLink: false
-description: 恒帅的博客,hengshuai's blog,welcome to hengshuai's blog for sharing developer knowledge,很高兴在这里遇见您,我会分享给大家前后端开发经验,以及日常的经验新的等等
-head:
-  - - meta
-    - name: keywords
-      content: hengshuai's blog,恒帅的博客,前端开发,Vue,React,webpack,vite,rollup,gulp,nestjs,typescript,前端性能优化,低代码,微前端,node bff,node中间件,node性能优化,混合应用,可视化开发,前端可视化,设计模式,小程序,前端调试指南,前端构建工具,nginx,反向代理,http协议,http protocol,docker,k8s,kubenetes,nodejs,css,regexp,正则表达式,CI/CD,DevOps,Java,Redis,Mysql,Spring,SpringBoot,MyBatis,vue原理,babel,eslint,前端项目规范,编译原理,gitlab,jenkins
 ---
 
 <div align="center">

@@ -1,22 +1,8 @@
 ---
 title: 深入浅出RegExp
 description: 玩转正则表达式(regexp)的使用技巧,使用regexp提高开发效率
-head:
-  - - meta
-    - name: keywords
-      content: 正则表达式,RegExp,正则匹配,前端正则表达式
-  - - meta
-    - property: og:description
-      content: 玩转正则表达式(regexp)的使用技巧,使用regexp提高开发效率
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
-  - - meta
-    - name: twitter:description
-      content: 玩转正则表达式(regexp)的使用技巧,使用regexp提高开发效率
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+keywords: 正则表达式,RegExp,正则匹配,前端正则表达式
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # 深入浅出RegExp

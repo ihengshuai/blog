@@ -1,22 +1,8 @@
 ---
 title: 从零配置webpack工程
 description: 使用webpack搭建一个完整的工程项目,webpack使用基础指南
-head:
-  - - meta
-    - name: keywords
-      content: webpack,工程化,webpack搭建,webpack基础
-  - - meta
-    - property: og:description
-      content: 使用webpack搭建一个完整的工程项目,webpack使用基础指南
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-webpack.png
-  - - meta
-    - name: twitter:description
-      content: 使用webpack搭建一个完整的工程项目,webpack使用基础指南
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-webpack.png
+keywords: webpack,工程化,webpack搭建,webpack基础
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-webpack.png
 ---
 
 # 从零配置webpack工程

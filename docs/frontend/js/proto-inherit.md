@@ -1,22 +1,8 @@
 ---
 title: 原型、原型链与继承(构造函数继承、组合继承、寄生组合式继承、class继承)
 description: 一文吃透JavaScript的原型、原型链和继承概念和使用技巧，让你明白原型链继承、构造函数继承、原型式继承、组合式继承、寄生式继承、寄生组合式继承、class继承等多种继承方式
-head:
-  - - meta
-    - name: keywords
-      content: 原型概念,原型链概念,什么是原型,继承,前端继承,原型链继承,构造函数继承,组合继承,寄生式继承,寄生组合式继承,class继承
-  - - meta
-    - property: og:description
-      content: 一文吃透JavaScript的原型、原型链和继承概念和使用技巧，让你明白原型链继承、构造函数继承、原型式继承、组合式继承、寄生式继承、寄生组合式继承、class继承等多种继承方式
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
-  - - meta
-    - name: twitter:description
-      content: 一文吃透JavaScript的原型、原型链和继承概念和使用技巧，让你明白原型链继承、构造函数继承、原型式继承、组合式继承、寄生式继承、寄生组合式继承、class继承等多种继承方式
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
+keywords: 原型概念,原型链概念,什么是原型,继承,前端继承,原型链继承,构造函数继承,组合继承,寄生式继承,寄生组合式继承,class继承
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-js.png
 ---
 
 # 原型、原型链与继承

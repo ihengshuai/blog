@@ -1,22 +1,8 @@
 ---
 title: 前端调试技能指南
 description: 从Chrome DevTool Protocol到vscode玩转前端调试技巧
-head:
-  - - meta
-    - name: keywords
-      content: 前端调试,frontend debugger,vscode debugger,chrome调试,调试技能,node调试,typescript调试,线上调试
-  - - meta
-    - property: og:description
-      content: 从Chrome DevTool Protocol到vscode玩转前端调试技巧
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-icon.png
-  - - meta
-    - name: twitter:description
-      content: 从Chrome DevTool Protocol到vscode玩转前端调试技巧
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-icon.png
+keywords: 前端调试,frontend debugger,vscode debugger,chrome调试,调试技能,node调试,typescript调试,线上调试
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-debug.png
 ---
 
 # Debug skill

@@ -1,13 +1,7 @@
 ---
 title: 全栈开发
 description: 分享热门的后端知识包括不限于Java、nginx、MySQL、k8s、docker等等
-head:
-  - - meta
-    - name: keywords
-      content: Java基础,nginx服务,mysql,k8s,docker,gitlab,cicd等等
-  - - meta
-    - property: og:description
-      content: 分享热门的后端知识包括不限于Java、nginx、MySQL、k8s、docker等等
+keywords: Java基础,nginx服务,mysql,k8s,docker,gitlab,cicd等等
 ---
 
 # To Fullstack

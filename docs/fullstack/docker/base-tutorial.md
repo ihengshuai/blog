@@ -1,22 +1,8 @@
 ---
 title: Docker基础教程
 description: docker架构、镜像、容器、仓库使用指南
-head:
-  - - meta
-    - name: keywords
-      content: docker架构,docker命令,docker镜像,docker仓库,docker构建镜像,docker文件传输
-  - - meta
-    - property: og:description
-      content: docker架构、镜像、容器、仓库使用指南
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
-  - - meta
-    - name: twitter:description
-      content: docker架构、镜像、容器、仓库使用指南
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
+keywords: docker架构,docker命令,docker镜像,docker仓库,docker构建镜像,docker文件传输
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-docker.png
 ---
 
 # Docker基础教程

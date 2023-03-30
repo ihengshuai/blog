@@ -1,4 +1,2 @@
 # nginx
 
-
-<Gitalk />

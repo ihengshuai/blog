@@ -1,22 +1,8 @@
 ---
 title: Typescript装饰器指南
 description: 这是一篇Typescript装饰器使用指南,教大家理解什么装饰器,装饰器的作用
-head:
-  - - meta
-    - name: keywords
-      content: Typescript装饰器,ts装饰器,装饰器,类装饰器,参数装饰器,属性装饰器,方法装饰器,访问装饰器,装饰器模式,设计模式,Typescript Decorator
-  - - meta
-    - property: og:description
-      content: 这是一篇Typescript装饰器使用指南,教大家理解什么装饰器,装饰器的作用
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-ts.png
-  - - meta
-    - name: twitter:description
-      content: 这是一篇Typescript装饰器使用指南,教大家理解什么装饰器,装饰器的作用
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-ts.png
+keywords: Typescript装饰器,ts装饰器,装饰器,类装饰器,参数装饰器,属性装饰器,方法装饰器,访问装饰器,装饰器模式,设计模式,Typescript Decorator
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-ts.png
 ---
 
 # Typescript装饰器指南

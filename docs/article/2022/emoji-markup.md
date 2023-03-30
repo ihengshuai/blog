@@ -1,10 +1,7 @@
 ---
 title: Emoji markup(Markdown表情)
 description: Markdown表情,Markdown emoji markup list,help you select markdown emoji markup
-head:
-  - - meta
-    - name: keywords
-      content: markdown表情,markdown,emoji markup,emoji,markdown emoji
+keywords: markdown表情,markdown,emoji markup,emoji,markdown emoji
 ---
 
 # Emoji markup

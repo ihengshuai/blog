@@ -1,4 +1,2 @@
 # webpack
 
-
-<Gitalk />

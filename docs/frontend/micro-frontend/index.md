@@ -1,4 +1,2 @@
 # micro-frontend
 
-
-<Gitalk />

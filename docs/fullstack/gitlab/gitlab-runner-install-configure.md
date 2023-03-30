@@ -1,22 +1,8 @@
 ---
 title: Gitlab Runner安装与配置
 description: 一篇gitlab runner完整的安装与注册配置教程
-head:
-  - - meta
-    - name: keywords
-      content: gitlab-runner,runner注册,流水线,CI/CD,自动化构建
-  - - meta
-    - property: og:description
-      content: 一篇gitlab runner完整的安装与注册配置教程
-  - - meta
-    - property: og:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
-  - - meta
-    - name: twitter:description
-      content: 一篇gitlab runner完整的安装与注册配置教程
-  - - meta
-    - name: twitter:image
-      content: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
+keywords: gitlab-runner,runner注册,流水线,CI/CD,自动化构建
+logo: https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-gitlab.png
 ---
 
 # Gitlab Runner安装与配置
