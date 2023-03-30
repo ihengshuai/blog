@@ -1,6 +1,7 @@
 ---
 title: 恒帅博客(关于我)
 editLink: false
+aside: false
 ---
 
 <div align="center">
