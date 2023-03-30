@@ -19,12 +19,61 @@
       />
     </div>
   </figure>
+  <div class="reward-divider" />
+  <div class="share_wrap">
+    <a :href="weiboLink" target="_blank">
+      <img src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-weibo.png" alt="share to weibo" />
+    </a>
+    <a :href="twitterLink" target="_blank">
+      <img src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-twitter.png" alt="share to twitter" />
+    </a>
+    <a :href="facebookLink" target="_blank">
+      <img src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-facebook.png" alt="share to facebook" />
+    </a>
+  </div>
 </template>
+
+<script setup>
+import { onMounted, ref } from "vue"
+
+const weiboLink = ref('#');
+const twitterLink = ref('#');
+const facebookLink = ref('#');
+
+onMounted(() => {
+  const title = document.title;
+  const description = document.head.querySelector("meta[name='description']").content;
+  const pageLink = location.href;
+
+  weiboLink.value = `https://service.weibo.com/share/share.php?url=${pageLink}&platform=weibo&title=${title}`;
+  twitterLink.value = `https://twitter.com/intent/tweet?text=${description}&url=${pageLink}?platform=twitter`;
+  facebookLink.value = `https://www.facebook.com/sharer/sharer.php?u=${pageLink}&platform=facebook`;
+})
+</script>
 
 <style>
 .reward-divider {
   height: 1px;
   border-top: 1px dashed rgb(181, 180, 180);
   margin: 16px 0;
+}
+.share_wrap {
+  text-align: center;
+}
+.share_wrap a{
+  display: inline-block;
+  margin: 0 4px;
+}
+.share_wrap img {
+  width: 40px;
+  height: 40px;
+  border-radius:  50%;
+}
+
+@media screen and (max-width: 700px) {
+  .share_wrap img {
+    width: 28px;
+    height: 28px;
+  }
 }
 </style>
