@@ -57,8 +57,8 @@ onMounted(() => {
   const description = document.head.querySelector("meta[name='description']").content;
   const pageLink = location.href;
 
-  weiboLink.value = `https://service.weibo.com/share/share.php?url=${pageLink}&platform=weibo&title=${title}`;
-  twitterLink.value = `https://twitter.com/intent/tweet?text=${description}&url=${pageLink}?platform=twitter`;
+  weiboLink.value = `https://service.weibo.com/share/share.php?url=${pageLink}&platform=weibo&title=${encodeURIComponent(`${description} #hengshuai's blog# #恒帅的博客#`)}`;
+  twitterLink.value = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${description} #hengshuai #恒帅的博客`)}&url=${pageLink}?platform=twitter`;
   facebookLink.value = `https://www.facebook.com/sharer/sharer.php?u=${pageLink}&platform=facebook`;
 })
 </script>
