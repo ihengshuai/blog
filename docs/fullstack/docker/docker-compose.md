@@ -370,7 +370,7 @@ services:
 
 
 networks:
-  compose:
+  - compose:
 ```
 
 5. 创建镜像构建文件：分别使用`Dockerfile.nginx`和`Dockerfile.nodejs`来构建nginx和nodejs镜像，具体配置文件如下
