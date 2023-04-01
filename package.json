@@ -1,5 +1,5 @@
 {
-  "name": "vitepress-blog",
+  "name": "@ihengshuai/blog",
   "version": "1.0.0",
   "description": "this is a blog for sharing the knowledge of web development.",
   "main": "index.js",

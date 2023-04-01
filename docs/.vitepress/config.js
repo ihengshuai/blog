@@ -55,6 +55,12 @@ export default {
       appId: process.env.ALGOLIA_APP_ID,
       apiKey: process.env.ALGOLIA_APP_KEY,
       indexName: process.env.ALGOLIA_APP_INDEXNAME,
+      placeholder: "搜索文档...",
+      translations: {
+        button: {
+          buttonText: "Search"
+        }
+      }
     },
   },
 };
