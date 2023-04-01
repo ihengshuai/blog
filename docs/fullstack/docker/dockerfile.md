@@ -574,7 +574,7 @@ CMD ["nginx", "g", "daemon off;"]
 
 docker也支持像`.gitignore`类似的配置文件`.dockerignore`，在构建上传文件时将会忽略掉`.gitignore`中匹配的文件或路径，从而缩短文件上传耗时。
 
-```dockerignore
+```
 .DS_Store
 node_modules
 *.md

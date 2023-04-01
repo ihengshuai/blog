@@ -7,10 +7,12 @@
   --vp-custom-block-tip-text: var(--vp-c-green-dark);
   --vp-c-mute: #f9e7ca;
   --vp-button-alt-bg: #eee;
+  --vp-c-bg-alpha-with-backdrop: #ffffff80;
 }
 .dark {
   --vp-c-text-code: #232528;
   --vp-button-alt-bg: #454343;
+  --vp-c-bg-alpha-with-backdrop: var(--vp-c-bg-soft-mute)42;
 }
 
 .VPDoc.has-aside .content-container {
@@ -39,6 +41,17 @@
   margin: 28px 0 16px;
 }
 
+
+@media screen and (min-width: 960px) {
+  @supports ( (backdrop-filter: saturate(50%) blur(8px)) or (-webkit-backdrop-filter: saturate(50%) blur(8px)) ) {
+.VPNavBar.has-sidebar .content-body {
+    -webkit-backdrop-filter: saturate(50%) blur(8px);
+    backdrop-filter: saturate(50%) blur(8px);
+    background-color: var(--vp-c-bg-alpha-with-backdrop) !important;
+}
+}
+}
+
   .sm-center {
 @media screen and (max-width: 600px) {
     text-align: center;
@@ -47,3 +60,6 @@
     margin-bottom: 8px;
   }
 }
+
+
+

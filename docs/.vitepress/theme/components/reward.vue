@@ -2,7 +2,7 @@
   <div class="reward-divider" />
   <figure>
     <figcaption>
-      若您在阅读过程中发现错误：如语句不通、文字等错误，可以在评论区指出，我会及时调整修改，感谢您的阅读。若您觉得这篇文章对您有帮助，愿意的话可以打赏作者一笔作为鼓励，金额不限，再次感谢啦🤝。
+      若您在阅读过程中发现一些错误：如语句不通、文字、逻辑等错误，可以在评论区指出，我会及时调整修改，感谢您的阅读。同时您觉得这篇文章对您有帮助的话，可以打赏作者一笔作为鼓励，金额不限，感谢支持🤝。
     </figcaption>
     <div style="text-align: center;margin-top: 2em;">
       <img
@@ -22,13 +22,25 @@
   <div class="reward-divider" />
   <div class="share_wrap">
     <a :href="weiboLink" target="_blank">
-      <img src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-weibo.png" alt="share to weibo" />
+      <img
+        src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-weibo.png"
+        alt="share to weibo"
+        title="分享到微博"
+      />
     </a>
     <a :href="twitterLink" target="_blank">
-      <img src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-twitter.png" alt="share to twitter" />
+      <img
+        src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-twitter.png"
+        alt="share to twitter"
+        title="分享到twitter"
+      />
     </a>
     <a :href="facebookLink" target="_blank">
-      <img src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-facebook.png" alt="share to facebook" />
+      <img
+        src="https://ihengshuai-demo1.oss-cn-beijing.aliyuncs.com/icon-facebook.png"
+        alt="share to facebook"
+        title="分享到facebook"
+      />
     </a>
   </div>
 </template>

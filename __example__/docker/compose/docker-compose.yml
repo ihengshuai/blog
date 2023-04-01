@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  # 用nginx部署静态页面
+  compose-nginx:
+    build:
+     context: .
+     dockerfile: Dockerfile.nginx
+    container_name: compose-nginx
+    ports:
+      - "10010:80"
+    depends_on:
+      - compose-nodejs
+    networks:
+      - compose
+
+  # 部署nodejs
+  compose-nodejs:
+    build:
+      context: .
+      dockerfile: Dockerfile.nodejs
+    container_name: compose-nodejs
+    ports:
+      - "10010"
+    networks:
+      - compose
+
+
+# 使用统一个网络，可以通过服务名进行访问不同应用
+networks:
+  compose:
