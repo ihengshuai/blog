@@ -40,7 +40,6 @@ const watchHTMLAttr = () => {
   ob.value.observe(document.documentElement, { attributes: true, childList: false, attributeFilter: ["class"] });
 }
 onUnmounted(() => {
-  console.log(1111);
   ob?.value?.disconnect?.();
 })
 
