@@ -1,0 +1,6 @@
+# https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt
+User-agent: *
+Disallow: /*.index.html$
+Allow: /
+
+Sitemap: https://blog.usword.cn/sitemap.txt
